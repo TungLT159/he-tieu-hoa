@@ -26,8 +26,10 @@ import { useFullscreen } from '../../viewer/useFullscreen'
 import { useViewerV2 } from '../viewerV2Context'
 import { AnnotationToolbar } from './AnnotationToolbar'
 import { ColorPickerPopover } from './ColorPickerPopover'
+import { InfoPanel } from './InfoPanel'
 import { OrganInfoCard } from './OrganInfoCard'
 import { PlaceholderDialog } from './PlaceholderDialog'
+import { ViewerV2Annotation } from './ViewerV2Annotation'
 import { captureScreenshot } from './screenshot'
 import { VideoPlayerPanel } from './VideoPlayerPanel'
 import { ViewerV2SettingsPanel } from './ViewerV2SettingsPanel'
@@ -280,13 +282,7 @@ export function ViewerV2Overlay() {
           onClose={() => setActiveSheet(null)}
         />
       ) : null}
-      {activeDialog === 'info' ? (
-        <PlaceholderDialog
-          titleKey="viewer.info.title"
-          placeholderKey="viewer.info.description"
-          onClose={() => setActiveDialog(null)}
-        />
-      ) : null}
+      {activeDialog === 'info' ? <InfoPanel onClose={() => setActiveDialog(null)} /> : null}
       {activeDialog === 'quiz' ? (
         <PlaceholderDialog
           titleKey="viewer.quiz.title"
@@ -303,6 +299,7 @@ export function ViewerV2Overlay() {
       ) : null}
       {activeSheet === 'video' ? <VideoPlayerPanel onClose={() => setActiveSheet(null)} /> : null}
       <OrganInfoCard />
+      <ViewerV2Annotation />
       <AnnotationToolbar />
     </>
   )

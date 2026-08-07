@@ -1,8 +1,8 @@
 import { StarterSettingsContext } from '@/app/StarterSettingsContext'
 import { DEFAULT_STARTER_SETTINGS } from '@/app/settingsStorage'
 import { renderStarter } from '@/test/starterRender'
-import { fireEvent, screen, within } from '@testing-library/react'
-import { describe, expect, it, vi } from 'vitest'
+import { fireEvent, screen, waitFor, within } from '@testing-library/react'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { VideoPlayerPanel } from '../VideoPlayerPanel'
 
@@ -23,6 +23,14 @@ function renderPanel(onClose = vi.fn(), locale: 'en' | 'vi' = 'en') {
 }
 
 describe('VideoPlayerPanel', () => {
+  beforeEach(() => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }))
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
   it('renders a localized close button', () => {
     renderPanel()
 
@@ -64,6 +72,19 @@ describe('VideoPlayerPanel', () => {
     fireEvent.error(screen.getByTestId('learning-video'))
 
     expect(screen.getByTestId('learning-video-error')).toHaveTextContent('Your browser cannot play this learning video.')
+  })
+
+  it('shows fallback text when the video asset is unavailable before playback', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({ ok: false }),
+    )
+
+    renderPanel()
+
+    await waitFor(() => {
+      expect(screen.getByTestId('learning-video-error')).toHaveTextContent('Your browser cannot play this learning video.')
+    })
   })
 
   it('adds localized metadata to the captions track', () => {

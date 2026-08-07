@@ -1,6 +1,6 @@
 import { renderStarter } from '@/test/starterRender'
 import { fireEvent, screen, within } from '@testing-library/react'
-import { describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { StarterSettingsContext } from '@/app/StarterSettingsContext'
 import { DEFAULT_STARTER_SETTINGS } from '@/app/settingsStorage'
@@ -86,6 +86,14 @@ function renderOverlay(overrides: Partial<ViewerV2ContextValue> = {}) {
 }
 
 describe('ViewerV2Overlay', () => {
+  beforeEach(() => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }))
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
   it('renders essential localized controls without the old viewer context', () => {
     renderOverlay()
 
@@ -210,12 +218,13 @@ describe('ViewerV2Overlay', () => {
     expect(screen.getByRole('button', { name: 'Background Color' })).toBeInTheDocument()
   })
 
-  it('shows and closes the info placeholder dialog', () => {
+  it('shows and closes the detailed info panel', () => {
     const setActiveDialog = vi.fn()
     renderOverlay({ activeDialog: 'info', setActiveDialog })
 
     const dialog = screen.getByRole('dialog', { name: 'Human Digestive System' })
     expect(within(dialog).getByText('Explore the main organs of the digestive system in the order food moves through the body.')).toBeInTheDocument()
+    expect(within(dialog).getByText(/Digestion begins in the mouth/i)).toBeInTheDocument()
 
     fireEvent.click(within(dialog).getByRole('button', { name: 'Close' }))
 

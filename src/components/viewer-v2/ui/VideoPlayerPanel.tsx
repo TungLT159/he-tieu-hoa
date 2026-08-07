@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react'
+
 import { useStarterSettings } from '@/app/StarterSettingsContext'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { createTranslator } from '@/lib/i18n'
-import { useState } from 'react'
 
 interface VideoPlayerPanelProps {
   onClose: () => void
@@ -14,6 +15,18 @@ export function VideoPlayerPanel({ onClose }: VideoPlayerPanelProps) {
   const [hasVideoError, setHasVideoError] = useState(false)
   const trackLabel = locale === 'vi' ? 'Tiếng Việt' : 'English'
   const trackLanguage = locale === 'vi' ? 'vi' : 'en'
+
+  useEffect(() => {
+    const controller = new AbortController()
+
+    fetch('/videos/he-tieu-hoa.mp4', { method: 'HEAD', signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) setHasVideoError(true)
+      })
+      .catch(() => setHasVideoError(true))
+
+    return () => controller.abort()
+  }, [])
 
   return (
     <Card
