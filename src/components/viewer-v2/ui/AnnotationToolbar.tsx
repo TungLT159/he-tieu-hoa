@@ -1,4 +1,4 @@
-import { Eraser, PaintBrush, Palette, SignOut, Trash } from '@phosphor-icons/react'
+import { Eraser, PaintBrush, SignOut, Trash } from '@phosphor-icons/react'
 
 import { useStarterSettings } from '@/app/StarterSettingsContext'
 import { Button } from '@/components/ui/button'
@@ -45,19 +45,14 @@ export function AnnotationToolbar() {
         <Eraser className="h-4 w-4" aria-hidden />
         {t('viewer.annotation.eraser')}
       </Button>
-      <div className="relative">
-        <Button type="button" size="sm" variant="outline" aria-label={colorLabel} title={colorLabel}>
-          <Palette className="h-4 w-4" aria-hidden />
-          {colorLabel}
-        </Button>
-        <input
-          type="color"
-          value={drawColor}
-          aria-label={colorLabel}
-          className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
-          onInput={(event) => setDrawColor(event.currentTarget.value)}
-        />
-      </div>
+      <input
+        type="color"
+        value={drawColor}
+        aria-label={colorLabel}
+        title={colorLabel}
+        className="h-8 w-12 cursor-pointer rounded-md border border-input bg-background p-1 shadow-xs transition-all outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
+        onInput={(event) => setDrawColor(event.currentTarget.value)}
+      />
       <Button type="button" size="sm" variant="outline" aria-label={t('viewer.annotation.clearAll')} title={t('viewer.annotation.clearAll')} onClick={dispatchClear}>
         <Trash className="h-4 w-4" aria-hidden />
         {t('viewer.annotation.clearAll')}

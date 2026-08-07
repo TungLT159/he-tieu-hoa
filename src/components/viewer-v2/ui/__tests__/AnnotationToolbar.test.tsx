@@ -94,7 +94,7 @@ describe('AnnotationToolbar', () => {
 
     expect(screen.getByRole('button', { name: 'Pen' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Eraser' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Draw color #ff0000' })).toBeInTheDocument()
+    expect(screen.getByLabelText('Draw color #ff0000')).toHaveAttribute('type', 'color')
     expect(screen.getByRole('button', { name: 'Clear All' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Exit Drawing' })).toBeInTheDocument()
   })
@@ -142,8 +142,7 @@ describe('AnnotationToolbar', () => {
     const setDrawColor = vi.fn()
     renderToolbar({ setDrawColor })
 
-    fireEvent.click(screen.getByRole('button', { name: 'Draw color #ff0000' }))
-    fireEvent.input(document.querySelector('input[type="color"]') as HTMLInputElement, { target: { value: '#00ff00' } })
+    fireEvent.input(screen.getByLabelText('Draw color #ff0000'), { target: { value: '#00ff00' } })
 
     expect(setDrawColor).toHaveBeenCalledWith('#00ff00')
   })
