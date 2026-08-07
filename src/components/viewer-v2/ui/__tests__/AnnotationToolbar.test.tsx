@@ -92,6 +92,7 @@ describe('AnnotationToolbar', () => {
   it('shows all drawing controls when drawing is enabled', () => {
     renderToolbar()
 
+    expect(screen.getByRole('toolbar', { name: 'Annotation' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Pen' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Eraser' })).toBeInTheDocument()
     expect(screen.getByLabelText('Draw color #ff0000')).toHaveAttribute('type', 'color')

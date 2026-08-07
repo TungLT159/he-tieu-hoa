@@ -20,7 +20,11 @@ export function AnnotationToolbar() {
   }
 
   return (
-    <div className="pointer-events-auto absolute left-1/2 top-4 z-30 flex -translate-x-1/2 flex-wrap items-center gap-2 rounded-xl border border-border/70 bg-background/90 p-2 shadow-lg backdrop-blur">
+    <div
+      role="toolbar"
+      aria-label={t('viewer.menu.annotation')}
+      className="pointer-events-auto absolute left-1/2 top-4 z-30 flex -translate-x-1/2 flex-wrap items-center gap-2 rounded-xl border border-border/70 bg-background/90 p-2 shadow-lg backdrop-blur"
+    >
       <Button
         type="button"
         size="sm"
