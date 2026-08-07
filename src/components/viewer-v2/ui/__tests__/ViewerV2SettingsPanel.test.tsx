@@ -87,7 +87,7 @@ describe('ViewerV2SettingsPanel', () => {
 
     const dialog = screen.getByRole('dialog', { name: 'Settings' })
     expect(within(dialog).getByText('Quality')).toBeInTheDocument()
-    expect(within(dialog).getByRole('radio', { name: 'Low' })).toHaveAttribute('data-slot', 'radio-group-item')
+    expect(within(dialog).getByRole('radio', { name: 'Smooth' })).toHaveAttribute('data-slot', 'radio-group-item')
     expect(within(dialog).getByRole('radio', { name: 'Medium' })).toHaveAttribute('data-slot', 'radio-group-item')
     expect(within(dialog).getByRole('radio', { name: 'High' })).toBeChecked()
     expect(within(dialog).getByText('Volume')).toBeInTheDocument()
@@ -114,7 +114,7 @@ describe('ViewerV2SettingsPanel', () => {
     const setVoice = vi.fn()
     renderPanel({ setQualityPreset, setVoice })
 
-    fireEvent.click(screen.getByRole('radio', { name: 'Low' }))
+    fireEvent.click(screen.getByRole('radio', { name: 'Smooth' }))
     fireEvent.click(screen.getByRole('radio', { name: 'Central' }))
 
     expect(setQualityPreset).toHaveBeenCalledWith('low')
