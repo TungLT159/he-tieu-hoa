@@ -1,7 +1,18 @@
 export function captureScreenshot(): void {
   if (isWindows()) {
-    window.open('explorer ms-screenclip:', '_blank')
-    return
+    try {
+      const openedWindow = window.open(
+        'ms-screenclip:',
+        '_blank',
+        'noopener,noreferrer',
+      )
+
+      if (openedWindow !== null) {
+        return
+      }
+    } catch {
+      // Fall back below when the WebView blocks custom protocol navigation.
+    }
   }
 
   // Browsers and Tauri do not expose a reliable macOS screenshot URI.

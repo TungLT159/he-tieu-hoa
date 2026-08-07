@@ -18,13 +18,77 @@ describe('captureScreenshot', () => {
 
   it('opens the Windows screen clipping tool', () => {
     mockPlatform('Win32')
-    const openSpy = vi.spyOn(window, 'open').mockImplementation(() => null)
+    const openedWindow = {} as Window
+    const openSpy = vi
+      .spyOn(window, 'open')
+      .mockImplementation(() => openedWindow)
     const querySelectorSpy = vi.spyOn(document, 'querySelector')
 
     captureScreenshot()
 
-    expect(openSpy).toHaveBeenCalledWith('explorer ms-screenclip:', '_blank')
+    expect(openSpy).toHaveBeenCalledWith(
+      'ms-screenclip:',
+      '_blank',
+      'noopener,noreferrer',
+    )
     expect(querySelectorSpy).not.toHaveBeenCalled()
+  })
+
+  it('falls back to downloading a PNG when Windows screen clipping is blocked', () => {
+    mockPlatform('Win32')
+    const canvas = document.createElement('canvas')
+    const toDataURL = vi.fn().mockReturnValue('data:image/png;base64,abc123')
+    const mockClick = vi.fn()
+    const mockAnchor = {
+      href: '',
+      download: '',
+      click: mockClick,
+    } as unknown as HTMLAnchorElement
+
+    vi.spyOn(window, 'open').mockImplementation(() => null)
+    vi.spyOn(document, 'querySelector').mockReturnValue(canvas)
+    vi.spyOn(canvas, 'toDataURL').mockImplementation(toDataURL)
+    vi.spyOn(document, 'createElement').mockReturnValue(mockAnchor)
+    vi.spyOn(Date.prototype, 'toISOString').mockReturnValue(
+      '2026-08-07T12:00:00.000Z',
+    )
+
+    captureScreenshot()
+
+    expect(toDataURL).toHaveBeenCalledWith('image/png')
+    expect(mockAnchor.href).toBe('data:image/png;base64,abc123')
+    expect(mockAnchor.download).toBe(
+      'hetieuhoa-screenshot-2026-08-07T12-00-00.000Z.png',
+    )
+    expect(mockClick).toHaveBeenCalled()
+  })
+
+  it('falls back to downloading a PNG when Windows screen clipping throws', () => {
+    mockPlatform('Win32')
+    const canvas = document.createElement('canvas')
+    const toDataURL = vi.fn().mockReturnValue('data:image/png;base64,abc123')
+    const mockClick = vi.fn()
+    const mockAnchor = {
+      href: '',
+      download: '',
+      click: mockClick,
+    } as unknown as HTMLAnchorElement
+
+    vi.spyOn(window, 'open').mockImplementation(() => {
+      throw new Error('blocked')
+    })
+    vi.spyOn(document, 'querySelector').mockReturnValue(canvas)
+    vi.spyOn(canvas, 'toDataURL').mockImplementation(toDataURL)
+    vi.spyOn(document, 'createElement').mockReturnValue(mockAnchor)
+    vi.spyOn(Date.prototype, 'toISOString').mockReturnValue(
+      '2026-08-07T12:00:00.000Z',
+    )
+
+    captureScreenshot()
+
+    expect(toDataURL).toHaveBeenCalledWith('image/png')
+    expect(mockAnchor.href).toBe('data:image/png;base64,abc123')
+    expect(mockClick).toHaveBeenCalled()
   })
 
   it('falls back to downloading a PNG from the viewer canvas', () => {
