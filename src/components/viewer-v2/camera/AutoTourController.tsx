@@ -16,6 +16,9 @@ export const TOUR_ORGAN_ORDER = [
 export function AutoTourController() {
   const {
     flyCameraActive,
+    flyCameraOrganPopup,
+    flyCameraPaused,
+    isTransitioning,
     selectedOrgan,
     setCameraTarget,
     setFlyCameraActive,
@@ -36,6 +39,8 @@ export function AutoTourController() {
   }, [setFlyCameraOrganPopup, setFlyCameraPaused])
 
   const advanceTour = useCallback(() => {
+    if (!flyCameraActive || !flyCameraPaused || flyCameraOrganPopup !== tourSelectedOrgan.current) return
+
     setFlyCameraPaused(false)
     setFlyCameraOrganPopup(null)
 
@@ -54,7 +59,7 @@ export function AutoTourController() {
     tourSelectedOrgan.current = nextOrgan
     isSettingTourSelection.current = true
     setSelectedOrgan(nextOrgan)
-  }, [resetTour, setCameraTarget, setFlyCameraActive, setFlyCameraOrganPopup, setFlyCameraPaused, setSelectedOrgan])
+  }, [flyCameraActive, flyCameraOrganPopup, flyCameraPaused, resetTour, setCameraTarget, setFlyCameraActive, setFlyCameraOrganPopup, setFlyCameraPaused, setSelectedOrgan])
 
   useEffect(() => {
     if (!flyCameraActive) {
@@ -64,6 +69,7 @@ export function AutoTourController() {
 
     if (isSettingTourSelection.current) {
       if (selectedOrgan !== tourSelectedOrgan.current) return
+      if (isTransitioning) return
       isSettingTourSelection.current = false
       setFlyCameraPaused(true)
       setFlyCameraOrganPopup(tourSelectedOrgan.current)
@@ -83,7 +89,7 @@ export function AutoTourController() {
       resetTour()
       setFlyCameraActive(false)
     }
-  }, [flyCameraActive, resetTour, selectedOrgan, setFlyCameraActive, setFlyCameraOrganPopup, setFlyCameraPaused, setSelectedOrgan])
+  }, [flyCameraActive, isTransitioning, resetTour, selectedOrgan, setFlyCameraActive, setFlyCameraOrganPopup, setFlyCameraPaused, setSelectedOrgan])
 
   useEffect(() => {
     if (!flyCameraActive) return undefined
