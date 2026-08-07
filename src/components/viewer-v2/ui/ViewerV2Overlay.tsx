@@ -115,7 +115,18 @@ export function ViewerV2Overlay() {
   const hasOpenPanel = activeSheet !== null || activeDialog !== null
 
   const toggleSheet = (sheet: 'chatbot' | 'settings' | 'video') => {
-    setActiveSheet(activeSheet === sheet ? null : sheet)
+    if (activeSheet === sheet) {
+      setActiveSheet(null)
+      return
+    }
+
+    setActiveDialog(null)
+    setActiveSheet(sheet)
+  }
+
+  const openDialog = (dialog: 'info' | 'quiz' | 'genai') => {
+    setActiveSheet(null)
+    setActiveDialog(dialog)
   }
 
   const modelInteractionButtons: MenuButtonDef[] = [
@@ -146,8 +157,8 @@ export function ViewerV2Overlay() {
   ]
 
   const learningButtons: MenuButtonDef[] = [
-    { id: 'quiz', label: t('viewer.menu.quiz'), icon: Question, onClick: () => setActiveDialog('quiz') },
-    { id: 'info', label: t('viewer.menu.info'), icon: Info, onClick: () => setActiveDialog('info') },
+    { id: 'quiz', label: t('viewer.menu.quiz'), icon: Question, onClick: () => openDialog('quiz') },
+    { id: 'info', label: t('viewer.menu.info'), icon: Info, onClick: () => openDialog('info') },
     {
       id: 'video',
       label: t('viewer.menu.video'),
@@ -155,7 +166,7 @@ export function ViewerV2Overlay() {
       onClick: () => toggleSheet('video'),
       active: activeSheet === 'video',
     },
-    { id: 'genai', label: t('viewer.menu.genai'), icon: Sparkle, onClick: () => setActiveDialog('genai') },
+    { id: 'genai', label: t('viewer.menu.genai'), icon: Sparkle, onClick: () => openDialog('genai') },
   ]
 
   const toolsButtons: MenuButtonDef[] = [

@@ -125,6 +125,31 @@ describe('ViewerV2Overlay', () => {
     expect(setActiveDialog).not.toHaveBeenCalledWith('video')
   })
 
+  it.each(['video', 'settings', 'chatbot'] as const)(
+    'clears the active sheet before opening info while %s is active',
+    (activeSheet) => {
+      const setActiveSheet = vi.fn()
+      const setActiveDialog = vi.fn()
+      renderOverlay({ activeSheet, setActiveDialog, setActiveSheet })
+
+      fireEvent.click(screen.getByRole('button', { name: 'Information' }))
+
+      expect(setActiveSheet).toHaveBeenCalledWith(null)
+      expect(setActiveDialog).toHaveBeenCalledWith('info')
+    },
+  )
+
+  it('clears the active dialog before opening video', () => {
+    const setActiveDialog = vi.fn()
+    const setActiveSheet = vi.fn()
+    renderOverlay({ activeDialog: 'info', setActiveDialog, setActiveSheet })
+
+    fireEvent.click(screen.getByRole('button', { name: 'Learning Video' }))
+
+    expect(setActiveDialog).toHaveBeenCalledWith(null)
+    expect(setActiveSheet).toHaveBeenCalledWith('video')
+  })
+
   it('shows a floating return button only when an organ is selected', () => {
     const requestViewReset = vi.fn()
     renderOverlay({ selectedOrgan: 'Stomach', requestViewReset })
