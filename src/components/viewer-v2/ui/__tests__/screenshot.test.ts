@@ -91,6 +91,53 @@ describe('captureScreenshot', () => {
     expect(mockClick).toHaveBeenCalled()
   })
 
+  it('opens the macOS screenshot tool', () => {
+    mockPlatform('MacIntel')
+    const openedWindow = {} as Window
+    const openSpy = vi
+      .spyOn(window, 'open')
+      .mockImplementation(() => openedWindow)
+    const querySelectorSpy = vi.spyOn(document, 'querySelector')
+
+    captureScreenshot()
+
+    expect(openSpy).toHaveBeenCalledWith(
+      'screencapture:',
+      '_blank',
+      'noopener,noreferrer',
+    )
+    expect(querySelectorSpy).not.toHaveBeenCalled()
+  })
+
+  it('falls back to downloading a PNG when macOS screenshot is blocked', () => {
+    mockPlatform('MacIntel')
+    const canvas = document.createElement('canvas')
+    const toDataURL = vi.fn().mockReturnValue('data:image/png;base64,abc123')
+    const mockClick = vi.fn()
+    const mockAnchor = {
+      href: '',
+      download: '',
+      click: mockClick,
+    } as unknown as HTMLAnchorElement
+
+    vi.spyOn(window, 'open').mockImplementation(() => null)
+    vi.spyOn(document, 'querySelector').mockReturnValue(canvas)
+    vi.spyOn(canvas, 'toDataURL').mockImplementation(toDataURL)
+    vi.spyOn(document, 'createElement').mockReturnValue(mockAnchor)
+    vi.spyOn(Date.prototype, 'toISOString').mockReturnValue(
+      '2026-08-07T12:00:00.000Z',
+    )
+
+    captureScreenshot()
+
+    expect(toDataURL).toHaveBeenCalledWith('image/png')
+    expect(mockAnchor.href).toBe('data:image/png;base64,abc123')
+    expect(mockAnchor.download).toBe(
+      'hetieuhoa-screenshot-2026-08-07T12-00-00.000Z.png',
+    )
+    expect(mockClick).toHaveBeenCalled()
+  })
+
   it('falls back to downloading a PNG from the viewer canvas', () => {
     mockPlatform('Linux x86_64')
     const canvas = document.createElement('canvas')

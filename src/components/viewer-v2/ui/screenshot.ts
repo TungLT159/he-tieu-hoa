@@ -1,26 +1,34 @@
 export function captureScreenshot(): void {
   if (isWindows()) {
-    try {
-      const openedWindow = window.open(
-        'ms-screenclip:',
-        '_blank',
-        'noopener,noreferrer',
-      )
-
-      if (openedWindow !== null) {
-        return
-      }
-    } catch {
-      // Fall back below when the WebView blocks custom protocol navigation.
+    if (openNativeScreenshotTool('ms-screenclip:')) {
+      return
     }
   }
 
-  // Browsers and Tauri do not expose a reliable macOS screenshot URI.
+  if (isMacOS()) {
+    if (openNativeScreenshotTool('screencapture:')) {
+      return
+    }
+  }
+
   fallbackCanvasCapture()
+}
+
+function openNativeScreenshotTool(uri: string): boolean {
+  try {
+    const openedWindow = window.open(uri, '_blank', 'noopener,noreferrer')
+    return openedWindow !== null
+  } catch {
+    return false
+  }
 }
 
 function isWindows(): boolean {
   return /win/i.test(window.navigator.platform || window.navigator.userAgent)
+}
+
+function isMacOS(): boolean {
+  return /mac/i.test(window.navigator.platform || window.navigator.userAgent)
 }
 
 export function fallbackCanvasCapture(): void {
