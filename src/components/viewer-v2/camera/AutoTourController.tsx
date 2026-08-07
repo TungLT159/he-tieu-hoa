@@ -28,11 +28,15 @@ export function AutoTourController() {
   } = useViewerV2()
   const tourStep = useRef<number | null>(null)
   const tourSelectedOrgan = useRef<string | null>(null)
+  const pendingPopupOrgan = useRef<string | null>(null)
+  const hasObservedTransitionForStop = useRef(false)
   const isSettingTourSelection = useRef(false)
 
   const resetTour = useCallback(() => {
     tourStep.current = null
     tourSelectedOrgan.current = null
+    pendingPopupOrgan.current = null
+    hasObservedTransitionForStop.current = false
     isSettingTourSelection.current = false
     setFlyCameraPaused(false)
     setFlyCameraOrganPopup(null)
@@ -57,6 +61,8 @@ export function AutoTourController() {
     const nextOrgan = TOUR_ORGAN_ORDER[nextStep]
     tourStep.current = nextStep
     tourSelectedOrgan.current = nextOrgan
+    pendingPopupOrgan.current = nextOrgan
+    hasObservedTransitionForStop.current = false
     isSettingTourSelection.current = true
     setSelectedOrgan(nextOrgan)
   }, [flyCameraActive, flyCameraOrganPopup, flyCameraPaused, resetTour, setCameraTarget, setFlyCameraActive, setFlyCameraOrganPopup, setFlyCameraPaused, setSelectedOrgan])
@@ -68,11 +74,23 @@ export function AutoTourController() {
     }
 
     if (isSettingTourSelection.current) {
-      if (selectedOrgan !== tourSelectedOrgan.current) return
-      if (isTransitioning) return
+      if (selectedOrgan !== tourSelectedOrgan.current) {
+        if (selectedOrgan !== null) {
+          resetTour()
+          setFlyCameraActive(false)
+        }
+        return
+      }
+      if (isTransitioning) {
+        hasObservedTransitionForStop.current = true
+        return
+      }
+      if (!hasObservedTransitionForStop.current || pendingPopupOrgan.current !== tourSelectedOrgan.current) return
       isSettingTourSelection.current = false
       setFlyCameraPaused(true)
       setFlyCameraOrganPopup(tourSelectedOrgan.current)
+      pendingPopupOrgan.current = null
+      hasObservedTransitionForStop.current = false
       return
     }
 
@@ -80,6 +98,8 @@ export function AutoTourController() {
       const firstOrgan = TOUR_ORGAN_ORDER[0]
       tourStep.current = 0
       tourSelectedOrgan.current = firstOrgan
+      pendingPopupOrgan.current = firstOrgan
+      hasObservedTransitionForStop.current = false
       isSettingTourSelection.current = true
       setSelectedOrgan(firstOrgan)
       return

@@ -137,7 +137,8 @@ describe('AutoTourController', () => {
     expect(setFlyCameraActive).not.toHaveBeenCalledWith(false)
   })
 
-  it('pauses with a popup after the tour selection reaches the current organ', () => {
+  it('pauses with a popup after the tour selection transition completes', () => {
+    vi.useFakeTimers()
     const setSelectedOrgan = vi.fn()
     const setFlyCameraPaused = vi.fn()
     const setFlyCameraOrganPopup = vi.fn()
@@ -146,6 +147,16 @@ describe('AutoTourController', () => {
       const [selectedOrgan, updateSelectedOrgan] = useState<string | null>(null)
       const [flyCameraPaused, updateFlyCameraPaused] = useState(false)
       const [flyCameraOrganPopup, updateFlyCameraOrganPopup] = useState<string | null>(null)
+      const [isTransitioning, updateIsTransitioning] = useState(true)
+
+      useEffect(() => {
+        if (selectedOrgan === 'mieng') {
+          const timeoutId = window.setTimeout(() => updateIsTransitioning(false), 0)
+          return () => window.clearTimeout(timeoutId)
+        }
+
+        return undefined
+      }, [selectedOrgan])
 
       return (
         <ViewerV2Context.Provider
@@ -153,6 +164,7 @@ describe('AutoTourController', () => {
             flyCameraActive: true,
             flyCameraPaused,
             flyCameraOrganPopup,
+            isTransitioning,
             selectedOrgan,
             setFlyCameraPaused: (paused) => {
               setFlyCameraPaused(paused)
@@ -175,7 +187,80 @@ describe('AutoTourController', () => {
 
     render(<StatefulAutoTourController />)
 
+    act(() => vi.advanceTimersByTime(0))
+
     expect(setSelectedOrgan).toHaveBeenCalledWith('mieng')
+    expect(setFlyCameraPaused).toHaveBeenCalledWith(true)
+    expect(setFlyCameraOrganPopup).toHaveBeenCalledWith('mieng')
+  })
+
+  it('does not show popup until the current tour organ has transitioned from active to complete', () => {
+    const setSelectedOrgan = vi.fn()
+    const setFlyCameraPaused = vi.fn()
+    const setFlyCameraOrganPopup = vi.fn()
+
+    const { rerender } = renderWithViewerContext(<AutoTourController />, {
+      flyCameraActive: true,
+      isTransitioning: false,
+      selectedOrgan: null,
+      setFlyCameraPaused,
+      setFlyCameraOrganPopup,
+      setSelectedOrgan: (organ) => {
+        setSelectedOrgan(organ)
+      },
+    })
+
+    rerender(
+      <ViewerV2Context.Provider
+        value={createViewerValue({
+          flyCameraActive: true,
+          isTransitioning: false,
+          selectedOrgan: 'mieng',
+          setFlyCameraPaused,
+          setFlyCameraOrganPopup,
+          setSelectedOrgan,
+        })}
+      >
+        <AutoTourController />
+      </ViewerV2Context.Provider>,
+    )
+
+    expect(setFlyCameraPaused).not.toHaveBeenCalledWith(true)
+    expect(setFlyCameraOrganPopup).not.toHaveBeenCalledWith('mieng')
+
+    rerender(
+      <ViewerV2Context.Provider
+        value={createViewerValue({
+          flyCameraActive: true,
+          isTransitioning: true,
+          selectedOrgan: 'mieng',
+          setFlyCameraPaused,
+          setFlyCameraOrganPopup,
+          setSelectedOrgan,
+        })}
+      >
+        <AutoTourController />
+      </ViewerV2Context.Provider>,
+    )
+
+    expect(setFlyCameraPaused).not.toHaveBeenCalledWith(true)
+    expect(setFlyCameraOrganPopup).not.toHaveBeenCalledWith('mieng')
+
+    rerender(
+      <ViewerV2Context.Provider
+        value={createViewerValue({
+          flyCameraActive: true,
+          isTransitioning: false,
+          selectedOrgan: 'mieng',
+          setFlyCameraPaused,
+          setFlyCameraOrganPopup,
+          setSelectedOrgan,
+        })}
+      >
+        <AutoTourController />
+      </ViewerV2Context.Provider>,
+    )
+
     expect(setFlyCameraPaused).toHaveBeenCalledWith(true)
     expect(setFlyCameraOrganPopup).toHaveBeenCalledWith('mieng')
   })
@@ -243,6 +328,16 @@ describe('AutoTourController', () => {
       const [selectedOrgan, updateSelectedOrgan] = useState<string | null>(null)
       const [flyCameraPaused, updateFlyCameraPaused] = useState(false)
       const [flyCameraOrganPopup, updateFlyCameraOrganPopup] = useState<string | null>(null)
+      const [isTransitioning, updateIsTransitioning] = useState(true)
+
+      useEffect(() => {
+        if (selectedOrgan !== null) {
+          const timeoutId = window.setTimeout(() => updateIsTransitioning(false), 0)
+          return () => window.clearTimeout(timeoutId)
+        }
+
+        return undefined
+      }, [selectedOrgan])
 
       return (
         <ViewerV2Context.Provider
@@ -250,6 +345,7 @@ describe('AutoTourController', () => {
             flyCameraActive: true,
             flyCameraPaused,
             flyCameraOrganPopup,
+            isTransitioning,
             selectedOrgan,
             setFlyCameraPaused: (paused) => {
               setFlyCameraPaused(paused)
@@ -261,6 +357,7 @@ describe('AutoTourController', () => {
             },
             setSelectedOrgan: (organ) => {
               setSelectedOrgan(organ)
+              if (organ !== null) updateIsTransitioning(true)
               updateSelectedOrgan(organ)
             },
           })}
@@ -446,6 +543,16 @@ describe('AutoTourController', () => {
       const [flyCameraActive, updateFlyCameraActive] = useState(true)
       const [flyCameraPaused, updateFlyCameraPaused] = useState(false)
       const [flyCameraOrganPopup, updateFlyCameraOrganPopup] = useState<string | null>(null)
+      const [isTransitioning, updateIsTransitioning] = useState(true)
+
+      useEffect(() => {
+        if (selectedOrgan !== null) {
+          const timeoutId = window.setTimeout(() => updateIsTransitioning(false), 0)
+          return () => window.clearTimeout(timeoutId)
+        }
+
+        return undefined
+      }, [selectedOrgan])
 
       return (
         <ViewerV2Context.Provider
@@ -453,6 +560,7 @@ describe('AutoTourController', () => {
             flyCameraActive,
             flyCameraPaused,
             flyCameraOrganPopup,
+            isTransitioning,
             selectedOrgan,
             setCameraTarget,
             setFlyCameraActive: (active) => {
@@ -469,6 +577,7 @@ describe('AutoTourController', () => {
             },
             setSelectedOrgan: (organ) => {
               setSelectedOrgan(organ)
+              if (organ !== null) updateIsTransitioning(true)
               updateSelectedOrgan(organ)
             },
           })}
@@ -478,10 +587,15 @@ describe('AutoTourController', () => {
       )
     }
 
+    vi.useFakeTimers()
+
     render(<StatefulAutoTourController />)
+
+    act(() => vi.advanceTimersByTime(0))
 
     for (let i = 0; i < 8; i += 1) {
       act(() => window.dispatchEvent(new Event('flycamera-advance')))
+      act(() => vi.advanceTimersByTime(0))
     }
 
     expect(setSelectedOrgan).toHaveBeenLastCalledWith(null)
