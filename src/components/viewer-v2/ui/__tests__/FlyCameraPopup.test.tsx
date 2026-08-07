@@ -122,6 +122,15 @@ describe('FlyCameraPopup', () => {
     expect(container).toBeEmptyDOMElement()
   })
 
+  it('renders nothing when popup organ is unknown', () => {
+    const { container } = renderWithProviders({
+      flyCameraOrganPopup: 'unknown_organ',
+      organNodes: new Map([['unknown_organ', [createOrganMesh()]]]),
+    })
+
+    expect(container).toBeEmptyDOMElement()
+  })
+
   it('renders nothing when popup organ has no meshes', () => {
     const { container } = renderWithProviders({
       flyCameraOrganPopup: 'da_day',
