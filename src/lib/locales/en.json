@@ -67,6 +67,7 @@
   "viewer.settings.quality.high": "High",
   "viewer.settings.volume": "Volume",
   "viewer.settings.mute": "Mute",
+  "viewer.settings.unmute": "Unmute",
   "viewer.settings.voice": "Voice",
   "viewer.settings.voice.bac": "Northern",
   "viewer.settings.voice.trung": "Central",

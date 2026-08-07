@@ -1,9 +1,9 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Slider } from '@/components/ui/slider'
 import { createTranslator } from '@/lib/i18n'
-import { cn } from '@/lib/utils'
 import { useStarterSettings } from '@/app/StarterSettingsContext'
 
 import { useViewerV2 } from '../viewerV2Context'
@@ -30,6 +30,7 @@ export function ViewerV2SettingsPanel() {
   } = useViewerV2()
   const { locale } = useStarterSettings()
   const t = createTranslator(locale)
+  const muteLabel = volume === 0 ? t('viewer.settings.unmute') : t('viewer.settings.mute')
 
   return (
     <Card
@@ -56,23 +57,21 @@ export function ViewerV2SettingsPanel() {
 
         <fieldset className="space-y-2">
           <legend className="text-sm font-medium text-card-foreground">{t('viewer.settings.quality')}</legend>
-          <div role="radiogroup" aria-label={t('viewer.settings.quality')} className="grid grid-cols-3 gap-2">
+          <RadioGroup
+            value={qualityPreset}
+            onValueChange={(value) => setQualityPreset(value as QualityPreset)}
+            aria-label={t('viewer.settings.quality')}
+            className="grid grid-cols-3 gap-2"
+          >
             {QUALITY_OPTIONS.map((option) => (
-              <button
-                key={option}
-                type="button"
-                role="radio"
-                aria-checked={qualityPreset === option}
-                className={cn(
-                  'rounded-md border border-border px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-                  qualityPreset === option ? 'bg-primary text-primary-foreground' : 'bg-background hover:bg-accent hover:text-accent-foreground',
-                )}
-                onClick={() => setQualityPreset(option)}
-              >
-                {t(`viewer.settings.quality.${option}`)}
-              </button>
+              <div key={option} className="flex items-center gap-2 rounded-md border border-border px-3 py-2">
+                <RadioGroupItem id={`viewer-v2-quality-${option}`} value={option} />
+                <Label htmlFor={`viewer-v2-quality-${option}`} className="cursor-pointer">
+                  {t(`viewer.settings.quality.${option}`)}
+                </Label>
+              </div>
             ))}
-          </div>
+          </RadioGroup>
         </fieldset>
 
         <div className="space-y-3">
@@ -91,30 +90,28 @@ export function ViewerV2SettingsPanel() {
               onValueChange={([nextVolume]) => setVolume(nextVolume ?? 0)}
             />
             <Button type="button" variant="outline" size="sm" onClick={() => setVolume(volume === 0 ? DEFAULT_VOLUME : 0)}>
-              {t('viewer.settings.mute')}
+              {muteLabel}
             </Button>
           </div>
         </div>
 
         <fieldset className="space-y-2">
           <legend className="text-sm font-medium text-card-foreground">{t('viewer.settings.voice')}</legend>
-          <div role="radiogroup" aria-label={t('viewer.settings.voice')} className="grid grid-cols-3 gap-2">
+          <RadioGroup
+            value={voice}
+            onValueChange={(value) => setVoice(value as VoiceOption)}
+            aria-label={t('viewer.settings.voice')}
+            className="grid grid-cols-3 gap-2"
+          >
             {VOICE_OPTIONS.map((option) => (
-              <button
-                key={option}
-                type="button"
-                role="radio"
-                aria-checked={voice === option}
-                className={cn(
-                  'rounded-md border border-border px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-                  voice === option ? 'bg-primary text-primary-foreground' : 'bg-background hover:bg-accent hover:text-accent-foreground',
-                )}
-                onClick={() => setVoice(option)}
-              >
-                {t(`viewer.settings.voice.${option}`)}
-              </button>
+              <div key={option} className="flex items-center gap-2 rounded-md border border-border px-3 py-2">
+                <RadioGroupItem id={`viewer-v2-voice-${option}`} value={option} />
+                <Label htmlFor={`viewer-v2-voice-${option}`} className="cursor-pointer">
+                  {t(`viewer.settings.voice.${option}`)}
+                </Label>
+              </div>
             ))}
-          </div>
+          </RadioGroup>
         </fieldset>
 
         <div className="space-y-2">

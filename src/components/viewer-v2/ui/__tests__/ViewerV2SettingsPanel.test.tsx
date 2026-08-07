@@ -87,14 +87,15 @@ describe('ViewerV2SettingsPanel', () => {
 
     const dialog = screen.getByRole('dialog', { name: 'Settings' })
     expect(within(dialog).getByText('Quality')).toBeInTheDocument()
-    expect(within(dialog).getByRole('radio', { name: 'Low' })).toBeInTheDocument()
-    expect(within(dialog).getByRole('radio', { name: 'Medium' })).toBeInTheDocument()
+    expect(within(dialog).getByRole('radio', { name: 'Low' })).toHaveAttribute('data-slot', 'radio-group-item')
+    expect(within(dialog).getByRole('radio', { name: 'Medium' })).toHaveAttribute('data-slot', 'radio-group-item')
     expect(within(dialog).getByRole('radio', { name: 'High' })).toBeChecked()
     expect(within(dialog).getByText('Volume')).toBeInTheDocument()
     expect(within(dialog).getByText('55')).toBeInTheDocument()
     expect(within(dialog).getByRole('button', { name: 'Mute' })).toBeInTheDocument()
     expect(within(dialog).getByText('Voice')).toBeInTheDocument()
     expect(within(dialog).getByRole('radio', { name: 'Southern' })).toBeChecked()
+    expect(within(dialog).getByRole('radio', { name: 'Southern' })).toHaveAttribute('data-slot', 'radio-group-item')
     expect(within(dialog).getByRole('button', { name: 'Model Color' })).toBeInTheDocument()
     expect(within(dialog).getByRole('button', { name: 'Background Color' })).toBeInTheDocument()
   })
@@ -145,7 +146,7 @@ describe('ViewerV2SettingsPanel', () => {
       </StarterSettingsContext.Provider>,
     )
 
-    fireEvent.click(screen.getByRole('button', { name: 'Mute' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Unmute' }))
     expect(setVolume).toHaveBeenCalledWith(80)
   })
 
@@ -155,6 +156,6 @@ describe('ViewerV2SettingsPanel', () => {
 
     fireEvent.keyDown(screen.getByRole('slider', { name: 'Volume' }), { key: 'ArrowLeft' })
 
-    expect(setVolume).toHaveBeenCalled()
+    expect(setVolume).toHaveBeenCalledWith(79)
   })
 })
