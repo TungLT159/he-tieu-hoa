@@ -2,7 +2,7 @@ import { createContext, useContext } from 'react'
 import type * as THREE from 'three'
 
 export type ActiveSheet = 'chatbot' | 'settings' | 'video' | null
-export type ActiveDialog = 'info' | 'quiz' | 'genai' | null
+export type ActiveDialog = 'info' | 'quiz' | 'genai' | 'video' | null
 
 export type QualityPreset = 'low' | 'medium' | 'high'
 export type VoiceOption = 'bac' | 'trung' | 'nam'
