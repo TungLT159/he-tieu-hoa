@@ -1,7 +1,8 @@
 import { renderStarter } from '@/test/starterRender'
 import { fireEvent, screen } from '@testing-library/react'
+import type { ReactNode } from 'react'
 import * as THREE from 'three'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import { StarterSettingsContext } from '@/app/StarterSettingsContext'
 import { DEFAULT_STARTER_SETTINGS } from '@/app/settingsStorage'
@@ -9,14 +10,12 @@ import { ViewerV2Context } from '../../viewerV2Context'
 import type { ViewerV2ContextValue } from '../../viewerV2Context'
 import { FlyCameraPopup } from '../FlyCameraPopup'
 
-const threeCamera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000)
-const domElement = document.createElement('canvas')
-
-vi.mock('@react-three/fiber', () => ({
-  useThree: () => ({
-    camera: threeCamera,
-    gl: { domElement },
-  }),
+vi.mock('@react-three/drei', () => ({
+  Html: ({ children, position }: { children: ReactNode, position?: THREE.Vector3 }) => (
+    <div data-position={position?.toArray().join(',')} data-testid="fly-camera-html">
+      {children}
+    </div>
+  ),
 }))
 
 function createOrganMesh() {
@@ -98,16 +97,6 @@ function renderWithProviders(viewerOverrides: Partial<ViewerV2ContextValue> = {}
 }
 
 describe('FlyCameraPopup', () => {
-  beforeEach(() => {
-    threeCamera.position.set(0, 0, 0)
-    threeCamera.lookAt(0, 0, -1)
-    threeCamera.updateMatrixWorld(true)
-    threeCamera.updateProjectionMatrix()
-
-    Object.defineProperty(domElement, 'clientWidth', { configurable: true, value: 800 })
-    Object.defineProperty(domElement, 'clientHeight', { configurable: true, value: 600 })
-  })
-
   it('renders localized organ details for da_day', () => {
     renderWithProviders({
       flyCameraOrganPopup: 'da_day',
@@ -116,6 +105,15 @@ describe('FlyCameraPopup', () => {
 
     expect(screen.getByText('Dạ dày')).toBeInTheDocument()
     expect(screen.getByText(/Dạ dày là cơ quan tiêu hóa hình túi/)).toBeInTheDocument()
+  })
+
+  it('renders the popup through Html anchored at the organ center', () => {
+    renderWithProviders({
+      flyCameraOrganPopup: 'da_day',
+      organNodes: new Map([['da_day', [createOrganMesh()]]]),
+    })
+
+    expect(screen.getByTestId('fly-camera-html')).toHaveAttribute('data-position', '0,0,-5')
   })
 
   it('renders nothing when popup is null', () => {
@@ -142,7 +140,7 @@ describe('FlyCameraPopup', () => {
       organNodes: new Map([['da_day', [createOrganMesh()]]]),
     })
 
-    fireEvent.click(screen.getByRole('button', { name: 'Continue' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Tiếp tục' }))
 
     expect(onAdvance).toHaveBeenCalledOnce()
     window.removeEventListener('flycamera-advance', onAdvance)
