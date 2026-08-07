@@ -87,6 +87,19 @@ describe('VideoPlayerPanel', () => {
     })
   })
 
+  it('ignores aborted availability checks', async () => {
+    const abortError = new DOMException('The operation was aborted.', 'AbortError')
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValue(abortError))
+
+    renderPanel()
+
+    await waitFor(() => {
+      expect(fetch).toHaveBeenCalledWith('/videos/he-tieu-hoa.mp4', expect.objectContaining({ method: 'HEAD' }))
+    })
+
+    expect(screen.queryByTestId('learning-video-error')).not.toBeInTheDocument()
+  })
+
   it('adds localized metadata to the captions track', () => {
     const { rerender } = renderPanel()
 

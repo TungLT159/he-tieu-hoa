@@ -18,14 +18,23 @@ export function VideoPlayerPanel({ onClose }: VideoPlayerPanelProps) {
 
   useEffect(() => {
     const controller = new AbortController()
+    let isActive = true
 
     fetch('/videos/he-tieu-hoa.mp4', { method: 'HEAD', signal: controller.signal })
       .then((response) => {
-        if (!response.ok) setHasVideoError(true)
+        if (isActive && !controller.signal.aborted && !response.ok) setHasVideoError(true)
       })
-      .catch(() => setHasVideoError(true))
+      .catch((error: unknown) => {
+        if (!isActive || controller.signal.aborted) return
+        if (error instanceof DOMException && error.name === 'AbortError') return
 
-    return () => controller.abort()
+        setHasVideoError(true)
+      })
+
+    return () => {
+      isActive = false
+      controller.abort()
+    }
   }, [])
 
   return (
