@@ -1,34 +1,12 @@
-export function captureScreenshot(): void {
-  if (isWindows()) {
-    if (openNativeScreenshotTool('ms-screenclip:')) {
-      return
-    }
-  }
+import { invoke } from '@tauri-apps/api/core'
 
-  if (isMacOS()) {
-    if (openNativeScreenshotTool('screencapture:')) {
-      return
-    }
-  }
-
-  fallbackCanvasCapture()
-}
-
-function openNativeScreenshotTool(uri: string): boolean {
+export async function captureScreenshot(): Promise<void> {
   try {
-    const openedWindow = window.open(uri, '_blank', 'noopener,noreferrer')
-    return openedWindow !== null
+    await invoke('open_system_screenshot_tool')
+    return
   } catch {
-    return false
+    fallbackCanvasCapture()
   }
-}
-
-function isWindows(): boolean {
-  return /win/i.test(window.navigator.platform || window.navigator.userAgent)
-}
-
-function isMacOS(): boolean {
-  return /mac/i.test(window.navigator.platform || window.navigator.userAgent)
 }
 
 export function fallbackCanvasCapture(): void {

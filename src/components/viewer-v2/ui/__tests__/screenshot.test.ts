@@ -1,41 +1,36 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
+const { invoke } = vi.hoisted(() => ({
+  invoke: vi.fn(),
+}))
+
+vi.mock('@tauri-apps/api/core', () => ({ invoke }))
+
 import { captureScreenshot } from '../screenshot'
 
 describe('captureScreenshot', () => {
   beforeEach(() => {
     vi.restoreAllMocks()
+    invoke.mockReset()
   })
 
   afterEach(() => {
     vi.restoreAllMocks()
+    invoke.mockReset()
   })
 
-  function mockPlatform(platform: string, userAgent = platform): void {
-    vi.spyOn(window.navigator, 'platform', 'get').mockReturnValue(platform)
-    vi.spyOn(window.navigator, 'userAgent', 'get').mockReturnValue(userAgent)
-  }
-
-  it('opens the Windows screen clipping tool', () => {
-    mockPlatform('Win32')
-    const openedWindow = {} as Window
-    const openSpy = vi
-      .spyOn(window, 'open')
-      .mockImplementation(() => openedWindow)
+  it('opens the native screenshot tool through Tauri', async () => {
+    invoke.mockResolvedValue(undefined)
     const querySelectorSpy = vi.spyOn(document, 'querySelector')
 
-    captureScreenshot()
+    await captureScreenshot()
 
-    expect(openSpy).toHaveBeenCalledWith(
-      'ms-screenclip:',
-      '_blank',
-      'noopener,noreferrer',
-    )
+    expect(invoke).toHaveBeenCalledWith('open_system_screenshot_tool')
     expect(querySelectorSpy).not.toHaveBeenCalled()
   })
 
-  it('falls back to downloading a PNG when Windows screen clipping is blocked', () => {
-    mockPlatform('Win32')
+  it('falls back to downloading a PNG when Tauri invoke fails', async () => {
+    invoke.mockRejectedValue(new Error('unavailable'))
     const canvas = document.createElement('canvas')
     const toDataURL = vi.fn().mockReturnValue('data:image/png;base64,abc123')
     const mockClick = vi.fn()
@@ -45,7 +40,6 @@ describe('captureScreenshot', () => {
       click: mockClick,
     } as unknown as HTMLAnchorElement
 
-    vi.spyOn(window, 'open').mockImplementation(() => null)
     vi.spyOn(document, 'querySelector').mockReturnValue(canvas)
     vi.spyOn(canvas, 'toDataURL').mockImplementation(toDataURL)
     vi.spyOn(document, 'createElement').mockReturnValue(mockAnchor)
@@ -53,8 +47,9 @@ describe('captureScreenshot', () => {
       '2026-08-07T12:00:00.000Z',
     )
 
-    captureScreenshot()
+    await captureScreenshot()
 
+    expect(invoke).toHaveBeenCalledWith('open_system_screenshot_tool')
     expect(toDataURL).toHaveBeenCalledWith('image/png')
     expect(mockAnchor.href).toBe('data:image/png;base64,abc123')
     expect(mockAnchor.download).toBe(
@@ -63,83 +58,10 @@ describe('captureScreenshot', () => {
     expect(mockClick).toHaveBeenCalled()
   })
 
-  it('falls back to downloading a PNG when Windows screen clipping throws', () => {
-    mockPlatform('Win32')
-    const canvas = document.createElement('canvas')
-    const toDataURL = vi.fn().mockReturnValue('data:image/png;base64,abc123')
-    const mockClick = vi.fn()
-    const mockAnchor = {
-      href: '',
-      download: '',
-      click: mockClick,
-    } as unknown as HTMLAnchorElement
-
-    vi.spyOn(window, 'open').mockImplementation(() => {
-      throw new Error('blocked')
+  it('falls back to downloading a PNG when Tauri invoke is unavailable', async () => {
+    invoke.mockImplementation(() => {
+      throw new Error('not in Tauri')
     })
-    vi.spyOn(document, 'querySelector').mockReturnValue(canvas)
-    vi.spyOn(canvas, 'toDataURL').mockImplementation(toDataURL)
-    vi.spyOn(document, 'createElement').mockReturnValue(mockAnchor)
-    vi.spyOn(Date.prototype, 'toISOString').mockReturnValue(
-      '2026-08-07T12:00:00.000Z',
-    )
-
-    captureScreenshot()
-
-    expect(toDataURL).toHaveBeenCalledWith('image/png')
-    expect(mockAnchor.href).toBe('data:image/png;base64,abc123')
-    expect(mockClick).toHaveBeenCalled()
-  })
-
-  it('opens the macOS screenshot tool', () => {
-    mockPlatform('MacIntel')
-    const openedWindow = {} as Window
-    const openSpy = vi
-      .spyOn(window, 'open')
-      .mockImplementation(() => openedWindow)
-    const querySelectorSpy = vi.spyOn(document, 'querySelector')
-
-    captureScreenshot()
-
-    expect(openSpy).toHaveBeenCalledWith(
-      'screencapture:',
-      '_blank',
-      'noopener,noreferrer',
-    )
-    expect(querySelectorSpy).not.toHaveBeenCalled()
-  })
-
-  it('falls back to downloading a PNG when macOS screenshot is blocked', () => {
-    mockPlatform('MacIntel')
-    const canvas = document.createElement('canvas')
-    const toDataURL = vi.fn().mockReturnValue('data:image/png;base64,abc123')
-    const mockClick = vi.fn()
-    const mockAnchor = {
-      href: '',
-      download: '',
-      click: mockClick,
-    } as unknown as HTMLAnchorElement
-
-    vi.spyOn(window, 'open').mockImplementation(() => null)
-    vi.spyOn(document, 'querySelector').mockReturnValue(canvas)
-    vi.spyOn(canvas, 'toDataURL').mockImplementation(toDataURL)
-    vi.spyOn(document, 'createElement').mockReturnValue(mockAnchor)
-    vi.spyOn(Date.prototype, 'toISOString').mockReturnValue(
-      '2026-08-07T12:00:00.000Z',
-    )
-
-    captureScreenshot()
-
-    expect(toDataURL).toHaveBeenCalledWith('image/png')
-    expect(mockAnchor.href).toBe('data:image/png;base64,abc123')
-    expect(mockAnchor.download).toBe(
-      'hetieuhoa-screenshot-2026-08-07T12-00-00.000Z.png',
-    )
-    expect(mockClick).toHaveBeenCalled()
-  })
-
-  it('falls back to downloading a PNG from the viewer canvas', () => {
-    mockPlatform('Linux x86_64')
     const canvas = document.createElement('canvas')
     const toDataURL = vi.fn().mockReturnValue('data:image/png;base64,abc123')
     const mockClick = vi.fn()
@@ -158,7 +80,7 @@ describe('captureScreenshot', () => {
       '2026-08-07T12:00:00.000Z',
     )
 
-    captureScreenshot()
+    await captureScreenshot()
 
     expect(querySelectorSpy).toHaveBeenCalledWith('[data-viewer-canvas]')
     expect(toDataURL).toHaveBeenCalledWith('image/png')
@@ -169,34 +91,34 @@ describe('captureScreenshot', () => {
     expect(mockClick).toHaveBeenCalled()
   })
 
-  it('logs a warning when canvas is not found', () => {
-    mockPlatform('Linux x86_64')
+  it('logs a warning when canvas is not found', async () => {
+    invoke.mockRejectedValue(new Error('unavailable'))
     const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
     vi.spyOn(document, 'querySelector').mockReturnValue(null)
 
-    captureScreenshot()
+    await captureScreenshot()
 
     expect(warnSpy).toHaveBeenCalledWith(
       'Viewer canvas not found for screenshot',
     )
   })
 
-  it('logs a warning when the viewer element is not a canvas', () => {
-    mockPlatform('Linux x86_64')
+  it('logs a warning when the viewer element is not a canvas', async () => {
+    invoke.mockRejectedValue(new Error('unavailable'))
     const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
     vi.spyOn(document, 'querySelector').mockReturnValue(
       document.createElement('div'),
     )
 
-    captureScreenshot()
+    await captureScreenshot()
 
     expect(warnSpy).toHaveBeenCalledWith(
       'Viewer canvas not found for screenshot',
     )
   })
 
-  it('logs a warning when the viewer canvas is empty', () => {
-    mockPlatform('Linux x86_64')
+  it('logs a warning when the viewer canvas is empty', async () => {
+    invoke.mockRejectedValue(new Error('unavailable'))
     const canvas = document.createElement('canvas')
     const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
     const toDataURL = vi.fn()
@@ -206,7 +128,7 @@ describe('captureScreenshot', () => {
     vi.spyOn(document, 'querySelector').mockReturnValue(canvas)
     vi.spyOn(canvas, 'toDataURL').mockImplementation(toDataURL)
 
-    captureScreenshot()
+    await captureScreenshot()
 
     expect(warnSpy).toHaveBeenCalledWith(
       'Viewer canvas is empty for screenshot',
@@ -214,8 +136,8 @@ describe('captureScreenshot', () => {
     expect(toDataURL).not.toHaveBeenCalled()
   })
 
-  it('logs a warning when screenshot export fails', () => {
-    mockPlatform('Linux x86_64')
+  it('logs a warning when screenshot export fails', async () => {
+    invoke.mockRejectedValue(new Error('unavailable'))
     const canvas = document.createElement('canvas')
     const error = new Error('export failed')
     const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
@@ -225,7 +147,7 @@ describe('captureScreenshot', () => {
       throw error
     })
 
-    captureScreenshot()
+    await captureScreenshot()
 
     expect(warnSpy).toHaveBeenCalledWith(
       'Viewer screenshot capture failed',
