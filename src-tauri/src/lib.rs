@@ -57,8 +57,16 @@ fn open_system_screenshot_tool() -> Result<(), String> {
             .arg("/clip")
             .spawn()
             .map(|_| ())
-            .or_else(|_| std::process::Command::new("SnippingTool.exe").spawn().map(|_| ()))
-            .or_else(|_| std::process::Command::new("snippingtool.exe").spawn().map(|_| ()))
+            .or_else(|_| {
+                std::process::Command::new("SnippingTool.exe")
+                    .spawn()
+                    .map(|_| ())
+            })
+            .or_else(|_| {
+                std::process::Command::new("snippingtool.exe")
+                    .spawn()
+                    .map(|_| ())
+            })
             .map_err(|error| format!("failed to launch Windows screenshot tool: {error}"))
     }
 
