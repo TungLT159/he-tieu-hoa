@@ -13,6 +13,12 @@ vi.mock('../screenshot', () => ({
   captureScreenshot: vi.fn(),
 }))
 
+vi.mock('@/services/ai', () => ({
+  DEFAULT_GENAI_PROMPT: 'Explain the digestive system',
+  chat: vi.fn().mockResolvedValue('Generated digestive system description.'),
+  generateImage: vi.fn().mockResolvedValue('https://example.test/generated.png'),
+}))
+
 function createViewerValue(overrides: Partial<ViewerV2ContextValue> = {}): ViewerV2ContextValue {
   return {
     selectedOrgan: null,
@@ -243,12 +249,13 @@ describe('ViewerV2Overlay', () => {
     expect(setActiveDialog).toHaveBeenCalledWith(null)
   })
 
-  it('shows and closes the GenAI placeholder dialog', () => {
+  it('shows and closes the GenAI panel instead of the placeholder dialog', async () => {
     const setActiveDialog = vi.fn()
     renderOverlay({ activeDialog: 'genai', setActiveDialog })
 
     const dialog = screen.getByRole('dialog', { name: 'Digestive System Description' })
-    expect(within(dialog).getByText('This feature is under development.')).toBeInTheDocument()
+    expect(await within(dialog).findByText('Regenerate')).toBeInTheDocument()
+    expect(within(dialog).queryByText('This feature is under development.')).not.toBeInTheDocument()
 
     fireEvent.click(within(dialog).getByRole('button', { name: 'Close' }))
 
@@ -276,12 +283,14 @@ describe('ViewerV2Overlay', () => {
     expect(within(toolbar).getByRole('button', { name: 'Clear All' })).toBeInTheDocument()
   })
 
-  it('shows and closes the chatbot placeholder dialog', () => {
+  it('shows and closes the chatbot panel instead of the placeholder dialog', () => {
     const setActiveSheet = vi.fn()
     renderOverlay({ activeSheet: 'chatbot', setActiveSheet })
 
     const dialog = screen.getByRole('dialog', { name: 'AI Chatbot' })
-    expect(within(dialog).getByText('This feature is under development.')).toBeInTheDocument()
+    expect(within(dialog).getByRole('tab', { name: 'Chat' })).toBeInTheDocument()
+    expect(within(dialog).getByRole('tab', { name: 'Image' })).toBeInTheDocument()
+    expect(within(dialog).queryByText('This feature is under development.')).not.toBeInTheDocument()
 
     fireEvent.click(within(dialog).getByRole('button', { name: 'Close' }))
 

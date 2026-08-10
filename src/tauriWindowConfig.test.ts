@@ -9,6 +9,10 @@ type TauriWindowConfig = {
 
 type TauriConfig = {
   app: {
+    security: {
+      csp: string
+      devCsp: string
+    }
     windows: TauriWindowConfig[]
   }
 }
@@ -23,5 +27,16 @@ describe('Tauri window chrome configuration', () => {
 
     expect(mainWindow.decorations).not.toBe(false)
     expect(mainWindow.hiddenTitle).toBe(true)
+  })
+
+  it('allows IIT AI API and generated image origins in CSP', () => {
+    const { csp, devCsp } = readTauriConfig().app.security
+
+    expect(csp).toContain('connect-src')
+    expect(csp).toContain('https://ai.iit.vn')
+    expect(csp).toContain('img-src')
+    expect(csp).toContain('https://file.aiquickdraw.com')
+    expect(devCsp).toContain('https://ai.iit.vn')
+    expect(devCsp).toContain('https://file.aiquickdraw.com')
   })
 })

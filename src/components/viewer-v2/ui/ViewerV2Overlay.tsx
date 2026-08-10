@@ -25,7 +25,9 @@ import { cn } from '@/lib/utils'
 import { useFullscreen } from '../../viewer/useFullscreen'
 import { useViewerV2 } from '../viewerV2Context'
 import { AnnotationToolbar } from './AnnotationToolbar'
+import { ChatbotPanel } from './ChatbotPanel'
 import { ColorPickerPopover } from './ColorPickerPopover'
+import { GenAIPanel } from './GenAIPanel'
 import { InfoPanel } from './InfoPanel'
 import { OrganInfoCard } from './OrganInfoCard'
 import { PlaceholderDialog } from './PlaceholderDialog'
@@ -275,13 +277,7 @@ export function ViewerV2Overlay() {
         </Button>
       ) : null}
       {activeSheet === 'settings' ? <ViewerV2SettingsPanel /> : null}
-      {activeSheet === 'chatbot' ? (
-        <PlaceholderDialog
-          titleKey="viewer.chatbot.title"
-          placeholderKey="viewer.chatbot.placeholderBody"
-          onClose={() => setActiveSheet(null)}
-        />
-      ) : null}
+      {activeSheet === 'chatbot' ? <ChatbotPanel onClose={() => setActiveSheet(null)} /> : null}
       {activeDialog === 'info' ? <InfoPanel onClose={() => setActiveDialog(null)} /> : null}
       {activeDialog === 'quiz' ? (
         <PlaceholderDialog
@@ -290,13 +286,7 @@ export function ViewerV2Overlay() {
           onClose={() => setActiveDialog(null)}
         />
       ) : null}
-      {activeDialog === 'genai' ? (
-        <PlaceholderDialog
-          titleKey="viewer.genai.title"
-          placeholderKey="viewer.genai.placeholder"
-          onClose={() => setActiveDialog(null)}
-        />
-      ) : null}
+      {activeDialog === 'genai' ? <GenAIPanel onClose={() => setActiveDialog(null)} /> : null}
       {activeSheet === 'video' ? <VideoPlayerPanel onClose={() => setActiveSheet(null)} /> : null}
       <OrganInfoCard />
       <ViewerV2Annotation />
