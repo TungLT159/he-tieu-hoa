@@ -1,0 +1,22 @@
+[package]
+name = "starter-tauri-app"
+version = "0.1.0"
+description = "Starter Tauri React desktop app"
+authors = []
+license = "MIT"
+repository = ""
+edition = "2021"
+rust-version = "1.77.2"
+
+[lib]
+name = "starter_tauri_app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.5.4", features = [] }
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "2.10.0", features = ["devtools", "image-png"] }
+
+[dev-dependencies]

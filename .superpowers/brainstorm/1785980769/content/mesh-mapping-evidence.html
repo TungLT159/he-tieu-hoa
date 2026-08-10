@@ -1,0 +1,45 @@
+<h2>FBX Mesh Mapping Evidence</h2>
+<p class="subtitle">Detected directly from <code>public/models/hetieuhoa.fbx</code>. Mesh names are generic, so this should be treated as a proposal that needs UI-side debug validation.</p>
+
+<div class="section">
+  <div class="label">Detected Geometry Meshes</div>
+  <div style="overflow:auto;border:1px solid var(--border);border-radius:12px;margin-top:10px">
+    <table style="width:100%;border-collapse:collapse;font-size:14px">
+      <thead>
+        <tr style="background:var(--muted)">
+          <th style="text-align:left;padding:10px">Mesh</th>
+          <th style="text-align:left;padding:10px">Vertices</th>
+          <th style="text-align:left;padding:10px">Center</th>
+          <th style="text-align:left;padding:10px">Size</th>
+          <th style="text-align:left;padding:10px">Proposed Organ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:10px"><code>digestive_system001</code></td><td style="padding:10px">7,830</td><td style="padding:10px">[-1.806, 5.228, 1.375]</td><td style="padding:10px">[5.946, 10.057, 9.771]</td><td style="padding:10px">Dạ dày group</td></tr>
+        <tr><td style="padding:10px"><code>digestive_system003</code></td><td style="padding:10px">17,550</td><td style="padding:10px">[0.777, 3.179, 0.660]</td><td style="padding:10px">[13.151, 10.935, 10.285]</td><td style="padding:10px">Dạ dày group</td></tr>
+        <tr><td style="padding:10px"><code>digestive_system005</code></td><td style="padding:10px">4,938</td><td style="padding:10px">[0.560, 22.242, -5.018]</td><td style="padding:10px">[2.908, 30.761, 7.405]</td><td style="padding:10px">Thực quản</td></tr>
+        <tr><td style="padding:10px"><code>digestive_system009</code></td><td style="padding:10px">61,296</td><td style="padding:10px">[-0.451, -6.888, 0.430]</td><td style="padding:10px">[16.970, 11.390, 9.478]</td><td style="padding:10px">Ruột non</td></tr>
+        <tr><td style="padding:10px"><code>digestive_system008</code></td><td style="padding:10px">137,280</td><td style="padding:10px">[-0.047, -12.606, -2.222]</td><td style="padding:10px">[22.574, 32.212, 16.362]</td><td style="padding:10px">Ruột già</td></tr>
+        <tr><td style="padding:10px"><code>digestive_system006</code></td><td style="padding:10px">14,934</td><td style="padding:10px">[-2.465, 5.340, -0.578]</td><td style="padding:10px">[17.617, 10.102, 15.754]</td><td style="padding:10px">Gan</td></tr>
+        <tr><td style="padding:10px"><code>digestive_system007</code></td><td style="padding:10px">7,764</td><td style="padding:10px">[-4.282, 2.698, 1.545]</td><td style="padding:10px">[5.076, 3.992, 5.533]</td><td style="padding:10px">Túi mật</td></tr>
+        <tr><td style="padding:10px"><code>digestive_system010</code></td><td style="padding:10px">8,832</td><td style="padding:10px">[1.188, 1.407, -1.778]</td><td style="padding:10px">[11.508, 5.101, 5.342]</td><td style="padding:10px">Tụy</td></tr>
+        <tr><td style="padding:10px"><code>digestive_system004</code></td><td style="padding:10px">25,368</td><td style="padding:10px">[-0.228, 41.815, 3.430]</td><td style="padding:10px">[5.483, 9.376, 11.692]</td><td style="padding:10px">Miệng / vùng trên</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section">
+  <div class="label">Non-selectable / Empty Meshes</div>
+  <p><code>digestive_system</code> and <code>digestive_system002</code> have 0 vertices, so they should not be selectable organs.</p>
+</div>
+
+<div class="options">
+  <div class="option" data-choice="recommended" onclick="toggleSelect(this)">
+    <div class="letter">R</div>
+    <div class="content">
+      <h3>Recommended</h3>
+      <p>Keep this inferred mapping, add an in-app debug panel that lists clicked mesh name, mapped organ, and all registered meshes so we can correct uncertain entries quickly.</p>
+    </div>
+  </div>
+</div>

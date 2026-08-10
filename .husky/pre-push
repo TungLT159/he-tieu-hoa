@@ -1,0 +1,187 @@
+#!/bin/sh
+# Pre-push: full CI checks run locally before any push.
+# This replaces remote CI for normal task pushes.
+# DO NOT skip with --no-verify (Claude Code is configured to never do this).
+#
+set -e
+
+ensure_cargo_tooling() {
+  if command -v cargo >/dev/null 2>&1; then
+    return 0
+  fi
+
+  if [ -s "$HOME/.cargo/env" ]; then
+    # shellcheck disable=SC1091
+    . "$HOME/.cargo/env"
+  fi
+
+  if ! command -v cargo >/dev/null 2>&1; then
+    echo "❌ cargo must be available before pushing"
+    echo "   Install Rust via https://rustup.rs or ensure ~/.cargo/bin is in PATH."
+    exit 1
+  fi
+}
+
+ensure_node_tooling() {
+  if command -v node >/dev/null 2>&1 && command -v pnpm >/dev/null 2>&1; then
+    return 0
+  fi
+
+  NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+  if [ -s "$NVM_DIR/nvm.sh" ]; then
+    # shellcheck disable=SC1090
+    . "$NVM_DIR/nvm.sh" --no-use
+    nvm use --silent node >/dev/null 2>&1 || true
+  fi
+
+  if ! command -v node >/dev/null 2>&1 || ! command -v pnpm >/dev/null 2>&1; then
+    echo "❌ node and pnpm must be available before pushing"
+    echo "   Install them or make sure your nvm setup is available to git hooks."
+    exit 1
+  fi
+}
+
+require_main_push() {
+  CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  if [ "$CURRENT_BRANCH" != "main" ] && [ "$CURRENT_BRANCH" != "HEAD" ]; then
+    echo "❌ Pushes must happen from main or a detached HEAD that is pushed directly to main. Current branch: $CURRENT_BRANCH"
+    exit 1
+  fi
+
+  while IFS=' ' read -r LOCAL_REF LOCAL_SHA REMOTE_REF REMOTE_SHA; do
+    [ -z "$LOCAL_REF" ] && continue
+
+    case "$LOCAL_REF:$REMOTE_REF" in
+      refs/heads/main:refs/heads/main)
+        ;;
+      HEAD:refs/heads/main)
+        ;;
+      refs/tags/*:refs/tags/*)
+        ;;
+      *)
+        echo "❌ Pushes must be main -> main only."
+        echo "   Attempted: ${LOCAL_REF:-<none>} -> ${REMOTE_REF:-<none>}"
+        exit 1
+        ;;
+    esac
+  done <<EOF
+$PUSH_INPUT
+EOF
+}
+
+if [ -t 0 ]; then
+  PUSH_INPUT=""
+else
+  PUSH_INPUT=$(cat)
+fi
+require_main_push
+ensure_node_tooling
+
+START_TIME=$(date +%s)
+
+echo ""
+echo "🚀 Pre-push checks (replaces CI — do not skip)"
+echo "================================================"
+
+# ── Detect what changed ─────────────────────────────────────────────────
+PUSH_TARGET=$(git rev-parse @{push} 2>/dev/null || echo "")
+RUST_CHANGED=true
+APP_CHANGED=true
+
+if [ -n "$PUSH_TARGET" ]; then
+  CHANGED=$(git diff --name-only "$PUSH_TARGET"..HEAD)
+  APP_CHANGED=false
+  if ! echo "$CHANGED" | grep -qE '^(src-tauri/|Cargo)'; then
+    RUST_CHANGED=false
+  fi
+  for FILE in $CHANGED; do
+    case "$FILE" in
+      .github/workflows/*|.husky/*|docs/*|*.md)
+        ;;
+      *)
+        APP_CHANGED=true
+        ;;
+    esac
+  done
+fi
+
+if [ "$APP_CHANGED" = false ]; then
+  echo ""
+  echo "⏭️  App checks skipped (docs/workflow/hooks only)"
+  ELAPSED=$(($(date +%s) - START_TIME))
+  echo ""
+  echo "✅ Pre-push passed in ${ELAPSED}s"
+  exit 0
+fi
+
+ensure_cargo_tooling
+
+echo ""
+echo "🔎 [0/5] Frontend lint..."
+pnpm lint
+echo "  ✅ Lint OK"
+
+echo ""
+echo "📦 [1/5] TypeScript + Vite build..."
+pnpm build
+echo "  ✅ Build OK"
+
+echo ""
+echo "📊 [2/5] Frontend tests + coverage (≥70%)..."
+node scripts/run-vitest-coverage.mjs --silent
+echo "  ✅ Frontend coverage OK"
+
+echo ""
+if [ "$RUST_CHANGED" = true ]; then
+  echo "🔧 [3/5] Clippy + rustfmt..."
+  cargo clippy --manifest-path=src-tauri/Cargo.toml -- -D warnings
+  cargo fmt --manifest-path=src-tauri/Cargo.toml -- --check
+  echo "  ✅ Rust lint OK"
+else
+  echo "⏭️  [3/5] Rust lint — skipped (no src-tauri/ changes)"
+fi
+
+echo ""
+if [ "$RUST_CHANGED" = true ]; then
+  LLVM_COV_FLAGS="--no-clean"
+  if [ "${STARTER_FULL_COVERAGE:-0}" = "1" ]; then
+    LLVM_COV_FLAGS=""
+    echo "🦀 [4/5] Rust coverage — FULL (STARTER_FULL_COVERAGE=1)..."
+  else
+    echo "🦀 [4/5] Rust coverage (≥85%, incremental)..."
+  fi
+  unset GIT_DIR GIT_WORK_TREE GIT_INDEX_FILE
+  # shellcheck disable=SC2086
+  cargo llvm-cov \
+    --manifest-path src-tauri/Cargo.toml \
+    $LLVM_COV_FLAGS \
+    --ignore-filename-regex "lib\.rs|main\.rs|menu\.rs" \
+    --fail-under-lines 85 \
+    -- --test-threads=1
+  echo "  ✅ Rust coverage OK"
+else
+  echo "⏭️  [4/5] Rust coverage — skipped (no src-tauri/ changes)"
+fi
+
+echo ""
+SMOKE_FILES=$(find tests/smoke -name '*.spec.ts' 2>/dev/null | head -1)
+if [ -n "$SMOKE_FILES" ]; then
+  echo "🎭 [5/5] Playwright smoke tests..."
+  if ! pnpm playwright:smoke; then
+    echo "  ❌ Smoke tests FAILED"
+    exit 1
+  fi
+  echo "  ✅ Smoke tests OK"
+else
+  echo "⏭️  [5/5] Playwright smoke tests — skipped (no tests/smoke/*.spec.ts)"
+fi
+
+END_TIME=$(date +%s)
+ELAPSED=$((END_TIME - START_TIME))
+MINUTES=$((ELAPSED / 60))
+SECONDS=$((ELAPSED % 60))
+
+echo ""
+echo "================================================"
+echo "✅ All checks passed — pushing (${MINUTES}m ${SECONDS}s)"
+echo ""

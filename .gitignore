@@ -1,0 +1,61 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Playwright
+/test-results/
+/playwright-report/
+
+# Coverage reports
+/coverage/
+
+# Claude Code task signals
+.claude-done
+.claude-blocked
+src-tauri/target
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Graphify local knowledge graph
+/graphify-out/
+
+# Dev screenshots
+screenshots/
+
+# Local home dir artifact from worktree ops
+(HOME)/
+
+# Runtime / process files
+.claude-pid
+
+# Tauri signing keys (never commit private keys)
+*.key
+*.key.pub
+
+# Local environment variables (never commit)
+.env
+.env.local
+.env.*.local

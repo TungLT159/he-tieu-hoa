@@ -1,0 +1,712 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ============================================================
+   Theme Variables — app-owned light/dark contract
+   ============================================================ */
+
+:root {
+  /* --- Font defaults --- */
+  --font-sans: ui-sans-serif, "Segoe UI Variable", "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --shadow-panel: 0 18px 48px color-mix(in oklab, var(--foreground) 12%, transparent);
+  --shadow-panel-soft: 0 10px 30px color-mix(in oklab, var(--foreground) 8%, transparent);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 14px;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-radix-popper-content-wrapper] {
+  zoom: var(--starter-overlay-zoom-inverse, 1);
+}
+
+[data-radix-popper-content-wrapper] > [data-slot="dropdown-menu-content"],
+[data-radix-popper-content-wrapper] > [data-slot="popover-content"],
+[data-radix-popper-content-wrapper] > [data-slot="select-content"],
+[data-radix-popper-content-wrapper] > [data-slot="tooltip-content"] {
+  zoom: var(--starter-overlay-zoom-factor, 1);
+}
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* --- Semantic surfaces (light mode) --- */
+  --surface-app: #FFFFFF;
+  --surface-sidebar: #F7F6F3;
+  --surface-panel: #FFFFFF;
+  --surface-card: #FFFFFF;
+  --surface-popover: #FFFFFF;
+  --surface-input: #FFFFFF;
+  --surface-button: #EBEBEA;
+  --surface-dialog: #FFFFFF;
+  --surface-editor: #FFFFFF;
+  --surface-overlay: rgba(0, 0, 0, 0.3);
+
+  /* --- Semantic text (light mode) --- */
+  --text-primary: #37352F;
+  --text-secondary: #787774;
+  --text-tertiary: #787774;
+  --text-muted: #B4B4B4;
+  --text-faint: #B4B4B4;
+  --text-heading: #37352F;
+  --text-inverse: #FFFFFF;
+
+  /* --- Semantic borders (light mode) --- */
+  --border-default: #E9E9E7;
+  --border-subtle: #E9E9E7;
+  --border-strong: #D9D9D6;
+  --border-input: #E9E9E7;
+  --border-dialog: #E9E9E7;
+  --border-focus: #155DFF;
+
+  /* --- Interaction states (light mode) --- */
+  --state-hover: #EBEBEA;
+  --state-hover-subtle: #F0F0EF;
+  --state-selected: #E8F4FE;
+  --state-selected-strong: #D8ECFE;
+  --state-active: #E8F4FE;
+  --state-focus-ring: #155DFF;
+  --state-drag-target: #155DFF18;
+  --state-disabled: #F0F0EF;
+
+  /* --- Accent roles (light mode) --- */
+  --accent-blue: #155DFF;
+  --accent-blue-bg: #155DFF18;
+  --accent-blue-hover: #0D4AD6;
+  --accent-blue-light: #155DFF14;
+  --accent-green: #38A169;
+  --accent-green-light: rgba(56, 161, 105, 0.1);
+  --accent-orange: #D9730D;
+  --accent-orange-light: rgba(217, 115, 13, 0.1);
+  --accent-red: #E53E3E;
+  --accent-red-light: rgba(229, 62, 62, 0.1);
+  --accent-purple: #805AD5;
+  --accent-purple-light: rgba(128, 90, 213, 0.1);
+  --accent-yellow: #D69E2E;
+  --accent-yellow-light: rgba(214, 158, 46, 0.1);
+  --accent-teal: #319795;
+  --accent-teal-light: rgba(49, 151, 149, 0.1);
+  --accent-pink: #D53F8C;
+  --accent-pink-light: rgba(213, 63, 140, 0.1);
+  --accent-gray: #718096;
+  --accent-gray-light: rgba(113, 128, 150, 0.1);
+
+  /* --- Feedback roles (light mode) --- */
+  --feedback-info-text: var(--accent-blue);
+  --feedback-info-bg: var(--accent-blue-light);
+  --feedback-success-text: var(--accent-green);
+  --feedback-success-bg: var(--accent-green-light);
+  --feedback-warning-text: #92400E;
+  --feedback-warning-bg: #FEF3C7;
+  --feedback-warning-border: #D97706;
+  --feedback-error-text: var(--accent-red);
+  --feedback-error-bg: var(--accent-red-light);
+
+  /* --- Syntax and diff roles (light mode) --- */
+  --syntax-heading: #0969DA;
+  --syntax-link: #0969DA;
+  --syntax-monospace: #C9383E;
+  --syntax-monospace-bg: rgba(175, 184, 193, 0.15);
+  --syntax-muted: #636C76;
+  --syntax-frontmatter-key: #C9383E;
+  --syntax-frontmatter-value: #2A7E4F;
+  --syntax-highlight-comment: #6A737D;
+  --syntax-highlight-keyword: #D73A49;
+  --syntax-highlight-string: #032F62;
+  --syntax-highlight-number: #005CC5;
+  --syntax-highlight-title: #6F42C1;
+  --syntax-highlight-type: #E36209;
+  --syntax-highlight-deletion: #B31D28;
+  --syntax-highlight-deletion-bg: #FFEEF0;
+  --diff-added-text: #4CAF50;
+  --diff-added-bg: rgba(76, 175, 80, 0.12);
+  --diff-removed-text: #F44336;
+  --diff-removed-bg: rgba(244, 67, 54, 0.12);
+  --diff-hunk-bg: rgba(33, 150, 243, 0.08);
+  --editor-code-block-background: var(--surface-sidebar);
+  --editor-code-block-border: var(--border-subtle);
+  --editor-code-block-text: var(--text-primary);
+  --editor-code-block-language: var(--text-secondary);
+
+  /* --- Overlays and shadows (light mode) --- */
+  --shadow-overlay: var(--surface-overlay);
+  --shadow-dialog: rgba(0, 0, 0, 0.15);
+
+  /* --- shadcn theme aliases (light mode) --- */
+  --radius: 0.5rem;
+  --background: var(--surface-app);
+  --foreground: var(--text-primary);
+  --card: var(--surface-card);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface-popover);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--accent-blue);
+  --primary-foreground: var(--text-inverse);
+  --secondary: var(--state-hover);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--state-hover-subtle);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--state-hover);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--accent-red);
+  --destructive-foreground: var(--text-inverse);
+  --border: var(--border-default);
+  --input: var(--border-input);
+  --ring: var(--state-focus-ring);
+  --sidebar: var(--surface-sidebar);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--accent-blue);
+  --sidebar-primary-foreground: var(--text-inverse);
+  --sidebar-accent: var(--state-hover);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border-default);
+  --sidebar-ring: var(--state-focus-ring);
+
+  /* --- Compatibility aliases for existing product code --- */
+  --bg-primary: var(--surface-app);
+  --bg-sidebar: var(--surface-sidebar);
+  --bg-card: var(--surface-card);
+  --bg-hover: var(--state-hover);
+  --bg-hover-subtle: var(--state-hover-subtle);
+  --bg-selected: var(--state-selected);
+  --bg-input: var(--surface-input);
+  --bg-button: var(--surface-button);
+  --bg-dialog: var(--surface-dialog);
+  --border-primary: var(--border-default);
+  --hover: var(--state-hover);
+  --link-color: var(--accent-blue);
+  --link-hover: var(--accent-blue-hover);
+}
+
+:root.dark,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* --- Semantic surfaces (dark mode) --- */
+  --surface-app: #1F1E1B;
+  --surface-sidebar: #191814;
+  --surface-panel: #23221F;
+  --surface-card: #23221F;
+  --surface-popover: #292823;
+  --surface-input: #1F1E1B;
+  --surface-button: #34322D;
+  --surface-dialog: #272622;
+  --surface-editor: #1F1E1B;
+  --surface-overlay: rgba(8, 8, 7, 0.58);
+
+  /* --- Semantic text (dark mode) --- */
+  --text-primary: #E6E1D8;
+  --text-secondary: #B8B1A6;
+  --text-tertiary: #9C9488;
+  --text-muted: #7F776D;
+  --text-faint: #625B53;
+  --text-heading: #F1ECE3;
+  --text-inverse: #151411;
+
+  /* --- Semantic borders (dark mode) --- */
+  --border-default: #34322D;
+  --border-subtle: #2A2925;
+  --border-strong: #46433B;
+  --border-input: #3A3832;
+  --border-dialog: #3A3832;
+  --border-focus: #78A4FF;
+
+  /* --- Interaction states (dark mode) --- */
+  --state-hover: #2D2B27;
+  --state-hover-subtle: #262520;
+  --state-selected: #1E344C;
+  --state-selected-strong: #25415F;
+  --state-active: #203A55;
+  --state-focus-ring: #78A4FF;
+  --state-drag-target: rgba(120, 164, 255, 0.2);
+  --state-disabled: #292824;
+
+  /* --- Accent roles (dark mode) --- */
+  --accent-blue: #78A4FF;
+  --accent-blue-bg: rgba(120, 164, 255, 0.2);
+  --accent-blue-hover: #9BBEFF;
+  --accent-blue-light: rgba(120, 164, 255, 0.16);
+  --accent-green: #79D89D;
+  --accent-green-light: rgba(121, 216, 157, 0.16);
+  --accent-orange: #F3A15B;
+  --accent-orange-light: rgba(243, 161, 91, 0.17);
+  --accent-red: #FF8A86;
+  --accent-red-light: rgba(255, 138, 134, 0.16);
+  --accent-purple: #B69CFF;
+  --accent-purple-light: rgba(182, 156, 255, 0.17);
+  --accent-yellow: #F2C86B;
+  --accent-yellow-light: rgba(242, 200, 107, 0.18);
+  --accent-teal: #64D1C8;
+  --accent-teal-light: rgba(100, 209, 200, 0.16);
+  --accent-pink: #F28AC3;
+  --accent-pink-light: rgba(242, 138, 195, 0.16);
+  --accent-gray: #A7B0BD;
+  --accent-gray-light: rgba(167, 176, 189, 0.14);
+
+  /* --- Feedback roles (dark mode) --- */
+  --feedback-info-text: var(--accent-blue);
+  --feedback-info-bg: var(--accent-blue-light);
+  --feedback-success-text: var(--accent-green);
+  --feedback-success-bg: var(--accent-green-light);
+  --feedback-warning-text: #F5C36B;
+  --feedback-warning-bg: rgba(245, 195, 107, 0.16);
+  --feedback-warning-border: #D99B3D;
+  --feedback-error-text: var(--accent-red);
+  --feedback-error-bg: var(--accent-red-light);
+
+  /* --- Syntax and diff roles (dark mode) --- */
+  --syntax-heading: #83B2FF;
+  --syntax-link: #83B2FF;
+  --syntax-monospace: #FFA6A3;
+  --syntax-monospace-bg: rgba(167, 176, 189, 0.16);
+  --syntax-muted: #9C9488;
+  --syntax-frontmatter-key: #FFA6A3;
+  --syntax-frontmatter-value: #8EDFAE;
+  --syntax-highlight-comment: #8E877D;
+  --syntax-highlight-keyword: #FF9BA0;
+  --syntax-highlight-string: #A9D6FF;
+  --syntax-highlight-number: #8BB7FF;
+  --syntax-highlight-title: #C2AAFF;
+  --syntax-highlight-type: #F3B175;
+  --syntax-highlight-deletion: #FF9C9A;
+  --syntax-highlight-deletion-bg: rgba(255, 138, 134, 0.16);
+  --diff-added-text: #79D89D;
+  --diff-added-bg: rgba(121, 216, 157, 0.14);
+  --diff-removed-text: #FF8A86;
+  --diff-removed-bg: rgba(255, 138, 134, 0.14);
+  --diff-hunk-bg: rgba(120, 164, 255, 0.13);
+  --editor-code-block-background: #161616;
+  --editor-code-block-border: transparent;
+  --editor-code-block-text: #FFFFFF;
+  --editor-code-block-language: rgba(255, 255, 255, 0.7);
+
+  /* --- Overlays and shadows (dark mode) --- */
+  --shadow-overlay: var(--surface-overlay);
+  --shadow-dialog: rgba(0, 0, 0, 0.42);
+
+  /* --- shadcn theme aliases (dark mode) --- */
+  --background: var(--surface-app);
+  --foreground: var(--text-primary);
+  --card: var(--surface-card);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface-popover);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--accent-blue);
+  --primary-foreground: var(--text-inverse);
+  --secondary: var(--state-hover);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--state-hover-subtle);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--state-hover);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--accent-red);
+  --destructive-foreground: var(--text-inverse);
+  --border: var(--border-default);
+  --input: var(--border-input);
+  --ring: var(--state-focus-ring);
+  --sidebar: var(--surface-sidebar);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--accent-blue);
+  --sidebar-primary-foreground: var(--text-inverse);
+  --sidebar-accent: var(--state-hover);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border-default);
+  --sidebar-ring: var(--state-focus-ring);
+
+  /* --- Compatibility aliases for existing product code --- */
+  --bg-primary: var(--surface-app);
+  --bg-sidebar: var(--surface-sidebar);
+  --bg-card: var(--surface-card);
+  --bg-hover: var(--state-hover);
+  --bg-hover-subtle: var(--state-hover-subtle);
+  --bg-selected: var(--state-selected);
+  --bg-input: var(--surface-input);
+  --bg-button: var(--surface-button);
+  --bg-dialog: var(--surface-dialog);
+  --border-primary: var(--border-default);
+  --hover: var(--state-hover);
+  --link-color: var(--accent-blue);
+  --link-hover: var(--accent-blue-hover);
+}
+
+/* --- Tailwind v4 theme inline: register colors + radii --- */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-surface-app: var(--surface-app);
+  --color-surface-sidebar: var(--surface-sidebar);
+  --color-surface-panel: var(--surface-panel);
+  --color-surface-card: var(--surface-card);
+  --color-surface-popover: var(--surface-popover);
+  --color-surface-editor: var(--surface-editor);
+  --color-state-hover: var(--state-hover);
+  --color-state-selected: var(--state-selected);
+  --color-border-default: var(--border-default);
+  --color-border-subtle: var(--border-subtle);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* --- Base layer --- */
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  body.custom-window-chrome {
+    padding-top: 32px;
+  }
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+  #root {
+    width: 100%;
+    height: 100%;
+  }
+  /* Interactive controls should advertise clickability unless disabled. */
+  :where(
+    button:not(:disabled):not([aria-disabled="true"]),
+    [role="button"]:not([aria-disabled="true"]):not([data-disabled]),
+    [role="menuitem"]:not([aria-disabled="true"]):not([data-disabled]),
+    [role="menuitemcheckbox"]:not([aria-disabled="true"]):not([data-disabled]),
+    [role="menuitemradio"]:not([aria-disabled="true"]):not([data-disabled]),
+    [role="option"]:not([aria-disabled="true"]):not([data-disabled])
+  ) {
+    cursor: pointer;
+  }
+}
+
+/* --- Label typography (Inter, sentence case) --- */
+/* t8: Section labels, metadata tags — 11px medium */
+.font-mono-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* t9: Overlines, category labels — 10px regular */
+.font-mono-overline {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.button-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: var(--muted-foreground);
+}
+
+.form-field {
+  display: grid;
+  gap: 6px;
+}
+
+.form-field > span {
+  font-weight: 650;
+}
+
+.pattern-page-header-demo {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+  background: color-mix(in oklab, var(--primary) 10%, var(--card));
+}
+
+.pattern-page-header-demo h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.75rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.pattern-page-header-demo p {
+  color: var(--muted-foreground);
+  max-width: 560px;
+}
+
+.mini-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.stat-card [data-slot='card-content'] {
+  display: grid;
+  gap: 10px;
+  padding-top: 18px;
+}
+
+.stat-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted-foreground);
+}
+
+.stat-card strong {
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.feature-list,
+.key-value-list,
+.activity-timeline,
+.checklist-progress ul {
+  display: grid;
+  gap: 10px;
+}
+
+.feature-list__item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.feature-list__item p,
+.empty-state p,
+.preference-row p,
+.inline-notice p,
+.activity-timeline p {
+  color: var(--muted-foreground);
+  margin: 4px 0 0;
+}
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: 18px;
+  padding: 28px;
+}
+
+.empty-state h3 {
+  margin: 0;
+}
+
+.filter-toolbar {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(150px, 0.5fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.filter-toolbar__search {
+  position: relative;
+}
+
+.filter-toolbar__search svg {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-foreground);
+}
+
+.filter-toolbar__search input {
+  padding-left: 34px;
+}
+
+.key-value-list {
+  margin: 0;
+}
+
+.key-value-list__row,
+.preference-row,
+.status-matrix__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+}
+
+.key-value-list__row:last-child,
+.status-matrix__item:last-child {
+  border-bottom: 0;
+}
+
+.key-value-list dt {
+  color: var(--muted-foreground);
+}
+
+.key-value-list dd {
+  margin: 0;
+  font-weight: 650;
+}
+
+.activity-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.activity-timeline__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+}
+
+.activity-timeline__dot {
+  margin-top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary) 18%, transparent);
+}
+
+.activity-timeline__heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.activity-timeline__heading small {
+  color: var(--muted-foreground);
+}
+
+.status-matrix {
+  display: grid;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 4px 12px;
+}
+
+.inline-notice {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  background: color-mix(in oklab, var(--primary) 8%, var(--card));
+}
+
+.inline-notice--success {
+  background: color-mix(in oklab, var(--accent-green) 10%, var(--card));
+}
+
+.inline-notice--warning {
+  background: color-mix(in oklab, var(--destructive) 8%, var(--card));
+}
+
+.checklist-progress {
+  display: grid;
+  gap: 14px;
+}
+
+.checklist-progress ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checklist-progress li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.6fr) minmax(240px, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.field-row__label {
+  font-weight: 650;
+}
+
+.field-row__description {
+  color: var(--muted-foreground);
+  margin: 4px 0 0;
+}
+
+@media (max-width: 780px) {
+  .field-row,
+  .filter-toolbar,
+  .mini-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pattern-page-header-demo,
+  .preference-row,
+  .key-value-list__row,
+  .status-matrix__item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .button-row {
+    width: 100%;
+  }
+
+  .button-row [data-slot='button'] {
+    min-width: 0;
+  }
+}
