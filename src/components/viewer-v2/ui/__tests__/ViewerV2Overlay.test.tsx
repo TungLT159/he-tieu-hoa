@@ -193,6 +193,17 @@ describe('ViewerV2Overlay', () => {
     expect(captureScreenshot).toHaveBeenCalled()
   })
 
+  it('resets the model color from the overlay color picker', () => {
+    const setModelColor = vi.fn()
+    renderOverlay({ modelColor: '#ffffff', setModelColor })
+
+    fireEvent.click(screen.getByRole('button', { name: 'Model Color' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Default' }))
+
+    expect(setModelColor).toHaveBeenCalledTimes(1)
+    expect(setModelColor).toHaveBeenCalledWith(null)
+  })
+
   it('shows and closes the v2 settings panel from active sheet state', () => {
     const setActiveSheet = vi.fn()
     renderOverlay({ activeSheet: 'settings', setActiveSheet })

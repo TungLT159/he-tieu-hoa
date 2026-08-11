@@ -1,5 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Popover, PopoverContent, PopoverTitle, PopoverTrigger } from '@/components/ui/popover'
+import { useStarterSettings } from '@/app/StarterSettingsContext'
+import { createTranslator } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 
 const DEFAULT_PRESETS = ['#1a1a2e', '#0f172a', '#ffffff', '#f97316', '#22c55e', '#3b82f6']
@@ -8,6 +10,7 @@ interface ColorPickerPopoverProps {
   label: string
   value: string | null
   onChange: (color: string) => void
+  onReset?: () => void
   presets?: string[]
   collapsed?: boolean
 }
@@ -16,9 +19,13 @@ export function ColorPickerPopover({
   label,
   value,
   onChange,
+  onReset,
   presets = DEFAULT_PRESETS,
   collapsed = false,
 }: ColorPickerPopoverProps) {
+  const { locale } = useStarterSettings()
+  const t = createTranslator(locale)
+
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -52,6 +59,11 @@ export function ColorPickerPopover({
             />
           ))}
         </div>
+        {onReset ? (
+          <Button type="button" variant="outline" size="sm" className="w-full" onClick={onReset}>
+            {t('viewer.colorPicker.reset')}
+          </Button>
+        ) : null}
       </PopoverContent>
     </Popover>
   )

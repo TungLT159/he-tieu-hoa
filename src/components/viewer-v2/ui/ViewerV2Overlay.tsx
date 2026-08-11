@@ -250,6 +250,7 @@ export function ViewerV2Overlay() {
                 label={t('viewer.menu.modelColor')}
                 value={modelColor}
                 onChange={setModelColor}
+                onReset={() => setModelColor(null)}
                 collapsed={!isMenuOpen}
               />
               <ColorPickerPopover

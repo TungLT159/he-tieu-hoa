@@ -115,7 +115,12 @@ export function ViewerV2SettingsPanel() {
         </fieldset>
 
         <div className="space-y-2">
-          <ColorPickerPopover label={t('viewer.menu.modelColor')} value={modelColor} onChange={setModelColor} />
+          <ColorPickerPopover
+            label={t('viewer.menu.modelColor')}
+            value={modelColor}
+            onChange={setModelColor}
+            onReset={() => setModelColor(null)}
+          />
           <ColorPickerPopover label={t('viewer.menu.backgroundColor')} value={backgroundColor} onChange={setBackgroundColor} />
         </div>
       </CardContent>

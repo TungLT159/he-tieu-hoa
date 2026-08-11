@@ -158,4 +158,15 @@ describe('ViewerV2SettingsPanel', () => {
 
     expect(setVolume).toHaveBeenCalledWith(79)
   })
+
+  it('resets the model color from the settings color picker', () => {
+    const setModelColor = vi.fn()
+    renderPanel({ modelColor: '#ffffff', setModelColor })
+
+    fireEvent.click(screen.getByRole('button', { name: 'Model Color' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Default' }))
+
+    expect(setModelColor).toHaveBeenCalledTimes(1)
+    expect(setModelColor).toHaveBeenCalledWith(null)
+  })
 })
