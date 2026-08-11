@@ -192,6 +192,9 @@ describe('ImageContent', () => {
     await screen.findByRole('img', { name: 'Lỗi tải xuống' })
 
     expect(screen.getByRole('alert')).toHaveTextContent('Không thể tải ảnh xuống. Vui lòng thử lại.')
+    expect(screen.getByRole('alert').compareDocumentPosition(screen.getByRole('button', { name: 'Tạo ảnh' }).closest('form') as Element)).toBe(
+      Node.DOCUMENT_POSITION_FOLLOWING,
+    )
   })
 
   it('shows an error and retries the failed prompt after an API failure', async () => {

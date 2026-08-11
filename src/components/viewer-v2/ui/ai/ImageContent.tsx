@@ -119,24 +119,6 @@ export function ImageContent() {
         ) : null}
       </div>
 
-      <form
-        className="flex shrink-0 gap-2"
-        onSubmit={(event) => {
-          event.preventDefault()
-          void generate()
-        }}
-      >
-        <Input
-          value={imageInput}
-          aria-label={t('viewer.chatbot.imagePlaceholder')}
-          placeholder={t('viewer.chatbot.imagePlaceholder')}
-          onChange={(event) => setImageInput(event.target.value)}
-        />
-        <Button type="submit" disabled={!imageCanGenerate}>
-          {t('viewer.chatbot.imagePrompt')}
-        </Button>
-      </form>
-
       {hasImageError ? (
         <Alert variant="destructive">
           <AlertDescription>
@@ -161,6 +143,24 @@ export function ImageContent() {
           <AlertDescription>{t('viewer.chatbot.downloadError')}</AlertDescription>
         </Alert>
       ) : null}
+
+      <form
+        className="flex shrink-0 gap-2"
+        onSubmit={(event) => {
+          event.preventDefault()
+          void generate()
+        }}
+      >
+        <Input
+          value={imageInput}
+          aria-label={t('viewer.chatbot.imagePlaceholder')}
+          placeholder={t('viewer.chatbot.imagePlaceholder')}
+          onChange={(event) => setImageInput(event.target.value)}
+        />
+        <Button type="submit" disabled={!imageCanGenerate}>
+          {t('viewer.chatbot.imagePrompt')}
+        </Button>
+      </form>
 
       {generatedImage ? (
         <ImageLightbox
