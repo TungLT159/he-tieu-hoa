@@ -131,6 +131,7 @@ describe('GenAIContent', () => {
     })
 
     expect(screen.getByText('F')).toHaveClass('whitespace-pre-wrap')
+    expect(screen.getByRole('status', { name: 'AI is thinking' })).toBeInTheDocument()
 
     finishTyping('irst line\nSecond line')
 
@@ -143,6 +144,7 @@ describe('GenAIContent', () => {
       'flex-1',
       'overflow-y-auto',
     )
+    expect(screen.queryByRole('status', { name: 'AI is thinking' })).not.toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Regenerate' }).parentElement).toHaveClass('shrink-0')
   })
 

@@ -72,7 +72,7 @@ export function GenAIContent({ refreshKey }: GenAIContentProps = {}) {
   return (
     <div className="flex h-full flex-col gap-3 overflow-hidden text-sm text-muted-foreground">
       <div data-testid="genai-response-scroll" className="min-h-0 flex-1 overflow-y-auto">
-        {isLoading ? (
+        {isLoading || isTyping ? (
           <div className="space-y-2">
             <p>{t('viewer.genai.loading')}</p>
             <TypingIndicator />
