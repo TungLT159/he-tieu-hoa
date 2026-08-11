@@ -150,7 +150,7 @@ describe('CameraController', () => {
     vi.spyOn(performance, 'now').mockReturnValue(0)
   })
 
-  it('renders OrbitControls with the expected navigation limits', () => {
+  it('renders OrbitControls with the expected navigation limits without a fixed target', () => {
     const { container } = renderWithViewerContext(<CameraController />)
 
     expect(container).toBeTruthy()
@@ -160,10 +160,10 @@ describe('CameraController', () => {
         makeDefault: true,
         maxDistance: 20,
         minDistance: 1,
-        target: DEFAULT_TARGET.toArray(),
       }),
       undefined,
     )
+    expect(orbitControlsMock.mock.calls.at(-1)?.[0]).not.toHaveProperty('target')
   })
 
   it('disables OrbitControls while transitioning', () => {
@@ -309,7 +309,45 @@ describe('CameraController', () => {
     expect(camera.position.z).toBeCloseTo(3)
     const controls = getControls()
     expect(controls.target.toArray()).toEqual([0, 0, 0])
-    expect(controls.update).toHaveBeenCalledTimes(1)
+    expect(controls.update).toHaveBeenCalledTimes(2)
+    expect(setIsTransitioning).toHaveBeenCalledWith(false)
+  })
+
+  it('snaps controls target to organ center and updates controls when transition completes', () => {
+    const mesh = new THREE.Mesh(new THREE.BoxGeometry(2, 2, 2))
+    mesh.position.set(3, 4, 5)
+    const setIsTransitioning = vi.fn()
+
+    const { rerender } = renderWithViewerContext(<CameraController />, {
+      organNodes: new Map([['gan', [mesh]]]),
+      selectedOrgan: 'gan',
+      setCameraTarget: vi.fn(),
+      setIsTransitioning,
+    })
+
+    rerender(
+      <ViewerV2Context.Provider
+        value={createViewerValue({
+          cameraTarget: 'gan',
+          isTransitioning: true,
+          organNodes: new Map([['gan', [mesh]]]),
+          selectedOrgan: 'gan',
+          setIsTransitioning,
+        })}
+      >
+        <CameraController />
+      </ViewerV2Context.Provider>,
+    )
+
+    const frameCallback = useFrameMock.mock.calls.at(-1)?.[0]
+    act(() => {
+      vi.mocked(performance.now).mockReturnValue(1000)
+      frameCallback()
+    })
+
+    const controls = getControls()
+    expect(controls.target.toArray()).toEqual([3, 4, 5])
+    expect(controls.update).toHaveBeenCalledTimes(2)
     expect(setIsTransitioning).toHaveBeenCalledWith(false)
   })
 

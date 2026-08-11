@@ -92,7 +92,11 @@ export function CameraController() {
     controls?.target.lerpVectors(startTarget.current, endTarget.current, easedT)
     controls?.update()
 
-    if (t >= 1) setIsTransitioning(false)
+    if (t >= 1) {
+      controls?.target.copy(endTarget.current)
+      controls?.update()
+      setIsTransitioning(false)
+    }
   })
 
   return (
@@ -101,7 +105,6 @@ export function CameraController() {
       autoRotate={isSpinning && !isTransitioning}
       autoRotateSpeed={1.0}
       enabled={!isTransitioning}
-      target={DEFAULT_TARGET.toArray()}
       minDistance={1}
       maxDistance={20}
       makeDefault
