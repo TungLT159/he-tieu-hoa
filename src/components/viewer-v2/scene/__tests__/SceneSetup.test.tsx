@@ -246,7 +246,7 @@ describe('SceneSetup', () => {
     expect(target.contains(flyCameraTour)).toBe(false)
   })
 
-  it('clears the current selection when the background plane is clicked', () => {
+  it('keeps the current selection when the background plane is clicked', () => {
     const setSelectedOrgan = vi.fn()
     const { container } = renderWithViewer({ selectedOrgan: 'da_day', setSelectedOrgan })
     const plane = container.querySelector('[data-node-type="mesh"]')
@@ -254,6 +254,6 @@ describe('SceneSetup', () => {
     expect(plane).not.toBeNull()
     fireEvent.pointerDown(plane as Element)
 
-    expect(setSelectedOrgan).toHaveBeenCalledWith(null)
+    expect(setSelectedOrgan).not.toHaveBeenCalled()
   })
 })

@@ -13,10 +13,8 @@ import { PostProcessing } from './PostProcessing'
 import { FlyCameraTour } from '../ui/FlyCameraTour'
 
 function BackgroundClickPlane() {
-  const { setSelectedOrgan } = useViewerV2()
-
   return (
-    <mesh position={[0, 0, -10]} onPointerDown={() => setSelectedOrgan(null)}>
+    <mesh position={[0, 0, -10]}>
       <planeGeometry args={[100, 100]} />
       <meshBasicMaterial transparent opacity={0} />
     </mesh>
