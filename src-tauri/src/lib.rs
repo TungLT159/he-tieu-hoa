@@ -53,17 +53,13 @@ fn get_app_version() -> &'static str {
 fn open_system_screenshot_tool() -> Result<(), String> {
     #[cfg(target_os = "windows")]
     {
-        std::process::Command::new("SnippingTool.exe")
-            .arg("/clip")
+        std::process::Command::new("cmd")
+            .args(["/C", "start", "", "ms-screenclip:"])
             .spawn()
             .map(|_| ())
             .or_else(|_| {
-                std::process::Command::new("SnippingTool.exe")
-                    .spawn()
-                    .map(|_| ())
-            })
-            .or_else(|_| {
-                std::process::Command::new("snippingtool.exe")
+                std::process::Command::new("explorer")
+                    .arg("ms-screenclip:")
                     .spawn()
                     .map(|_| ())
             })
