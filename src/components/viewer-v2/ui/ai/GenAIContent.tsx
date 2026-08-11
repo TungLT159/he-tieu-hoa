@@ -68,8 +68,8 @@ export function GenAIContent({ refreshKey }: GenAIContentProps = {}) {
   }, [generate, refreshKey])
 
   return (
-    <div className="flex h-full flex-col gap-3 text-sm text-muted-foreground">
-      <div data-testid="genai-response-scroll" className="min-h-0 flex-1 overflow-auto">
+    <div className="flex h-full flex-col gap-3 overflow-hidden text-sm text-muted-foreground">
+      <div data-testid="genai-response-scroll" className="min-h-0 flex-1 overflow-y-auto">
         {isLoading ? (
           <div className="space-y-2">
             <p>{t('viewer.genai.loading')}</p>
@@ -85,9 +85,11 @@ export function GenAIContent({ refreshKey }: GenAIContentProps = {}) {
         </Alert>
       ) : null}
 
-      <Button type="button" variant="outline" size="sm" onClick={() => void generate()} disabled={isLoading}>
-        {t('viewer.genai.regenerate')}
-      </Button>
+      <div className="shrink-0">
+        <Button type="button" variant="outline" size="sm" onClick={() => void generate()} disabled={isLoading}>
+          {t('viewer.genai.regenerate')}
+        </Button>
+      </div>
     </div>
   )
 }

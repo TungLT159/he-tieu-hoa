@@ -50,7 +50,16 @@ describe('AIPanel', () => {
 
     const dialog = screen.getByRole('dialog', { name: 'AI Assistant' })
 
-    expect(dialog).toHaveClass('w-full', 'sm:w-[40vw]', 'sm:max-w-[500px]', 'bg-card/95', 'backdrop-blur')
+    expect(dialog).toHaveClass(
+      'flex',
+      'h-full',
+      'flex-col',
+      'w-full',
+      'sm:w-[40vw]',
+      'sm:max-w-[500px]',
+      'bg-card/95',
+      'backdrop-blur',
+    )
     expect(screen.getByTestId('ai-panel-icon')).toHaveAttribute('aria-hidden', 'true')
 
     fireEvent.click(screen.getByRole('button', { name: 'Close' }))
@@ -58,12 +67,12 @@ describe('AIPanel', () => {
     expect(onClose).toHaveBeenCalledTimes(1)
   })
 
-  it('renders body content inside a scrollable area that fills remaining height', () => {
+  it('renders body content inside a scrollable viewport that fills remaining height', () => {
     renderAIPanel()
 
-    const scrollArea = screen.getByText('Panel body').closest('[data-slot="scroll-area"]')
+    const viewport = screen.getByText('Panel body').parentElement
 
-    expect(scrollArea).toHaveClass('min-h-0', 'flex-1')
+    expect(viewport).toHaveClass('min-h-0', 'flex-1', 'overflow-y-auto')
   })
 
   it('renders optional tabs and reports tab changes', () => {
@@ -79,7 +88,9 @@ describe('AIPanel', () => {
 
     expect(screen.getByRole('tablist')).toBeInTheDocument()
     expect(screen.getByRole('tab', { name: 'Chat' })).toHaveAttribute('data-state', 'active')
+    expect(screen.getByRole('tabpanel')).toHaveClass('min-h-0', 'flex-1')
     expect(screen.getByRole('tabpanel')).toHaveTextContent('Panel body')
+    expect(screen.getByText('Panel body').parentElement).toHaveClass('h-full', 'overflow-y-auto')
 
     fireEvent.keyDown(screen.getByRole('tab', { name: 'Image' }), { key: 'Enter' })
 

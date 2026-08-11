@@ -69,7 +69,11 @@ describe('ChatContent', () => {
   it('renders the chat log, localized input, and disabled send button', () => {
     renderChatContent('vi')
 
-    expect(screen.getByRole('log', { name: 'Trò chuyện' })).toHaveAttribute('aria-live', 'polite')
+    const log = screen.getByRole('log', { name: 'Trò chuyện' })
+
+    expect(log).toHaveAttribute('aria-live', 'polite')
+    expect(log.parentElement).toHaveClass('min-h-0', 'flex-1', 'overflow-y-auto')
+    expect(screen.getByRole('button', { name: 'Gửi' }).closest('form')).toHaveClass('shrink-0')
     expect(screen.getByRole('textbox', { name: 'Nhập câu hỏi của bạn...' })).toHaveAttribute(
       'placeholder',
       'Nhập câu hỏi của bạn...',

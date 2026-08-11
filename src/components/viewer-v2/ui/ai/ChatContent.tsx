@@ -3,7 +3,6 @@ import { useStarterSettings } from '@/app/StarterSettingsContext'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { ScrollArea } from '@/components/ui/scroll-area'
 import { useChatHistory } from '@/hooks/useChatHistory'
 import { createTranslator } from '@/lib/i18n'
 import { chat } from '@/services/ai'
@@ -67,8 +66,8 @@ export function ChatContent() {
   const chatCanSend = chatInput.trim().length > 0 && !isChatLoading
 
   return (
-    <div className="flex h-full flex-col gap-3 text-sm text-muted-foreground">
-      <ScrollArea className="min-h-0 flex-1 rounded-md border border-border p-3">
+    <div className="flex h-full flex-col gap-3 overflow-hidden text-sm text-muted-foreground">
+      <div className="min-h-0 flex-1 overflow-y-auto rounded-md border border-border p-3">
         <div
           role="log"
           aria-label={t('viewer.chatbot.tabChat')}
@@ -103,7 +102,7 @@ export function ChatContent() {
           {isChatLoading ? <TypingIndicator /> : null}
           <div ref={chatEndRef} />
         </div>
-      </ScrollArea>
+      </div>
 
       {hasChatError ? (
         <Alert variant="destructive">
@@ -125,7 +124,7 @@ export function ChatContent() {
       ) : null}
 
       <form
-        className="flex gap-2"
+        className="flex shrink-0 gap-2"
         onSubmit={(event) => {
           event.preventDefault()
           void sendChat()

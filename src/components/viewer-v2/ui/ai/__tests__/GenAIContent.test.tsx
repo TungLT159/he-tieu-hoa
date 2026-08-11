@@ -112,7 +112,12 @@ describe('GenAIContent', () => {
       (_, element) => element?.tagName.toLowerCase() === 'p' && element.textContent === 'First line\nSecond line',
     )
     expect(response).toHaveClass('whitespace-pre-wrap')
-    expect(response.closest('[data-testid="genai-response-scroll"]')).toHaveClass('overflow-auto')
+    expect(response.closest('[data-testid="genai-response-scroll"]')).toHaveClass(
+      'min-h-0',
+      'flex-1',
+      'overflow-y-auto',
+    )
+    expect(screen.getByRole('button', { name: 'Regenerate' }).parentElement).toHaveClass('shrink-0')
   })
 
   it('regenerates the response and disables the button while loading', async () => {
