@@ -6,7 +6,7 @@ export function useTypewriter(text: string | null, speed = DEFAULT_TYPEWRITER_SP
   const [typedState, setTypedState] = useState({ sourceText: null as string | null, characterCount: 0 })
   const isCurrentText = typedState.sourceText === text
   const displayedText = text && isCurrentText ? text.slice(0, typedState.characterCount) : ''
-  const isTyping = Boolean(text) && (!isCurrentText || typedState.characterCount < text.length)
+  const isTyping = text !== null && text.length > 0 && (!isCurrentText || typedState.characterCount < text.length)
 
   useEffect(() => {
     if (!text) {
