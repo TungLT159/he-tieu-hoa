@@ -141,7 +141,7 @@ describe('CameraController', () => {
   beforeEach(() => {
     cameraRef.current = camera
     controlsRef.current = {
-      target: new THREE.Vector3(0, 0.5, 0),
+      target: new THREE.Vector3(0, 0, 0),
       update: vi.fn(),
     }
     orbitControlsMock.mockClear()
@@ -150,7 +150,7 @@ describe('CameraController', () => {
     vi.spyOn(performance, 'now').mockReturnValue(0)
   })
 
-  it('renders OrbitControls with the expected navigation limits without a fixed target', () => {
+  it('renders OrbitControls with the expected navigation limits without a fixed target prop', () => {
     const { container } = renderWithViewerContext(<CameraController />)
 
     expect(container).toBeTruthy()
@@ -164,6 +164,14 @@ describe('CameraController', () => {
       undefined,
     )
     expect(orbitControlsMock.mock.calls.at(-1)?.[0]).not.toHaveProperty('target')
+  })
+
+  it('initializes OrbitControls to the overview target on mount', () => {
+    renderWithViewerContext(<CameraController />)
+
+    const controls = getControls()
+    expect(controls.target.toArray()).toEqual(DEFAULT_TARGET.toArray())
+    expect(controls.update).toHaveBeenCalledTimes(1)
   })
 
   it('disables OrbitControls while transitioning', () => {
@@ -269,7 +277,7 @@ describe('CameraController', () => {
     expect(controls.target.x).toBeCloseTo(0)
     expect(controls.target.y).toBeCloseTo(0.25)
     expect(controls.target.z).toBeCloseTo(0)
-    expect(controls.update).toHaveBeenCalledTimes(1)
+    expect(controls.update).toHaveBeenCalledTimes(2)
     expect(setIsTransitioning).not.toHaveBeenCalledWith(false)
   })
 
@@ -309,7 +317,7 @@ describe('CameraController', () => {
     expect(camera.position.z).toBeCloseTo(3)
     const controls = getControls()
     expect(controls.target.toArray()).toEqual([0, 0, 0])
-    expect(controls.update).toHaveBeenCalledTimes(2)
+    expect(controls.update).toHaveBeenCalledTimes(3)
     expect(setIsTransitioning).toHaveBeenCalledWith(false)
   })
 
@@ -347,7 +355,7 @@ describe('CameraController', () => {
 
     const controls = getControls()
     expect(controls.target.toArray()).toEqual([3, 4, 5])
-    expect(controls.update).toHaveBeenCalledTimes(2)
+    expect(controls.update).toHaveBeenCalledTimes(3)
     expect(setIsTransitioning).toHaveBeenCalledWith(false)
   })
 

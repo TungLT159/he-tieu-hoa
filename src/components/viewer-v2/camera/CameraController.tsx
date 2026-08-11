@@ -51,6 +51,14 @@ export function CameraController() {
   )
 
   useEffect(() => {
+    const controls = controlsRef.current
+    if (!controls) return
+
+    controls.target.copy(DEFAULT_TARGET)
+    controls.update()
+  }, [])
+
+  useEffect(() => {
     if (resetViewVersion !== handledResetViewVersion.current) return
 
     const nextTarget = selectedOrgan ?? 'overview'
