@@ -45,6 +45,9 @@ __pycache__/
 # Dev screenshots
 screenshots/
 
+# Superpowers brainstorming scratch files
+.superpowers/brainstorm/
+
 # Local home dir artifact from worktree ops
 (HOME)/
 

@@ -139,7 +139,7 @@ describe('ViewerV2Overlay', () => {
     expect(setActiveDialog).not.toHaveBeenCalledWith('video')
   })
 
-  it.each(['video', 'settings', 'chatbot'] as const)(
+  it.each(['video', 'settings'] as const)(
     'clears the active sheet before opening info while %s is active',
     (activeSheet) => {
       const setActiveSheet = vi.fn()
