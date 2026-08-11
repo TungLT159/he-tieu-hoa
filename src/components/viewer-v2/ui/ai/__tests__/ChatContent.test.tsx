@@ -215,6 +215,26 @@ describe('ChatContent', () => {
     expect(screen.getByText('Persistent answer')).toBeInTheDocument()
   })
 
+  it('saves a returned bot answer when the panel closes before typewriter finishes', async () => {
+    chatMock.mockResolvedValue('Answer saved after close')
+    const firstRender = renderChatContent()
+
+    fireEvent.change(chatInput(), { target: { value: 'Close during typing' } })
+    fireEvent.click(screen.getByRole('button', { name: 'Send' }))
+    await flushPromises()
+
+    act(() => {
+      vi.advanceTimersByTime(30)
+    })
+    expect(screen.getByText('A')).toBeInTheDocument()
+
+    firstRender.unmount()
+    renderChatContent()
+
+    expect(screen.getByText('Close during typing')).toBeInTheDocument()
+    expect(screen.getByText('Answer saved after close')).toBeInTheDocument()
+  })
+
   it('does not add a bot message when the chat promise resolves after unmount', async () => {
     const request = deferred<string>()
     const consoleError = vi.spyOn(console, 'error').mockImplementation(() => undefined)

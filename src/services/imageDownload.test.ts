@@ -52,6 +52,20 @@ describe('image download service', () => {
     expect(createObjectURLSpy).not.toHaveBeenCalled()
   })
 
+  it('falls back to direct anchor download when fetching the image is blocked', async () => {
+    fetchMock.mockRejectedValueOnce(new TypeError('Failed to fetch'))
+
+    await downloadImage('https://file.aiquickdraw.com/image.png', 'image.png')
+
+    const clickedAnchor = clickSpy.mock.instances[0] as HTMLAnchorElement | undefined
+    expect(clickedAnchor).toBeDefined()
+    expect(clickedAnchor?.href).toBe('https://file.aiquickdraw.com/image.png')
+    expect(clickedAnchor?.download).toBe('image.png')
+    expect(createObjectURLSpy).not.toHaveBeenCalled()
+    expect(revokeObjectURLSpy).not.toHaveBeenCalled()
+    expect(document.body.querySelector('a')).toBeNull()
+  })
+
   it('removes the anchor and revokes the object URL when clicking throws', async () => {
     const blob = new Blob(['image'], { type: 'image/png' })
     fetchMock.mockResolvedValueOnce({

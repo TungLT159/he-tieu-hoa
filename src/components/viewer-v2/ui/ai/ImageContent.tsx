@@ -74,26 +74,13 @@ export function ImageContent() {
   const imageCanGenerate = imageInput.trim().length > 0 && !isImageLoading
 
   return (
-    <div className="flex flex-col gap-3 text-sm text-muted-foreground">
-      <form
-        className="flex gap-2"
-        onSubmit={(event) => {
-          event.preventDefault()
-          void generate()
-        }}
+    <div data-testid="chatbot-image-content" className="flex h-full flex-col gap-3 overflow-hidden text-sm text-muted-foreground">
+      <div
+        role="status"
+        aria-live="polite"
+        data-testid="chatbot-image-status"
+        className="min-h-0 flex-1 overflow-y-auto rounded-md border border-border p-3"
       >
-        <Input
-          value={imageInput}
-          aria-label={t('viewer.chatbot.imagePlaceholder')}
-          placeholder={t('viewer.chatbot.imagePlaceholder')}
-          onChange={(event) => setImageInput(event.target.value)}
-        />
-        <Button type="submit" disabled={!imageCanGenerate}>
-          {t('viewer.chatbot.imagePrompt')}
-        </Button>
-      </form>
-
-      <div role="status" aria-live="polite" data-testid="chatbot-image-status">
         {isImageLoading ? <ImageSkeleton label={t('viewer.chatbot.imageLoading')} /> : null}
         {generatedImage ? (
           <div className="space-y-2">
@@ -131,6 +118,24 @@ export function ImageContent() {
           </div>
         ) : null}
       </div>
+
+      <form
+        className="flex shrink-0 gap-2"
+        onSubmit={(event) => {
+          event.preventDefault()
+          void generate()
+        }}
+      >
+        <Input
+          value={imageInput}
+          aria-label={t('viewer.chatbot.imagePlaceholder')}
+          placeholder={t('viewer.chatbot.imagePlaceholder')}
+          onChange={(event) => setImageInput(event.target.value)}
+        />
+        <Button type="submit" disabled={!imageCanGenerate}>
+          {t('viewer.chatbot.imagePrompt')}
+        </Button>
+      </form>
 
       {hasImageError ? (
         <Alert variant="destructive">

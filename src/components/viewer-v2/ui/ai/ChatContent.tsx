@@ -28,9 +28,13 @@ export function ChatContent() {
     isMountedRef.current = true
 
     return () => {
+      if (temporaryResponse && committedTemporaryResponseRef.current !== temporaryResponse) {
+        committedTemporaryResponseRef.current = temporaryResponse
+        addMessage(temporaryResponse, 'bot')
+      }
       isMountedRef.current = false
     }
-  }, [])
+  }, [addMessage, temporaryResponse])
 
   useEffect(() => {
     if (messages.length > 0 || displayedResponse) {

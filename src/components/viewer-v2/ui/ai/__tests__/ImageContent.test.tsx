@@ -73,6 +73,9 @@ describe('ImageContent', () => {
   it('renders localized prompt input and a disabled generate button', () => {
     renderImageContent('vi')
 
+    expect(screen.getByTestId('chatbot-image-content')).toHaveClass('h-full', 'overflow-hidden')
+    expect(screen.getByTestId('chatbot-image-status')).toHaveClass('min-h-0', 'flex-1', 'overflow-y-auto')
+    expect(screen.getByRole('button', { name: 'Tạo ảnh' }).closest('form')).toHaveClass('shrink-0')
     expect(screen.getByRole('textbox', { name: 'Mô tả hình ảnh...' })).toHaveAttribute(
       'placeholder',
       'Mô tả hình ảnh...',
