@@ -127,7 +127,11 @@ describe('ImageContent', () => {
     expect(image).toHaveAttribute('src', 'https://example.com/digestive.png')
     expect(lightboxTrigger).toHaveAttribute('title', 'Open image: Digestive diagram')
 
-    fireEvent.click(screen.getByRole('button', { name: 'Download' }))
+    const downloadButton = screen.getByRole('button', { name: 'Download' })
+    expect(downloadButton).toHaveClass('absolute', 'right-2', 'top-2')
+    expect(downloadButton).toContainHTML('svg')
+
+    fireEvent.click(downloadButton)
 
     expect(downloadMock).toHaveBeenCalledWith(
       'https://example.com/digestive.png',

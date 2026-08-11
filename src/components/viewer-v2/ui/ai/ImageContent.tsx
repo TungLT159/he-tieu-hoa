@@ -1,3 +1,4 @@
+import { DownloadSimple } from '@phosphor-icons/react'
 import { useEffect, useRef, useState } from 'react'
 
 import { useStarterSettings } from '@/app/StarterSettingsContext'
@@ -83,7 +84,7 @@ export function ImageContent() {
       >
         {isImageLoading ? <ImageSkeleton label={t('viewer.chatbot.imageLoading')} /> : null}
         {generatedImage ? (
-          <div className="space-y-2">
+          <div className="relative">
             <button
               type="button"
               className="block w-full rounded-md focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
@@ -109,11 +110,14 @@ export function ImageContent() {
             <Button
               type="button"
               variant="outline"
-              size="sm"
+              size="icon"
+              className="absolute right-2 top-2 bg-background/90 shadow-md backdrop-blur"
               disabled={isDownloading}
               onClick={() => downloadGeneratedImage(generatedImage.url)}
+              aria-label={t('viewer.chatbot.download')}
+              title={t('viewer.chatbot.download')}
             >
-              {t('viewer.chatbot.download')}
+              <DownloadSimple aria-hidden="true" />
             </Button>
           </div>
         ) : null}
