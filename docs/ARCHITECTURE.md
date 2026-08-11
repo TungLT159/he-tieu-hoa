@@ -1,6 +1,6 @@
 # Architecture
 
-Starter-Tauri-App is a Tauri + React desktop starter focused on a single digestive 3D viewer. It provides a collapsible viewer side menu, reusable shadcn UI primitives, light/dark/system theme support, and English/Vietnamese localization.
+Phần mềm 3D Hệ tiêu hóa is a Tauri + React desktop starter focused on a single digestive 3D viewer. It provides a collapsible viewer side menu, reusable shadcn UI primitives, light/dark/system theme support, and English/Vietnamese localization.
 
 ## Layers
 

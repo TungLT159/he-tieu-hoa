@@ -1,6 +1,6 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "Starter-Tauri-App",
+  "productName": "Phần mềm 3D Hệ tiêu hóa",
   "version": "0.1.0",
   "identifier": "app.starter.tauri",
   "build": {
@@ -13,7 +13,7 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "Starter-Tauri-App",
+        "title": "Phần mềm 3D Hệ tiêu hóa",
         "width": 1280,
         "height": 820,
         "minWidth": 480,

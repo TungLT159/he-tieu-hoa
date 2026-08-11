@@ -21,7 +21,7 @@ describe('index startup script', () => {
   it('uses starter branding and excludes removed workspace bootstrap tokens', () => {
     const indexHtml = readFileSync(`${process.cwd()}/index.html`, 'utf8')
 
-    expect(indexHtml).toContain('<title>Starter-Tauri-App</title>')
+    expect(indexHtml).toContain('<title>Phần mềm 3D Hệ tiêu hóa</title>')
     expect(indexHtml).not.toContain(token('To', 'laria'))
     expect(indexHtml).not.toContain(token('ai', '-workspace'))
     expect(indexHtml).not.toContain(token('ai', '-workspace-native-window'))

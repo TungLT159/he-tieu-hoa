@@ -99,7 +99,7 @@ pub fn run() {
             settings::save_settings,
         ])
         .run(tauri::generate_context!())
-        .expect("error while running Starter-Tauri-App");
+        .expect("error while running Phần mềm 3D Hệ tiêu hóa");
 }
 
 #[cfg(test)]

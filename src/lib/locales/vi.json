@@ -1,5 +1,5 @@
 {
-  "app.name": "Starter-Tauri-App",
+  "app.name": "Phần mềm 3D Hệ tiêu hóa",
   "app.tagline": "Ứng dụng khởi đầu sạch với Tauri + React.",
   "app.defaultDisplayName": "Người xây dựng",
   "app.welcome": "Chào mừng trở lại, {name}",

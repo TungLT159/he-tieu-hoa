@@ -103,7 +103,7 @@ describe('ViewerV2Overlay', () => {
   it('renders essential localized controls without the old viewer context', () => {
     renderOverlay()
 
-    expect(screen.getByText('Starter-Tauri-App')).toBeInTheDocument()
+    expect(screen.getByText('Phần mềm 3D Hệ tiêu hóa')).toBeInTheDocument()
     expect(screen.getByText('Model Interaction')).toBeInTheDocument()
     expect(screen.getByText('Learning')).toBeInTheDocument()
     expect(screen.getByText('Tools')).toBeInTheDocument()
@@ -218,7 +218,7 @@ describe('ViewerV2Overlay', () => {
     renderOverlay({ isMenuOpen: false })
 
     expect(screen.getByRole('button', { name: 'Expand' })).toBeInTheDocument()
-    expect(screen.queryByText('Starter-Tauri-App')).not.toBeInTheDocument()
+    expect(screen.queryByText('Phần mềm 3D Hệ tiêu hóa')).not.toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Rotate Model' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Model Color' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Background Color' })).toBeInTheDocument()

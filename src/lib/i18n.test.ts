@@ -19,7 +19,7 @@ describe('starter i18n', () => {
 
   it('falls back to English when Vietnamese key is missing', () => {
     const t = createTranslator('vi')
-    expect(t('app.name')).toBe('Starter-Tauri-App')
+    expect(t('app.name')).toBe('Phần mềm 3D Hệ tiêu hóa')
   })
 
   it('normalizes supported preferences and rejects old locales', () => {

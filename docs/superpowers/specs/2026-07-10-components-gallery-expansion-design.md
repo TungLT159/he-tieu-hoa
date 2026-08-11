@@ -2,7 +2,7 @@
 
 ## Context
 
-Starter-Tauri-App is a generic Tauri + React starter with a shell, routing, settings, theme support, localization, and a component gallery. The current gallery already demonstrates core shadcn/ui primitives across foundations, forms, overlays, navigation, feedback, and surfaces.
+Phần mềm 3D Hệ tiêu hóa is a generic Tauri + React starter with a shell, routing, settings, theme support, localization, and a component gallery. The current gallery already demonstrates core shadcn/ui primitives across foundations, forms, overlays, navigation, feedback, and surfaces.
 
 The next change expands the gallery into a larger starter UI kit that combines practical primitives with reusable application patterns. The implementation must stay generic, localized, accessible, and easy to copy into new projects.
 
