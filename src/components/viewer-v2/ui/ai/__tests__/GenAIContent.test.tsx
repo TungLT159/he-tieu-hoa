@@ -76,12 +76,26 @@ function deferred<T>() {
   return { promise, resolve, reject }
 }
 
+async function flushPromises() {
+  await act(async () => {
+    await Promise.resolve()
+  })
+}
+
+function finishTyping(text: string) {
+  act(() => {
+    vi.advanceTimersByTime(text.length * 30)
+  })
+}
+
 describe('GenAIContent', () => {
   beforeEach(() => {
+    vi.useFakeTimers()
     chatMock.mockReturnValue(new Promise(() => undefined))
   })
 
   afterEach(() => {
+    vi.useRealTimers()
     chatMock.mockReset()
     vi.restoreAllMocks()
   })
@@ -103,12 +117,24 @@ describe('GenAIContent', () => {
     expect(chatMock).toHaveBeenCalledWith(DEFAULT_GENAI_PROMPT)
   })
 
-  it('renders the response as pre-wrapped scrollable content', async () => {
+  it('renders the response as pre-wrapped scrollable content gradually', async () => {
     chatMock.mockResolvedValue('First line\nSecond line')
 
     renderGenAIContent()
 
-    const response = await screen.findByText(
+    await flushPromises()
+
+    expect(screen.queryByText('First line\nSecond line')).not.toBeInTheDocument()
+
+    act(() => {
+      vi.advanceTimersByTime(30)
+    })
+
+    expect(screen.getByText('F')).toHaveClass('whitespace-pre-wrap')
+
+    finishTyping('irst line\nSecond line')
+
+    const response = screen.getByText(
       (_, element) => element?.tagName.toLowerCase() === 'p' && element.textContent === 'First line\nSecond line',
     )
     expect(response).toHaveClass('whitespace-pre-wrap')
@@ -125,7 +151,10 @@ describe('GenAIContent', () => {
     chatMock.mockResolvedValueOnce('First response').mockReturnValueOnce(nextRequest.promise)
     renderGenAIContent()
 
-    expect(await screen.findByText('First response')).toBeInTheDocument()
+    await flushPromises()
+    finishTyping('First response')
+
+    expect(screen.getByText('First response')).toBeInTheDocument()
 
     fireEvent.click(screen.getByRole('button', { name: 'Regenerate' }))
 
@@ -138,7 +167,9 @@ describe('GenAIContent', () => {
       await nextRequest.promise
     })
 
-    expect(await screen.findByText('Second response')).toBeInTheDocument()
+    finishTyping('Second response')
+
+    expect(screen.getByText('Second response')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Regenerate' })).toBeEnabled()
   })
 
@@ -150,7 +181,10 @@ describe('GenAIContent', () => {
       .mockReturnValueOnce(latestRequest.promise)
     const { rerender } = renderRefreshableGenAIContent(0)
 
-    expect(await screen.findByText('Initial response')).toBeInTheDocument()
+    await flushPromises()
+    finishTyping('Initial response')
+
+    expect(screen.getByText('Initial response')).toBeInTheDocument()
 
     rerender(
       <StarterSettingsContext.Provider
@@ -186,7 +220,9 @@ describe('GenAIContent', () => {
       await latestRequest.promise
     })
 
-    expect(await screen.findByText('Latest response')).toBeInTheDocument()
+    finishTyping('Latest response')
+
+    expect(screen.getByText('Latest response')).toBeInTheDocument()
 
     await act(async () => {
       olderRequest.resolve('Older response')
@@ -203,7 +239,9 @@ describe('GenAIContent', () => {
 
     renderGenAIContent('vi')
 
-    expect(await screen.findByRole('alert')).toHaveTextContent('Không thể tạo mô tả.')
+    await flushPromises()
+
+    expect(screen.getByRole('alert')).toHaveTextContent('Không thể tạo mô tả.')
   })
 
   it('does not render a response that resolves after unmount', async () => {

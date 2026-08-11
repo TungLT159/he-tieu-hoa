@@ -4,6 +4,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useChatHistory } from '@/hooks/useChatHistory'
+import { useTypewriter } from '@/hooks/useTypewriter'
 import { createTranslator } from '@/lib/i18n'
 import { chat } from '@/services/ai'
 
@@ -17,8 +18,11 @@ export function ChatContent() {
   const [isChatLoading, setIsChatLoading] = useState(false)
   const [hasChatError, setHasChatError] = useState(false)
   const [failedChatPrompt, setFailedChatPrompt] = useState<string | null>(null)
+  const [temporaryResponse, setTemporaryResponse] = useState<string | null>(null)
+  const committedTemporaryResponseRef = useRef<string | null>(null)
   const isMountedRef = useRef(false)
   const chatEndRef = useRef<HTMLDivElement | null>(null)
+  const { displayedText: displayedResponse, isTyping: isResponseTyping } = useTypewriter(temporaryResponse)
 
   useEffect(() => {
     isMountedRef.current = true
@@ -29,10 +33,19 @@ export function ChatContent() {
   }, [])
 
   useEffect(() => {
-    if (messages.length > 0) {
+    if (messages.length > 0 || displayedResponse) {
       chatEndRef.current?.scrollIntoView({ block: 'end' })
     }
-  }, [messages])
+  }, [displayedResponse, messages])
+
+  useEffect(() => {
+    if (!temporaryResponse || isResponseTyping || displayedResponse !== temporaryResponse) return
+    if (committedTemporaryResponseRef.current === temporaryResponse) return
+
+    committedTemporaryResponseRef.current = temporaryResponse
+    addMessage(temporaryResponse, 'bot')
+    setTemporaryResponse(null)
+  }, [addMessage, displayedResponse, isResponseTyping, temporaryResponse])
 
   const sendChat = async (retryText?: string) => {
     const text = retryText ?? chatInput.trim()
@@ -46,11 +59,13 @@ export function ChatContent() {
     setIsChatLoading(true)
     setHasChatError(false)
     setFailedChatPrompt(null)
+    setTemporaryResponse(null)
+    committedTemporaryResponseRef.current = null
 
     try {
       const reply = await chat(text)
       if (!isMountedRef.current) return
-      addMessage(reply, 'bot')
+      setTemporaryResponse(reply)
     } catch (error) {
       if (!isMountedRef.current) return
       console.error(error)
@@ -63,7 +78,8 @@ export function ChatContent() {
     }
   }
 
-  const chatCanSend = chatInput.trim().length > 0 && !isChatLoading
+  const chatCanSend = chatInput.trim().length > 0 && !isChatLoading && !isResponseTyping
+  const botSenderLabel = t('viewer.chatbot.senderBot')
 
   return (
     <div className="flex h-full flex-col gap-3 overflow-hidden text-sm text-muted-foreground">
@@ -100,6 +116,18 @@ export function ChatContent() {
             )
           })}
           {isChatLoading ? <TypingIndicator /> : null}
+          {temporaryResponse ? (
+            <div
+              role="article"
+              aria-label={`${botSenderLabel}: ${displayedResponse}`}
+              data-testid="chatbot-message-bot-temporary"
+              className="flex justify-start"
+            >
+              <p className="max-w-[85%] whitespace-pre-wrap rounded-lg bg-muted px-3 py-2 text-muted-foreground">
+                {displayedResponse}
+              </p>
+            </div>
+          ) : null}
           <div ref={chatEndRef} />
         </div>
       </div>

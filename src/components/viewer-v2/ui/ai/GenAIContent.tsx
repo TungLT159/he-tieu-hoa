@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { useStarterSettings } from '@/app/StarterSettingsContext'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
+import { useTypewriter } from '@/hooks/useTypewriter'
 import { createTranslator } from '@/lib/i18n'
 import { DEFAULT_GENAI_PROMPT, chat } from '@/services/ai'
 
@@ -18,6 +19,7 @@ export function GenAIContent({ refreshKey }: GenAIContentProps = {}) {
   const [response, setResponse] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [hasError, setHasError] = useState(false)
+  const { displayedText, isTyping } = useTypewriter(response)
   const isMountedRef = useRef(false)
   const requestIdRef = useRef(0)
   const hasStartedInitialFetchRef = useRef(false)
@@ -76,7 +78,7 @@ export function GenAIContent({ refreshKey }: GenAIContentProps = {}) {
             <TypingIndicator />
           </div>
         ) : null}
-        {response ? <p className="whitespace-pre-wrap">{response}</p> : null}
+        {response ? <p className="whitespace-pre-wrap">{displayedText}</p> : null}
       </div>
 
       {hasError ? (
@@ -86,7 +88,7 @@ export function GenAIContent({ refreshKey }: GenAIContentProps = {}) {
       ) : null}
 
       <div className="shrink-0">
-        <Button type="button" variant="outline" size="sm" onClick={() => void generate()} disabled={isLoading}>
+        <Button type="button" variant="outline" size="sm" onClick={() => void generate()} disabled={isLoading || isTyping}>
           {t('viewer.genai.regenerate')}
         </Button>
       </div>
