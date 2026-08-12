@@ -64,7 +64,7 @@ describe('StarterApp bootstrap', () => {
       const actual = await importOriginal<typeof import('react-router-dom')>()
       return {
         ...actual,
-        BrowserRouter: ({ children }: { children: React.ReactNode }) => children,
+        HashRouter: ({ children }: { children: React.ReactNode }) => children,
       }
     })
     vi.doMock('@/components/ui/tooltip', () => ({
