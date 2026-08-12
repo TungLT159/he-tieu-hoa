@@ -150,5 +150,11 @@
   "common.cancel": "Huỷ",
   "common.close": "Đóng",
   "common.search": "Tìm kiếm",
-  "common.current": "Hiện tại"
+  "common.current": "Hiện tại",
+  "menu.titleLine1": "PHẦN MỀM 3D",
+  "menu.titleLine2": "HỆ TIÊU HÓA",
+  "menu.start": "Bắt đầu",
+  "menu.guide": "Hướng dẫn",
+  "menu.settings": "Cài đặt",
+  "menu.guidePlaceholder": "Nội dung hướng dẫn sẽ được cập nhật sau."
 }

@@ -150,5 +150,11 @@
   "common.cancel": "Cancel",
   "common.close": "Close",
   "common.search": "Search",
-  "common.current": "Current"
+  "common.current": "Current",
+  "menu.titleLine1": "3D SOFTWARE",
+  "menu.titleLine2": "DIGESTIVE SYSTEM",
+  "menu.start": "Start",
+  "menu.guide": "Guide",
+  "menu.settings": "Settings",
+  "menu.guidePlaceholder": "Instruction content will be available soon."
 }
