@@ -70,7 +70,7 @@ export function MenuPage() {
             <SheetDescription>{t('settings.subtitle')}</SheetDescription>
           </SheetHeader>
           <div className="text-muted-foreground text-sm">
-            {t('menu.guidePlaceholder')}
+            {t('viewer.placeholder.underDevelopment')}
           </div>
         </SheetContent>
       </Sheet>

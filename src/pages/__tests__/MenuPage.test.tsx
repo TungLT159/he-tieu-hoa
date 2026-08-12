@@ -50,9 +50,10 @@ describe('MenuPage', () => {
 
     const bg = document.querySelector('[data-testid="menu-background"]')
     expect(bg).toBeInTheDocument()
+    expect(bg).toHaveStyle({ backgroundImage: 'url("/bg_menu_phanmem3d-1.png")' })
   })
 
-  it('navigates to /viewer when start button is clicked', async () => {
+  it('navigates to /viewer when start button is clicked', () => {
     renderMenuPage()
 
     fireEvent.click(screen.getByRole('button', { name: /start|bắt đầu/i }))
@@ -60,7 +61,7 @@ describe('MenuPage', () => {
     expect(mockNavigate).toHaveBeenCalledWith('/viewer')
   })
 
-  it('navigates to /guide when guide button is clicked', async () => {
+  it('navigates to /guide when guide button is clicked', () => {
     renderMenuPage()
 
     fireEvent.click(screen.getByRole('button', { name: /guide|hướng dẫn/i }))
@@ -68,11 +69,16 @@ describe('MenuPage', () => {
     expect(mockNavigate).toHaveBeenCalledWith('/guide')
   })
 
-  it('opens settings sheet when settings button is clicked', async () => {
+  it('opens settings sheet when settings button is clicked', () => {
     renderMenuPage()
 
     fireEvent.click(screen.getByRole('button', { name: /settings|cài đặt/i }))
 
-    expect(screen.getByRole('dialog')).toBeInTheDocument()
+    const dialog = screen.getByRole('dialog')
+    expect(dialog).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Settings' })).toBeInTheDocument()
+    expect(screen.getByText('Starter preferences for appearance, language, and profile.')).toBeInTheDocument()
+    expect(screen.getByText('This feature is under development.')).toBeInTheDocument()
+    expect(screen.queryByText('Instruction content will be available soon.')).not.toBeInTheDocument()
   })
 })
