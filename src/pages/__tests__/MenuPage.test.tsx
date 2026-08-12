@@ -53,6 +53,16 @@ describe('MenuPage', () => {
     expect(bg).toHaveStyle({ backgroundImage: 'url("/bg_menu_phanmem3d-1.png")' })
   })
 
+  it('renders an upgraded hero card sized for the menu window', () => {
+    renderMenuPage()
+
+    const card = screen.getByTestId('menu-hero-card')
+    expect(card).toHaveClass('w-[min(760px,calc(100vw-48px))]')
+    expect(card).toHaveClass('md:px-16')
+    expect(card).toHaveClass('md:py-14')
+    expect(card).toHaveClass('backdrop-blur-2xl')
+  })
+
   it('navigates to /viewer when start button is clicked', () => {
     renderMenuPage()
 
