@@ -1,5 +1,6 @@
 import { renderStarter } from '@/test/starterRender'
 import { screen } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
 import { describe, expect, it, vi } from 'vitest'
 
 import { StarterSettingsContext } from '@/app/StarterSettingsContext'
@@ -25,17 +26,19 @@ vi.mock('../scene/SceneSetup', () => ({
 describe('ViewerV2Page', () => {
   it('renders the v2 viewer canvas and overlay without the old viewer context', () => {
     const { container } = renderStarter(
-      <StarterSettingsContext.Provider
-        value={{
-          appVersion: '0.1.0',
-          locale: 'en',
-          resolvedThemeMode: 'light',
-          settings: DEFAULT_STARTER_SETTINGS,
-          updateSettings: vi.fn(),
-        }}
-      >
-        <ViewerV2Page />
-      </StarterSettingsContext.Provider>,
+      <MemoryRouter>
+        <StarterSettingsContext.Provider
+          value={{
+            appVersion: '0.1.0',
+            locale: 'en',
+            resolvedThemeMode: 'light',
+            settings: DEFAULT_STARTER_SETTINGS,
+            updateSettings: vi.fn(),
+          }}
+        >
+          <ViewerV2Page />
+        </StarterSettingsContext.Provider>
+      </MemoryRouter>,
     )
 
     expect(container.querySelector('[data-viewer-canvas="true"]')).toBeInTheDocument()
