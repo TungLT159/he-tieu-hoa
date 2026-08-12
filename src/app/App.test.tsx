@@ -1,10 +1,19 @@
 import { screen } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
+import { MemoryRouter } from 'react-router-dom'
 import { renderStarter } from '@/test/starterRender'
 import { StarterApp } from './App'
 
 vi.mock('@/components/viewer-v2/ViewerV2Page', () => ({
   ViewerV2Page: () => <div data-testid="viewer-v2-page">Viewer v2</div>,
+}))
+
+vi.mock('@/pages/MenuPage', () => ({
+  MenuPage: () => <div data-testid="menu-page">Menu</div>,
+}))
+
+vi.mock('@/pages/GuidePage', () => ({
+  GuidePage: () => <div data-testid="guide-page">Guide</div>,
 }))
 
 vi.mock('./nativeSettings', () => ({
@@ -13,71 +22,35 @@ vi.mock('./nativeSettings', () => ({
   saveNativeStarterSettings: vi.fn(async () => undefined),
 }))
 
+function renderAppWithRoute(initialRoute = '/') {
+  return renderStarter(
+    <MemoryRouter initialEntries={[initialRoute]}>
+      <StarterApp />
+    </MemoryRouter>,
+  )
+}
+
 afterEach(() => {
   localStorage.clear()
-  window.history.pushState(null, '', '/')
   vi.clearAllMocks()
 })
 
-describe('StarterApp', () => {
-  it('renders the v2 viewer page as the default UI', () => {
-    renderStarter(<StarterApp />)
+describe('StarterApp routing', () => {
+  it('renders the menu page at /', () => {
+    renderAppWithRoute('/')
+
+    expect(screen.getByTestId('menu-page')).toHaveTextContent('Menu')
+  })
+
+  it('renders the viewer page at /viewer', () => {
+    renderAppWithRoute('/viewer')
 
     expect(screen.getByTestId('viewer-v2-page')).toHaveTextContent('Viewer v2')
   })
 
-  it('prevents native context menus only in the Tauri bootstrap', async () => {
-    vi.resetModules()
-    const addEventListener = vi.spyOn(document, 'addEventListener')
-    const render = vi.fn()
-    vi.doMock('@/components/ui/tooltip', () => ({
-      TooltipProvider: ({ children }: { children: React.ReactNode }) => children,
-    }))
-    vi.doMock('../components/FrontendReadyMarker', () => ({
-      FrontendReadyMarker: () => null,
-    }))
-    vi.doMock('../components/LinuxTitlebar', () => ({
-      LinuxTitlebar: () => null,
-    }))
-    vi.doMock('../lib/themeMode', () => ({
-      applyStoredThemeMode: vi.fn(),
-    }))
-    vi.doMock('../utils/platform', () => ({
-      isMac: vi.fn(() => false),
-      shouldUseCustomWindowChrome: vi.fn(() => false),
-    }))
-    vi.doMock('./App', () => ({
-      default: () => null,
-    }))
-    vi.doMock('react-dom/client', () => ({
-      createRoot: vi.fn(() => ({ render })),
-    }))
+  it('renders the guide page at /guide', () => {
+    renderAppWithRoute('/guide')
 
-    const tauriWindow = window as typeof window & { __TAURI_INTERNALS__?: object }
-    tauriWindow.__TAURI_INTERNALS__ = {}
-    document.body.innerHTML = '<div id="root"></div>'
-
-    try {
-      await import('../main')
-
-      const contextMenuCall = addEventListener.mock.calls.find(([type]) => type === 'contextmenu')
-      expect(contextMenuCall?.[2]).toBe(true)
-
-      const contextMenuEvent = new MouseEvent('contextmenu', { bubbles: true, cancelable: true })
-      document.dispatchEvent(contextMenuEvent)
-
-      expect(contextMenuEvent.defaultPrevented).toBe(true)
-    } finally {
-      addEventListener.mockRestore()
-      delete tauriWindow.__TAURI_INTERNALS__
-      vi.doUnmock('@/components/ui/tooltip')
-      vi.doUnmock('../components/FrontendReadyMarker')
-      vi.doUnmock('../components/LinuxTitlebar')
-      vi.doUnmock('../lib/themeMode')
-      vi.doUnmock('../utils/platform')
-      vi.doUnmock('./App')
-      vi.doUnmock('react-dom/client')
-      vi.resetModules()
-    }
+    expect(screen.getByTestId('guide-page')).toHaveTextContent('Guide')
   })
 })

@@ -1,4 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import { MenuPage } from '@/pages/MenuPage'
+import { GuidePage } from '@/pages/GuidePage'
 import { ViewerV2Page } from '@/components/viewer-v2/ViewerV2Page'
 import { applyThemeSelectionToDocument, resolveThemeMode } from '@/lib/themeMode'
 import { resolveEffectiveLocale } from '@/lib/i18n'
@@ -66,7 +69,11 @@ export function StarterApp() {
 
   return (
     <StarterSettingsContext.Provider value={contextValue}>
-      <ViewerV2Page />
+      <Routes>
+        <Route path="/" element={<MenuPage />} />
+        <Route path="/viewer" element={<ViewerV2Page />} />
+        <Route path="/guide" element={<GuidePage />} />
+      </Routes>
     </StarterSettingsContext.Provider>
   )
 }
