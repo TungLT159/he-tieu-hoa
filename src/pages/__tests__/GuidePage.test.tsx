@@ -21,6 +21,10 @@ describe('GuidePage', () => {
       </StarterSettingsContext.Provider>,
     )
 
-    expect(screen.getByRole('heading')).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        name: 'Instruction content will be available soon.',
+      }),
+    ).toBeInTheDocument()
   })
 })
