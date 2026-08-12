@@ -60,6 +60,7 @@ describe('MenuPage', () => {
     expect(card).toHaveClass('w-[min(760px,calc(100vw-48px))]')
     expect(card).toHaveClass('md:px-16')
     expect(card).toHaveClass('md:py-14')
+    expect(card).toHaveClass('bg-white/[0.045]')
     expect(card).toHaveClass('backdrop-blur-2xl')
   })
 

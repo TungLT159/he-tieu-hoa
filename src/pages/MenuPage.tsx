@@ -35,7 +35,7 @@ export function MenuPage() {
 
       <div
         data-testid="menu-hero-card"
-        className="relative z-10 w-[min(760px,calc(100vw-48px))] overflow-hidden rounded-[32px] border border-white/20 bg-white/[0.075] px-8 py-10 text-center shadow-[0_28px_90px_rgba(0,0,0,0.55)] backdrop-blur-2xl md:px-16 md:py-14"
+        className="relative z-10 w-[min(760px,calc(100vw-48px))] overflow-hidden rounded-[32px] border border-white/20 bg-white/[0.045] px-8 py-10 text-center shadow-[0_28px_90px_rgba(0,0,0,0.55)] backdrop-blur-2xl md:px-16 md:py-14"
       >
         <div className="pointer-events-none absolute inset-0 rounded-[32px] bg-[linear-gradient(135deg,rgba(255,255,255,0.18),rgba(124,58,237,0.08),rgba(255,255,255,0.04))]" />
         <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent" />

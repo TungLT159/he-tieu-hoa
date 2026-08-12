@@ -9,6 +9,16 @@ import type { ViewerV2ContextValue } from '../../viewerV2Context'
 import { captureScreenshot } from '../screenshot'
 import { ViewerV2Overlay } from '../ViewerV2Overlay'
 
+const mockNavigate = vi.hoisted(() => vi.fn())
+
+vi.mock('react-router-dom', async () => {
+  const actual = await vi.importActual('react-router-dom')
+  return {
+    ...actual,
+    useNavigate: () => mockNavigate,
+  }
+})
+
 vi.mock('../screenshot', () => ({
   captureScreenshot: vi.fn(),
 }))
@@ -94,6 +104,7 @@ function renderOverlay(overrides: Partial<ViewerV2ContextValue> = {}) {
 describe('ViewerV2Overlay', () => {
   beforeEach(() => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }))
+    mockNavigate.mockClear()
   })
 
   afterEach(() => {
@@ -137,6 +148,14 @@ describe('ViewerV2Overlay', () => {
     expect(setActiveSheet).toHaveBeenCalledWith('settings')
     expect(setActiveSheet).toHaveBeenCalledWith('video')
     expect(setActiveDialog).not.toHaveBeenCalledWith('video')
+  })
+
+  it('navigates back to the menu from the home button', () => {
+    renderOverlay()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Home' }))
+
+    expect(mockNavigate).toHaveBeenCalledWith('/')
   })
 
   it.each(['video', 'settings'] as const)(

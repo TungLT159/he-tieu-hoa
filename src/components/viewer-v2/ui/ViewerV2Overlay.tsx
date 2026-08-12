@@ -16,6 +16,7 @@ import {
   Sparkle,
   VideoCamera,
 } from '@phosphor-icons/react'
+import { useNavigate } from 'react-router-dom'
 
 import { useStarterSettings } from '@/app/StarterSettingsContext'
 import { Button } from '@/components/ui/button'
@@ -93,6 +94,7 @@ function ViewerV2MenuGroup({
 }
 
 export function ViewerV2Overlay() {
+  const navigate = useNavigate()
   const {
     activeSheet,
     backgroundColor,
@@ -217,9 +219,7 @@ export function ViewerV2Overlay() {
       id: 'home',
       label: t('viewer.menu.home'),
       icon: House,
-      onClick: () => {},
-      disabled: true,
-      title: t('viewer.menu.homeUnavailable'),
+      onClick: () => navigate('/'),
     },
   ]
 
