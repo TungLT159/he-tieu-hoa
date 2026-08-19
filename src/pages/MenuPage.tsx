@@ -3,8 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useStarterSettings } from '@/app/StarterSettingsContext'
 import { Button } from '@/components/ui/button'
-import { Label } from '@/components/ui/label'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { AppSettingsControls } from '@/components/settings/AppSettingsControls'
 import {
   Sheet,
   SheetContent,
@@ -12,11 +11,10 @@ import {
   SheetHeader,
   SheetTitle,
 } from '@/components/ui/sheet'
-import { createTranslator, type UiLanguagePreference } from '@/lib/i18n'
-import type { ThemeMode } from '@/lib/themeMode'
+import { createTranslator } from '@/lib/i18n'
 
 export function MenuPage() {
-  const { locale, settings, updateSettings } = useStarterSettings()
+  const { locale } = useStarterSettings()
   const t = createTranslator(locale)
   const navigate = useNavigate()
   const [settingsOpen, setSettingsOpen] = useState(false)
@@ -86,38 +84,7 @@ export function MenuPage() {
             <SheetTitle>{t('settings.title')}</SheetTitle>
             <SheetDescription>{t('settings.subtitle')}</SheetDescription>
           </SheetHeader>
-          <div className="space-y-5">
-            <div className="space-y-2">
-              <Label id="menu-settings-theme-label">{t('settings.theme')}</Label>
-              <Select value={settings.themeMode} onValueChange={(value) => updateSettings({ themeMode: value as ThemeMode })}>
-                <SelectTrigger aria-labelledby="menu-settings-theme-label" className="w-full">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="light">{t('settings.theme.light')}</SelectItem>
-                  <SelectItem value="dark">{t('settings.theme.dark')}</SelectItem>
-                  <SelectItem value="system">{t('settings.theme.system')}</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="space-y-2">
-              <Label id="menu-settings-language-label">{t('settings.language')}</Label>
-              <Select
-                value={settings.uiLanguage}
-                onValueChange={(value) => updateSettings({ uiLanguage: value as UiLanguagePreference })}
-              >
-                <SelectTrigger aria-labelledby="menu-settings-language-label" className="w-full">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="system">{t('settings.language.system')}</SelectItem>
-                  <SelectItem value="en">{t('settings.language.english')}</SelectItem>
-                  <SelectItem value="vi">{t('settings.language.vietnamese')}</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
+          <AppSettingsControls />
         </SheetContent>
       </Sheet>
     </div>

@@ -86,6 +86,9 @@ describe('ViewerV2SettingsPanel', () => {
     renderPanel({ qualityPreset: 'high', volume: 55, voice: 'nam' })
 
     const dialog = screen.getByRole('dialog', { name: 'Settings' })
+    expect(within(dialog).getByText('Theme')).toBeInTheDocument()
+    expect(within(dialog).getByText('Language')).toBeInTheDocument()
+    expect(within(dialog).getAllByRole('combobox')).toHaveLength(2)
     expect(within(dialog).getByText('Quality')).toBeInTheDocument()
     expect(within(dialog).getByRole('radio', { name: 'Smooth' })).toHaveAttribute('data-slot', 'radio-group-item')
     expect(within(dialog).getByRole('radio', { name: 'Medium' })).toHaveAttribute('data-slot', 'radio-group-item')

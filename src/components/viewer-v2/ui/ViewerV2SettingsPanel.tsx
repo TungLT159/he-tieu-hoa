@@ -5,6 +5,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Slider } from '@/components/ui/slider'
 import { createTranslator } from '@/lib/i18n'
 import { useStarterSettings } from '@/app/StarterSettingsContext'
+import { AppSettingsControls } from '@/components/settings/AppSettingsControls'
 
 import { useViewerV2 } from '../viewerV2Context'
 import type { QualityPreset, VoiceOption } from '../viewerV2Context'
@@ -54,6 +55,8 @@ export function ViewerV2SettingsPanel() {
             {t('common.close')}
           </Button>
         </div>
+
+        <AppSettingsControls />
 
         <fieldset className="space-y-2">
           <legend className="text-sm font-medium text-card-foreground">{t('viewer.settings.quality')}</legend>
