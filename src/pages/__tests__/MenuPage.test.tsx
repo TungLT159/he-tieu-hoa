@@ -80,33 +80,11 @@ describe('MenuPage', () => {
     expect(mockNavigate).toHaveBeenCalledWith('/guide')
   })
 
-  it('opens settings sheet with app setting controls when settings button is clicked', () => {
+  it('navigates to the viewer and requests the settings panel when settings button is clicked', () => {
     renderMenuPage()
 
     fireEvent.click(screen.getByRole('button', { name: /settings|cài đặt/i }))
 
-    const dialog = screen.getByRole('dialog')
-    expect(dialog).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Settings' })).toBeInTheDocument()
-    expect(screen.getByText('Starter preferences for appearance, language, and profile.')).toBeInTheDocument()
-    expect(screen.getByText('Theme')).toBeInTheDocument()
-    expect(screen.getByText('Language')).toBeInTheDocument()
-    expect(screen.getAllByRole('combobox')).toHaveLength(2)
-    expect(screen.queryByText('This feature is under development.')).not.toBeInTheDocument()
-    expect(screen.queryByText('Instruction content will be available soon.')).not.toBeInTheDocument()
-  })
-
-  it('updates persisted settings from the menu settings sheet', () => {
-    const updateSettings = vi.fn()
-    renderMenuPage({ updateSettings })
-
-    fireEvent.click(screen.getByRole('button', { name: /settings|cài đặt/i }))
-    fireEvent.click(screen.getByRole('combobox', { name: 'Theme' }))
-    fireEvent.click(screen.getByRole('option', { name: 'Dark' }))
-    fireEvent.click(screen.getByRole('combobox', { name: 'Language' }))
-    fireEvent.click(screen.getByRole('option', { name: 'Vietnamese' }))
-
-    expect(updateSettings).toHaveBeenCalledWith({ themeMode: 'dark' })
-    expect(updateSettings).toHaveBeenCalledWith({ uiLanguage: 'vi' })
+    expect(mockNavigate).toHaveBeenCalledWith('/viewer', { state: { openSettings: true } })
   })
 })

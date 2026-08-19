@@ -1,23 +1,13 @@
 import { BookOpen, Gear, Play } from '@phosphor-icons/react'
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useStarterSettings } from '@/app/StarterSettingsContext'
 import { Button } from '@/components/ui/button'
-import { AppSettingsControls } from '@/components/settings/AppSettingsControls'
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-} from '@/components/ui/sheet'
 import { createTranslator } from '@/lib/i18n'
 
 export function MenuPage() {
   const { locale } = useStarterSettings()
   const t = createTranslator(locale)
   const navigate = useNavigate()
-  const [settingsOpen, setSettingsOpen] = useState(false)
 
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 py-8">
@@ -69,7 +59,7 @@ export function MenuPage() {
           <Button
             variant="outline"
             className="h-13 w-full max-w-[340px] rounded-2xl border-white/15 bg-white/[0.08] text-base font-semibold text-white/90 hover:bg-white/15 hover:text-white"
-            onClick={() => setSettingsOpen(true)}
+            onClick={() => navigate('/viewer', { state: { openSettings: true } })}
           >
             <Gear className="size-5" />
             {t('menu.settings')}
@@ -77,16 +67,6 @@ export function MenuPage() {
           </div>
         </div>
       </div>
-
-      <Sheet open={settingsOpen} onOpenChange={setSettingsOpen}>
-        <SheetContent closeLabel={t('common.close')}>
-          <SheetHeader>
-            <SheetTitle>{t('settings.title')}</SheetTitle>
-            <SheetDescription>{t('settings.subtitle')}</SheetDescription>
-          </SheetHeader>
-          <AppSettingsControls />
-        </SheetContent>
-      </Sheet>
     </div>
   )
 }

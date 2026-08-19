@@ -48,4 +48,24 @@ describe('ViewerV2Page', () => {
     expect(screen.queryByRole('button', { name: 'Return to overview' })).not.toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Rotate Model' })).toBeInTheDocument()
   })
+
+  it('opens the viewer settings panel from menu navigation state', () => {
+    renderStarter(
+      <MemoryRouter initialEntries={[{ pathname: '/viewer', state: { openSettings: true } }]}>
+        <StarterSettingsContext.Provider
+          value={{
+            appVersion: '0.1.0',
+            locale: 'en',
+            resolvedThemeMode: 'light',
+            settings: DEFAULT_STARTER_SETTINGS,
+            updateSettings: vi.fn(),
+          }}
+        >
+          <ViewerV2Page />
+        </StarterSettingsContext.Provider>
+      </MemoryRouter>,
+    )
+
+    expect(screen.getByRole('dialog', { name: 'Settings' })).toBeInTheDocument()
+  })
 })

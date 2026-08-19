@@ -7,9 +7,10 @@ import type { ActiveDialog, ActiveSheet, AnnotationTool, QualityPreset, VoiceOpt
 
 interface ViewerV2ProviderProps {
   children: ReactNode
+  initialActiveSheet?: ActiveSheet
 }
 
-export function ViewerV2Provider({ children }: ViewerV2ProviderProps) {
+export function ViewerV2Provider({ children, initialActiveSheet = null }: ViewerV2ProviderProps) {
   const [selectedOrgan, setSelectedOrgan] = useState<string | null>(null)
   const [organNodes, setOrganNodes] = useState(() => new Map<string, THREE.Mesh[]>())
   const [cameraTarget, setCameraTarget] = useState('overview')
@@ -18,7 +19,7 @@ export function ViewerV2Provider({ children }: ViewerV2ProviderProps) {
   const [loadError, setLoadError] = useState<string | null>(null)
   const [resetViewVersion, setResetViewVersion] = useState(0)
   const [isMenuOpen, setIsMenuOpen] = useState(true)
-  const [activeSheet, setActiveSheet] = useState<ActiveSheet>(null)
+  const [activeSheet, setActiveSheet] = useState<ActiveSheet>(initialActiveSheet)
   const [activeDialog, setActiveDialog] = useState<ActiveDialog>(null)
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [isDrawing, setIsDrawing] = useState(false)
