@@ -102,7 +102,8 @@ function DropdownMenuContent({
         sideOffset={sideOffset}
         className={cn(
           dropdownMenuContentMotionClass,
-          "max-h-(--radix-dropdown-menu-content-available-height) min-w-[8rem] overflow-x-hidden overflow-y-auto shadow-md",
+          "animate-dropdown-slide-down",
+          "max-h-(--radix-dropdown-menu-content-available-height) min-w-[8rem] overflow-x-hidden overflow-y-auto shadow-lg",
           className
         )}
         {...props}

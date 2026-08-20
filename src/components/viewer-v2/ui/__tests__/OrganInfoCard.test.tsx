@@ -84,4 +84,11 @@ describe('OrganInfoCard', () => {
     expect(screen.getByText('Dạ dày')).toBeInTheDocument()
     expect(screen.getByText(/Dạ dày là cơ quan tiêu hóa hình túi/)).toBeInTheDocument()
   })
+
+  it('positions selected organ details in the lower-right corner', () => {
+    const { container } = renderOrganInfoCard({ selectedOrgan: 'gan' }, 'en')
+
+    expect(container.firstElementChild).toHaveClass('bottom-4', 'right-4')
+    expect(container.firstElementChild).not.toHaveClass('left-4')
+  })
 })

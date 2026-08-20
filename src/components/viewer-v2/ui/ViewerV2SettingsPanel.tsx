@@ -38,6 +38,7 @@ export function ViewerV2SettingsPanel() {
       role="dialog"
       aria-modal="false"
       aria-labelledby="viewer-v2-settings-title"
+      data-tutorial-target="settings-panel"
       className="absolute right-4 top-4 z-20 w-80 bg-card/95 shadow-lg backdrop-blur"
     >
       <CardContent className="space-y-5 p-4">

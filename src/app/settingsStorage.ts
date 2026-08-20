@@ -4,10 +4,16 @@ import {
   normalizeUiLanguagePreference,
   type UiLanguagePreference,
 } from '@/lib/i18n'
+import {
+  DEFAULT_NARRATION_VOICE,
+  normalizeNarrationVoice,
+  type NarrationVoice,
+} from '@/lib/narrationVoice'
 
 export interface StarterSettings {
   themeMode: ThemeMode
   uiLanguage: UiLanguagePreference
+  narrationVoice: NarrationVoice
   notificationsEnabled: boolean
   profileDisplayName: string
 }
@@ -17,6 +23,7 @@ export const STARTER_SETTINGS_STORAGE_KEY = 'starter-tauri-app-settings'
 export const DEFAULT_STARTER_SETTINGS: StarterSettings = {
   themeMode: 'system',
   uiLanguage: DEFAULT_UI_LANGUAGE,
+  narrationVoice: DEFAULT_NARRATION_VOICE,
   notificationsEnabled: false,
   profileDisplayName: '',
 }
@@ -36,6 +43,7 @@ export function normalizeStarterSettings(value: unknown): StarterSettings {
   return {
     themeMode: normalizeThemeMode(record.themeMode) ?? DEFAULT_STARTER_SETTINGS.themeMode,
     uiLanguage: normalizeUiLanguagePreference(record.uiLanguage) ?? DEFAULT_STARTER_SETTINGS.uiLanguage,
+    narrationVoice: normalizeNarrationVoice(record.narrationVoice) ?? DEFAULT_STARTER_SETTINGS.narrationVoice,
     notificationsEnabled: normalizeBoolean(record.notificationsEnabled),
     profileDisplayName: normalizeString(record.profileDisplayName),
   }

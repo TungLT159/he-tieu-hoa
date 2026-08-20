@@ -21,7 +21,7 @@ export function OrganInfoCard() {
   if (!organ) return null
 
   return (
-    <Card className="absolute bottom-4 left-4 z-10 w-[min(22rem,calc(100%-2rem))] bg-card/95 shadow-lg backdrop-blur">
+    <Card className="absolute bottom-4 right-4 z-10 w-[min(22rem,calc(100%-2rem))] bg-card/95 shadow-lg backdrop-blur">
       <CardHeader>
         <CardTitle>{t(organ.displayNameKey)}</CardTitle>
         <CardDescription>{t(organ.descriptionKey)}</CardDescription>

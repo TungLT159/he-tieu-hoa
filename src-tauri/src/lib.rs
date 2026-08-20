@@ -81,14 +81,35 @@ fn open_system_screenshot_tool() -> Result<(), String> {
     }
 }
 
+#[tauri::command]
+async fn download_image_to_path(url: String, path: String) -> Result<(), String> {
+    let response = reqwest::get(&url)
+        .await
+        .map_err(|error| format!("failed to download image: {error}"))?;
+
+    if !response.status().is_success() {
+        return Err(format!("Download failed: {}", response.status().as_u16()));
+    }
+
+    let bytes = response
+        .bytes()
+        .await
+        .map_err(|error| format!("failed to read image bytes: {error}"))?;
+
+    std::fs::write(&path, bytes).map_err(|error| format!("failed to save image: {error}"))
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_dialog::init())
+        .plugin(tauri_plugin_fs::init())
         .setup(|app| {
             remove_native_menus(app.handle())?;
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
+            download_image_to_path,
             get_app_version,
             open_system_screenshot_tool,
             settings::get_settings,

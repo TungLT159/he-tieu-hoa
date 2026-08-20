@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 
 import { StarterSettingsContext } from '@/app/StarterSettingsContext'
 import type { StarterSettingsContextValue } from '@/app/StarterSettingsContext'
-import type { StarterSettings } from '@/app/settingsStorage'
+import { DEFAULT_STARTER_SETTINGS } from '@/app/settingsStorage'
 import type { AppLocale } from '@/lib/i18n'
 
 import { ViewerProvider } from '../ViewerContext.tsx'
@@ -20,12 +20,7 @@ function createMockSettingsContext(
     locale: 'vi' as AppLocale,
     appVersion: '1.0.0',
     resolvedThemeMode: 'dark',
-    settings: {
-      themeMode: 'dark',
-      uiLanguage: 'vi',
-      profileDisplayName: 'Test',
-      notificationsEnabled: false,
-    } as StarterSettings,
+    settings: { ...DEFAULT_STARTER_SETTINGS, themeMode: 'dark', uiLanguage: 'vi', profileDisplayName: 'Test' },
     updateSettings: () => {},
     ...overrides,
   }

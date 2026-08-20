@@ -45,6 +45,7 @@ The active viewer-v2 currently loads `/models/hetieuhoa.fbx`. GLB conversion is 
 ## Add A Setting
 
 1. Add the field to `StarterSettings` in `src/app/settingsStorage.ts`.
-2. Add viewer-facing controls in `src/components/viewer-v2/ui/ViewerV2Overlay.tsx` or a focused v2 UI component if the setting is exposed in the active viewer.
-3. Add localized labels to both locale catalogs.
-4. Add persistence tests in `src/app/settingsStorage.test.ts`.
+2. Mirror the field in `src/app/nativeSettings.ts` and `src-tauri/src/settings.rs` if it should persist through Tauri commands.
+3. Add viewer-facing controls in `src/components/viewer-v2/ui/ViewerV2Overlay.tsx` or a focused v2 UI component if the setting is exposed in the active viewer.
+4. Add localized labels to both locale catalogs.
+5. Add persistence tests in `src/app/settingsStorage.test.ts`.

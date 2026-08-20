@@ -1,13 +1,37 @@
 import * as React from "react"
 import { Progress as ProgressPrimitive } from "radix-ui"
+import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-function Progress({ className, value, ...props }: React.ComponentProps<typeof ProgressPrimitive.Root>) {
+const progressVariants = cva(
+  "bg-primary/20 relative w-full overflow-hidden rounded-full",
+  {
+    variants: {
+      size: {
+        xs: "h-[1px]",
+        sm: "h-[5px]",
+        md: "h-2",
+        lg: "h-3",
+      },
+    },
+    defaultVariants: {
+      size: "md",
+    },
+  }
+)
+
+function Progress({
+  className,
+  value,
+  size,
+  ...props
+}: React.ComponentProps<typeof ProgressPrimitive.Root> &
+  VariantProps<typeof progressVariants>) {
   return (
     <ProgressPrimitive.Root
       data-slot="progress"
-      className={cn("bg-primary/20 relative h-2 w-full overflow-hidden rounded-full", className)}
+      className={cn(progressVariants({ size }), className)}
       {...props}
     >
       <ProgressPrimitive.Indicator

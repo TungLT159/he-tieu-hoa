@@ -77,6 +77,20 @@ function createViewerValue(overrides: Partial<ViewerV2ContextValue> = {}): Viewe
     setIsSpinning: vi.fn(),
     flyCameraActive: false,
     setFlyCameraActive: vi.fn(),
+    flyCameraPaused: false,
+    setFlyCameraPaused: vi.fn(),
+    flyCameraOrganPopup: null,
+    setFlyCameraOrganPopup: vi.fn(),
+    qualityPreset: 'medium',
+    setQualityPreset: vi.fn(),
+    volume: 80,
+    setVolume: vi.fn(),
+    voice: 'bac',
+    setVoice: vi.fn(),
+    annotationTool: 'pen',
+    setAnnotationTool: vi.fn(),
+    viewMode: '3d',
+    setViewMode: vi.fn(),
     ...overrides,
   }
 }
@@ -95,28 +109,33 @@ describe('CameraController helpers', () => {
     expect(destination.target.toArray()).toEqual(DEFAULT_TARGET.toArray())
   })
 
-  it('frames an organ using combined mesh bounds and the default offset', () => {
+  it('frames an unknown target using combined mesh bounds and the default offset', () => {
     const leftMesh = new THREE.Mesh(new THREE.BoxGeometry(1, 2, 1))
     const rightMesh = new THREE.Mesh(new THREE.BoxGeometry(1, 2, 1))
     leftMesh.position.set(-2, 0, 0)
     rightMesh.position.set(2, 0, 0)
 
-    const destination = computeCameraDestination('gan', new Map([['gan', [leftMesh, rightMesh]]]))
+    const destination = computeCameraDestination('unknown', new Map([['unknown', [leftMesh, rightMesh]]]))
 
     expect(destination.target.toArray()).toEqual([0, 0, 0])
-    expect(destination.position.x).toBeCloseTo(0)
-    expect(destination.position.y).toBeCloseTo(5)
-    expect(destination.position.z).toBeCloseTo(12.5)
+    expect(destination.position.x).toBeCloseTo(2.115)
+    expect(destination.position.y).toBeCloseTo(4.465)
+    expect(destination.position.z).toBeCloseTo(11.1625)
   })
 
-  it('uses a rear camera offset for tuy', () => {
+  it('uses distinct camera offsets for different organs', () => {
     const mesh = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1))
 
-    const destination = computeCameraDestination('tuy', new Map([['tuy', [mesh]]]))
+    const destinations = new Map(
+      ['da_day', 'thuc_quan', 'ruot_non', 'ruot_gia', 'gan', 'tui_mat', 'tuy', 'mieng'].map((organ) => {
+        const destination = computeCameraDestination(organ, new Map([[organ, [mesh]]]))
+        return [organ, destination.position.toArray().map((value) => value.toFixed(2)).join(',')]
+      }),
+    )
 
-    expect(destination.position.x).toBeCloseTo(0)
-    expect(destination.position.y).toBeCloseTo(1.2)
-    expect(destination.position.z).toBeCloseTo(-3)
+    expect(new Set(destinations.values()).size).toBe(destinations.size)
+    expect(destinations.get('tuy')).toBe('0.94,0.81,-1.89')
+    expect(destinations.get('gan')).toBe('-1.72,0.88,1.87')
   })
 
   it('falls back to overview when an organ has no meshes', () => {
@@ -133,7 +152,7 @@ describe('CameraController helpers', () => {
   })
 
   it('exports the default camera offset for tests and reuse', () => {
-    expect(DEFAULT_CAMERA_OFFSET.toArray()).toEqual([0, 0.4, 1])
+    expect(DEFAULT_CAMERA_OFFSET.toArray()).toEqual([0.18, 0.38, 0.95])
   })
 })
 
@@ -164,6 +183,46 @@ describe('CameraController', () => {
       undefined,
     )
     expect(orbitControlsMock.mock.calls.at(-1)?.[0]).not.toHaveProperty('target')
+  })
+
+  it('keeps rotation available in 3d mode', () => {
+    renderWithViewerContext(<CameraController />, { viewMode: '3d' })
+
+    expect(orbitControlsMock).toHaveBeenCalledWith(
+      expect.objectContaining({
+        enablePan: true,
+        enableRotate: true,
+        enableZoom: true,
+        mouseButtons: {
+          LEFT: THREE.MOUSE.ROTATE,
+          MIDDLE: THREE.MOUSE.DOLLY,
+          RIGHT: THREE.MOUSE.PAN,
+        },
+        screenSpacePanning: false,
+      }),
+      undefined,
+    )
+  })
+
+  it('switches left-drag to flat panning in 2d mode', () => {
+    renderWithViewerContext(<CameraController />, { viewMode: '2d' })
+
+    expect(orbitControlsMock).toHaveBeenCalledWith(
+      expect.objectContaining({
+        enablePan: true,
+        enableRotate: false,
+        enableZoom: true,
+        mouseButtons: {
+          LEFT: THREE.MOUSE.PAN,
+          MIDDLE: THREE.MOUSE.DOLLY,
+          RIGHT: THREE.MOUSE.PAN,
+        },
+        screenSpacePanning: true,
+      }),
+      undefined,
+    )
+    expect(camera.position.toArray()).toEqual(DEFAULT_POSITION.toArray())
+    expect(getControls().target.toArray()).toEqual(DEFAULT_TARGET.toArray())
   })
 
   it('initializes OrbitControls to the overview target on mount', () => {
@@ -270,9 +329,9 @@ describe('CameraController', () => {
       frameCallback()
     })
 
-    expect(camera.position.x).toBeCloseTo(0)
-    expect(camera.position.y).toBeCloseTo(1.6)
-    expect(camera.position.z).toBeCloseTo(5.5)
+    expect(camera.position.x).toBeCloseTo(-0.858)
+    expect(camera.position.y).toBeCloseTo(1.442)
+    expect(camera.position.z).toBeCloseTo(4.936)
     const controls = getControls()
     expect(controls.target.x).toBeCloseTo(0)
     expect(controls.target.y).toBeCloseTo(0.25)
@@ -312,9 +371,9 @@ describe('CameraController', () => {
       frameCallback()
     })
 
-    expect(camera.position.x).toBeCloseTo(0)
-    expect(camera.position.y).toBeCloseTo(1.2)
-    expect(camera.position.z).toBeCloseTo(3)
+    expect(camera.position.x).toBeCloseTo(-1.716)
+    expect(camera.position.y).toBeCloseTo(0.884)
+    expect(camera.position.z).toBeCloseTo(1.872)
     const controls = getControls()
     expect(controls.target.toArray()).toEqual([0, 0, 0])
     expect(controls.update).toHaveBeenCalledTimes(3)

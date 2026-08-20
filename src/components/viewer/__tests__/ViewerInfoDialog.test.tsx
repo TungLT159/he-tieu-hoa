@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 
 import { StarterSettingsContext } from '@/app/StarterSettingsContext'
 import type { StarterSettingsContextValue } from '@/app/StarterSettingsContext'
-import type { StarterSettings } from '@/app/settingsStorage'
+import { DEFAULT_STARTER_SETTINGS } from '@/app/settingsStorage'
 import type { AppLocale } from '@/lib/i18n'
 
 import { ORGAN_LIST } from '../organConfig'
@@ -18,12 +18,7 @@ function createMockSettingsContext(
     locale: 'vi' as AppLocale,
     appVersion: '1.0.0',
     resolvedThemeMode: 'dark',
-    settings: {
-      themeMode: 'dark',
-      uiLanguage: 'vi',
-      profileDisplayName: 'Test',
-      notificationsEnabled: false,
-    } as StarterSettings,
+    settings: { ...DEFAULT_STARTER_SETTINGS, themeMode: 'dark', uiLanguage: 'vi', profileDisplayName: 'Test' },
     updateSettings: () => {},
     ...overrides,
   }
@@ -60,7 +55,7 @@ describe('ViewerInfoDialog', () => {
 
     expect(screen.getByRole('heading', { name: 'Hệ tiêu hóa ở người' })).toBeInTheDocument()
     expect(
-      screen.getByText('Khám phá các cơ quan chính của hệ tiêu hóa theo thứ tự thức ăn di chuyển qua cơ thể.'),
+      screen.getByText('Hệ tiêu hóa ở người bao gồm đường tiêu hóa cộng với cơ quan phụ trợ tiêu hóa.'),
     ).toBeInTheDocument()
 
     const organHeadings = screen.getAllByRole('heading', { level: 3 })

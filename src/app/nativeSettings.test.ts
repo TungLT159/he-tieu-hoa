@@ -14,6 +14,7 @@ describe('native starter settings bridge', () => {
     invoke.mockResolvedValueOnce({
       theme_mode: 'dark',
       ui_language: 'vi',
+      narration_voice: 'trung',
       notifications_enabled: true,
       profile_display_name: 'Native User',
     })
@@ -22,6 +23,7 @@ describe('native starter settings bridge', () => {
     await expect(readNativeStarterSettings()).resolves.toEqual({
       themeMode: 'dark',
       uiLanguage: 'vi',
+      narrationVoice: 'trung',
       notificationsEnabled: true,
       profileDisplayName: 'Native User',
     })
@@ -33,6 +35,7 @@ describe('native starter settings bridge', () => {
     const settings: StarterSettings = {
       themeMode: 'system',
       uiLanguage: 'en',
+      narrationVoice: 'nam',
       notificationsEnabled: false,
       profileDisplayName: 'Browser User',
     }
@@ -44,6 +47,7 @@ describe('native starter settings bridge', () => {
       settings: {
         theme_mode: 'system',
         ui_language: 'en',
+        narration_voice: 'nam',
         notifications_enabled: false,
         profile_display_name: 'Browser User',
       },

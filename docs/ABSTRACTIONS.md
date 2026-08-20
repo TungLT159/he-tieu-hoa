@@ -12,6 +12,7 @@ The legacy `ViewerContextValue` remains in `src/components/viewer/` as retained 
 
 - `themeMode`: `light`, `dark`, or `system`
 - `uiLanguage`: `en`, `vi`, or `system`
+- `narrationVoice`: `bac`, `trung`, or `nam`
 - `notificationsEnabled`: boolean
 - `profileDisplayName`: string
 

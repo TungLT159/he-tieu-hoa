@@ -70,7 +70,7 @@ function renderPanel(overrides: Partial<ViewerV2ContextValue> = {}) {
         appVersion: '0.1.0',
         locale: 'en',
         resolvedThemeMode: 'light',
-        settings: DEFAULT_STARTER_SETTINGS,
+        settings: { ...DEFAULT_STARTER_SETTINGS, narrationVoice: value.voice },
         updateSettings: vi.fn(),
       }}
     >
@@ -139,7 +139,7 @@ describe('ViewerV2SettingsPanel', () => {
           appVersion: '0.1.0',
           locale: 'en',
           resolvedThemeMode: 'light',
-          settings: DEFAULT_STARTER_SETTINGS,
+          settings: { ...DEFAULT_STARTER_SETTINGS, narrationVoice: value.voice },
           updateSettings: vi.fn(),
         }}
       >

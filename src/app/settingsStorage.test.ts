@@ -17,6 +17,7 @@ describe('starter settings storage', () => {
     writeStarterSettings(storage, {
       themeMode: 'dark',
       uiLanguage: 'vi',
+      narrationVoice: 'nam',
       notificationsEnabled: true,
       profileDisplayName: 'Starter User',
     })
@@ -24,8 +25,20 @@ describe('starter settings storage', () => {
     expect(readStarterSettings(storage)).toEqual({
       themeMode: 'dark',
       uiLanguage: 'vi',
+      narrationVoice: 'nam',
       notificationsEnabled: true,
       profileDisplayName: 'Starter User',
     })
+  })
+
+  it('normalizes invalid narration voice to the default', () => {
+    const storage = createMemoryStorage()
+    storage.setItem('starter-tauri-app-settings', JSON.stringify({
+      themeMode: 'dark',
+      uiLanguage: 'vi',
+      narrationVoice: 'mien',
+    }))
+
+    expect(readStarterSettings(storage).narrationVoice).toBe(DEFAULT_STARTER_SETTINGS.narrationVoice)
   })
 })

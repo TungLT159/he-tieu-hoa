@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from 'vitest'
 
 import { StarterSettingsContext } from '@/app/StarterSettingsContext'
 import type { StarterSettingsContextValue } from '@/app/StarterSettingsContext'
-import type { StarterSettings } from '@/app/settingsStorage'
+import { DEFAULT_STARTER_SETTINGS } from '@/app/settingsStorage'
 import type { AppLocale } from '@/lib/i18n'
 
 import { ViewerAnnotation } from '../ViewerAnnotation'
@@ -15,12 +15,7 @@ function createMockSettingsContext(locale: AppLocale = 'en'): StarterSettingsCon
     locale,
     appVersion: '1.0.0',
     resolvedThemeMode: 'dark',
-    settings: {
-      themeMode: 'dark',
-      uiLanguage: locale,
-      profileDisplayName: 'Test',
-      notificationsEnabled: false,
-    } as StarterSettings,
+    settings: { ...DEFAULT_STARTER_SETTINGS, themeMode: 'dark', uiLanguage: locale, profileDisplayName: 'Test' },
     updateSettings: vi.fn(),
   }
 }

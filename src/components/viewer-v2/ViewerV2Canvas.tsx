@@ -10,7 +10,10 @@ export function ViewerV2Canvas() {
   const { qualityPreset } = useViewerV2()
 
   return (
-    <div className="relative h-full min-h-[24rem] w-full overflow-hidden">
+    <div
+      data-tutorial-target="viewer-area"
+      className="relative h-full min-h-[24rem] w-full overflow-hidden"
+    >
       <Canvas
         camera={{ position: [0, 2, 8], fov: 50 }}
         className="h-full w-full"

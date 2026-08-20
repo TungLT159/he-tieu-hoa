@@ -1,0 +1,3002 @@
+[
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: nghiền nhỏ, trộn thức ăn với nước bọt và bắt đầu tiêu hóa tinh bột?",
+        "options":  [
+                        "Miệng",
+                        "Dạ dày",
+                        "Ruột già",
+                        "Thực quản"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Miệng trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Nghiền nhỏ, trộn thức ăn với nước bọt và bắt đầu tiêu hóa tinh bột",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Miệng?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Nghiền nhỏ, trộn thức ăn với nước bọt và bắt đầu tiêu hóa tinh bột",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Miệng quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Nghiền nhỏ, trộn thức ăn với nước bọt và bắt đầu tiêu hóa tinh bột"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Miệng bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Nghiền nhỏ, trộn thức ăn với nước bọt và bắt đầu tiêu hóa tinh bột",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Miệng là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Nghiền nhỏ, trộn thức ăn với nước bọt và bắt đầu tiêu hóa tinh bột",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: cắt, xé và nghiền nhỏ thức ăn, làm tăng diện tích tiếp xúc với enzym?",
+        "options":  [
+                        "Gan",
+                        "Ruột non",
+                        "Răng",
+                        "Tuyến tụy"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Răng trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Cắt, xé và nghiền nhỏ thức ăn, làm tăng diện tích tiếp xúc với enzym"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Răng?",
+        "options":  [
+                        "Cắt, xé và nghiền nhỏ thức ăn, làm tăng diện tích tiếp xúc với enzym",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Răng quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Cắt, xé và nghiền nhỏ thức ăn, làm tăng diện tích tiếp xúc với enzym",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Răng bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Cắt, xé và nghiền nhỏ thức ăn, làm tăng diện tích tiếp xúc với enzym",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Răng là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Cắt, xé và nghiền nhỏ thức ăn, làm tăng diện tích tiếp xúc với enzym"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: đảo trộn thức ăn, hỗ trợ nuốt và cảm nhận vị?",
+        "options":  [
+                        "Lưỡi",
+                        "Tá tràng",
+                        "Ruột già",
+                        "Túi mật"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Lưỡi trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Đảo trộn thức ăn, hỗ trợ nuốt và cảm nhận vị",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Lưỡi?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Đảo trộn thức ăn, hỗ trợ nuốt và cảm nhận vị",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Lưỡi quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Đảo trộn thức ăn, hỗ trợ nuốt và cảm nhận vị"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Lưỡi bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Đảo trộn thức ăn, hỗ trợ nuốt và cảm nhận vị",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Lưỡi là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Đảo trộn thức ăn, hỗ trợ nuốt và cảm nhận vị",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: làm ẩm thức ăn và chứa amilaza bắt đầu phân giải tinh bột chín?",
+        "options":  [
+                        "Dịch mật",
+                        "Dịch vị",
+                        "Nước bọt",
+                        "Dịch tụy"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Nước bọt trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Làm ẩm thức ăn và chứa amilaza bắt đầu phân giải tinh bột chín"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Nước bọt?",
+        "options":  [
+                        "Làm ẩm thức ăn và chứa amilaza bắt đầu phân giải tinh bột chín",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Nước bọt quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Làm ẩm thức ăn và chứa amilaza bắt đầu phân giải tinh bột chín",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Nước bọt bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Làm ẩm thức ăn và chứa amilaza bắt đầu phân giải tinh bột chín",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Nước bọt là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Làm ẩm thức ăn và chứa amilaza bắt đầu phân giải tinh bột chín"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: phân giải một phần tinh bột chín thành đường đôi?",
+        "options":  [
+                        "Amilaza nước bọt",
+                        "Pepsin",
+                        "Lipaza",
+                        "Tripsin"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Amilaza nước bọt trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Phân giải một phần tinh bột chín thành đường đôi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Amilaza nước bọt?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Phân giải một phần tinh bột chín thành đường đôi",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Amilaza nước bọt quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Phân giải một phần tinh bột chín thành đường đôi"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Amilaza nước bọt bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Phân giải một phần tinh bột chín thành đường đôi",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Amilaza nước bọt là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Phân giải một phần tinh bột chín thành đường đôi",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: dẫn thức ăn từ hầu xuống dạ dày nhờ nhu động?",
+        "options":  [
+                        "Khí quản",
+                        "Ruột non",
+                        "Thực quản",
+                        "Gan"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Thực quản trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Dẫn thức ăn từ hầu xuống dạ dày nhờ nhu động"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Thực quản?",
+        "options":  [
+                        "Dẫn thức ăn từ hầu xuống dạ dày nhờ nhu động",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Thực quản quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Dẫn thức ăn từ hầu xuống dạ dày nhờ nhu động",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Thực quản bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Dẫn thức ăn từ hầu xuống dạ dày nhờ nhu động",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Thực quản là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Dẫn thức ăn từ hầu xuống dạ dày nhờ nhu động"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: co bóp dạng sóng giúp đẩy thức ăn di chuyển trong ống tiêu hóa?",
+        "options":  [
+                        "Nhu động",
+                        "Lọc máu",
+                        "Trao đổi khí",
+                        "Đông máu"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Nhu động trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Co bóp dạng sóng giúp đẩy thức ăn di chuyển trong ống tiêu hóa",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Nhu động?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Co bóp dạng sóng giúp đẩy thức ăn di chuyển trong ống tiêu hóa",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Nhu động quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Co bóp dạng sóng giúp đẩy thức ăn di chuyển trong ống tiêu hóa"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Nhu động bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Co bóp dạng sóng giúp đẩy thức ăn di chuyển trong ống tiêu hóa",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Nhu động là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Co bóp dạng sóng giúp đẩy thức ăn di chuyển trong ống tiêu hóa",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: nhào trộn thức ăn với dịch vị và bắt đầu tiêu hóa protein?",
+        "options":  [
+                        "Ruột già",
+                        "Gan",
+                        "Dạ dày",
+                        "Tuyến nước bọt"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Dạ dày trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Nhào trộn thức ăn với dịch vị và bắt đầu tiêu hóa protein"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Dạ dày?",
+        "options":  [
+                        "Nhào trộn thức ăn với dịch vị và bắt đầu tiêu hóa protein",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Dạ dày quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Nhào trộn thức ăn với dịch vị và bắt đầu tiêu hóa protein",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Dạ dày bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Nhào trộn thức ăn với dịch vị và bắt đầu tiêu hóa protein",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Dạ dày là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Nhào trộn thức ăn với dịch vị và bắt đầu tiêu hóa protein"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: môi trường axit có HCl và pepsin, hỗ trợ tiêu hóa protein?",
+        "options":  [
+                        "Dịch vị",
+                        "Dịch mật",
+                        "Nước bọt",
+                        "Dịch ruột già"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Dịch vị trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Môi trường axit có HCl và pepsin, hỗ trợ tiêu hóa protein",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Dịch vị?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Môi trường axit có HCl và pepsin, hỗ trợ tiêu hóa protein",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Dịch vị quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Môi trường axit có HCl và pepsin, hỗ trợ tiêu hóa protein"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Dịch vị bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Môi trường axit có HCl và pepsin, hỗ trợ tiêu hóa protein",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Dịch vị là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Môi trường axit có HCl và pepsin, hỗ trợ tiêu hóa protein",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: tạo môi trường axit, hoạt hóa pepsin và góp phần diệt khuẩn?",
+        "options":  [
+                        "Insulin",
+                        "Dịch mật",
+                        "Axit HCl trong dạ dày",
+                        "Chất nhầy đại tràng"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Axit HCl trong dạ dày trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Tạo môi trường axit, hoạt hóa pepsin và góp phần diệt khuẩn"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Axit HCl trong dạ dày?",
+        "options":  [
+                        "Tạo môi trường axit, hoạt hóa pepsin và góp phần diệt khuẩn",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Axit HCl trong dạ dày quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Tạo môi trường axit, hoạt hóa pepsin và góp phần diệt khuẩn",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Axit HCl trong dạ dày bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Tạo môi trường axit, hoạt hóa pepsin và góp phần diệt khuẩn",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Axit HCl trong dạ dày là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Tạo môi trường axit, hoạt hóa pepsin và góp phần diệt khuẩn"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: enzym tiêu hóa protein trong dạ dày?",
+        "options":  [
+                        "Pepsin",
+                        "Amilaza",
+                        "Maltaza",
+                        "Saccaraza"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Pepsin trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Enzym tiêu hóa protein trong dạ dày",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Pepsin?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Enzym tiêu hóa protein trong dạ dày",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Pepsin quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Enzym tiêu hóa protein trong dạ dày"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Pepsin bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Enzym tiêu hóa protein trong dạ dày",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Pepsin là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Enzym tiêu hóa protein trong dạ dày",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: bảo vệ niêm mạc dạ dày khỏi axit và enzym tiêu hóa?",
+        "options":  [
+                        "Men tụy",
+                        "Mật",
+                        "Chất nhầy dạ dày",
+                        "Dịch ruột"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Chất nhầy dạ dày trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Bảo vệ niêm mạc dạ dày khỏi axit và enzym tiêu hóa"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Chất nhầy dạ dày?",
+        "options":  [
+                        "Bảo vệ niêm mạc dạ dày khỏi axit và enzym tiêu hóa",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Chất nhầy dạ dày quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Bảo vệ niêm mạc dạ dày khỏi axit và enzym tiêu hóa",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Chất nhầy dạ dày bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Bảo vệ niêm mạc dạ dày khỏi axit và enzym tiêu hóa",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Chất nhầy dạ dày là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Bảo vệ niêm mạc dạ dày khỏi axit và enzym tiêu hóa"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: nơi tiêu hóa hóa học hoàn tất và hấp thụ phần lớn chất dinh dưỡng?",
+        "options":  [
+                        "Ruột non",
+                        "Ruột già",
+                        "Thực quản",
+                        "Khoang miệng"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Ruột non trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Nơi tiêu hóa hóa học hoàn tất và hấp thụ phần lớn chất dinh dưỡng",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Ruột non?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Nơi tiêu hóa hóa học hoàn tất và hấp thụ phần lớn chất dinh dưỡng",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Ruột non quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Nơi tiêu hóa hóa học hoàn tất và hấp thụ phần lớn chất dinh dưỡng"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Ruột non bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Nơi tiêu hóa hóa học hoàn tất và hấp thụ phần lớn chất dinh dưỡng",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Ruột non là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Nơi tiêu hóa hóa học hoàn tất và hấp thụ phần lớn chất dinh dưỡng",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: đoạn đầu ruột non nhận dịch mật và dịch tụy để tiếp tục tiêu hóa?",
+        "options":  [
+                        "Manh tràng",
+                        "Trực tràng",
+                        "Tá tràng",
+                        "Hầu"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Tá tràng trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Đoạn đầu ruột non nhận dịch mật và dịch tụy để tiếp tục tiêu hóa"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Tá tràng?",
+        "options":  [
+                        "Đoạn đầu ruột non nhận dịch mật và dịch tụy để tiếp tục tiêu hóa",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Tá tràng quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Đoạn đầu ruột non nhận dịch mật và dịch tụy để tiếp tục tiêu hóa",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Tá tràng bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Đoạn đầu ruột non nhận dịch mật và dịch tụy để tiếp tục tiêu hóa",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Tá tràng là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Đoạn đầu ruột non nhận dịch mật và dịch tụy để tiếp tục tiêu hóa"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: làm tăng diện tích bề mặt hấp thụ chất dinh dưỡng ở ruột non?",
+        "options":  [
+                        "Lông ruột",
+                        "Nếp thanh quản",
+                        "Phế nang",
+                        "Tiểu cầu"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Lông ruột trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Làm tăng diện tích bề mặt hấp thụ chất dinh dưỡng ở ruột non",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Lông ruột?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Làm tăng diện tích bề mặt hấp thụ chất dinh dưỡng ở ruột non",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Lông ruột quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Làm tăng diện tích bề mặt hấp thụ chất dinh dưỡng ở ruột non"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Lông ruột bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Làm tăng diện tích bề mặt hấp thụ chất dinh dưỡng ở ruột non",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Lông ruột là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Làm tăng diện tích bề mặt hấp thụ chất dinh dưỡng ở ruột non",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: hấp thụ chủ yếu glucose, axit amin, vitamin tan trong nước và muối khoáng?",
+        "options":  [
+                        "Khí quản",
+                        "Niệu quản",
+                        "Mao mạch máu trong lông ruột",
+                        "Ống mật"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Mao mạch máu trong lông ruột trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Hấp thụ chủ yếu glucose, axit amin, vitamin tan trong nước và muối khoáng"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Mao mạch máu trong lông ruột?",
+        "options":  [
+                        "Hấp thụ chủ yếu glucose, axit amin, vitamin tan trong nước và muối khoáng",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Mao mạch máu trong lông ruột quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Hấp thụ chủ yếu glucose, axit amin, vitamin tan trong nước và muối khoáng",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Mao mạch máu trong lông ruột bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Hấp thụ chủ yếu glucose, axit amin, vitamin tan trong nước và muối khoáng",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Mao mạch máu trong lông ruột là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Hấp thụ chủ yếu glucose, axit amin, vitamin tan trong nước và muối khoáng"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: hấp thụ nhiều sản phẩm tiêu hóa lipid sau khi được tái tổng hợp?",
+        "options":  [
+                        "Mạch bạch huyết trong lông ruột",
+                        "Động mạch phổi",
+                        "Tĩnh mạch chủ",
+                        "Niệu đạo"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Mạch bạch huyết trong lông ruột trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Hấp thụ nhiều sản phẩm tiêu hóa lipid sau khi được tái tổng hợp",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Mạch bạch huyết trong lông ruột?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Hấp thụ nhiều sản phẩm tiêu hóa lipid sau khi được tái tổng hợp",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Mạch bạch huyết trong lông ruột quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Hấp thụ nhiều sản phẩm tiêu hóa lipid sau khi được tái tổng hợp"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Mạch bạch huyết trong lông ruột bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Hấp thụ nhiều sản phẩm tiêu hóa lipid sau khi được tái tổng hợp",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Mạch bạch huyết trong lông ruột là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Hấp thụ nhiều sản phẩm tiêu hóa lipid sau khi được tái tổng hợp",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: sản xuất dịch mật và tham gia chuyển hóa, khử độc, dự trữ glycogen?",
+        "options":  [
+                        "Dạ dày",
+                        "Ruột già",
+                        "Gan",
+                        "Thực quản"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Gan trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Sản xuất dịch mật và tham gia chuyển hóa, khử độc, dự trữ glycogen"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Gan?",
+        "options":  [
+                        "Sản xuất dịch mật và tham gia chuyển hóa, khử độc, dự trữ glycogen",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Gan quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Sản xuất dịch mật và tham gia chuyển hóa, khử độc, dự trữ glycogen",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Gan bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Sản xuất dịch mật và tham gia chuyển hóa, khử độc, dự trữ glycogen",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Gan là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Sản xuất dịch mật và tham gia chuyển hóa, khử độc, dự trữ glycogen"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: nhũ tương hóa lipid, giúp lipaza tiêu hóa chất béo hiệu quả hơn?",
+        "options":  [
+                        "Dịch mật",
+                        "Pepsin",
+                        "Amilaza nước bọt",
+                        "Dịch vị"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Dịch mật trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Nhũ tương hóa lipid, giúp lipaza tiêu hóa chất béo hiệu quả hơn",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Dịch mật?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Nhũ tương hóa lipid, giúp lipaza tiêu hóa chất béo hiệu quả hơn",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Dịch mật quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Nhũ tương hóa lipid, giúp lipaza tiêu hóa chất béo hiệu quả hơn"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Dịch mật bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Nhũ tương hóa lipid, giúp lipaza tiêu hóa chất béo hiệu quả hơn",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Dịch mật là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Nhũ tương hóa lipid, giúp lipaza tiêu hóa chất béo hiệu quả hơn",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: dự trữ và cô đặc dịch mật trước khi đổ vào tá tràng?",
+        "options":  [
+                        "Tuyến yên",
+                        "Ruột thừa",
+                        "Túi mật",
+                        "Tuyến giáp"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Túi mật trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Dự trữ và cô đặc dịch mật trước khi đổ vào tá tràng"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Túi mật?",
+        "options":  [
+                        "Dự trữ và cô đặc dịch mật trước khi đổ vào tá tràng",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Túi mật quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Dự trữ và cô đặc dịch mật trước khi đổ vào tá tràng",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Túi mật bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Dự trữ và cô đặc dịch mật trước khi đổ vào tá tràng",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Túi mật là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Dự trữ và cô đặc dịch mật trước khi đổ vào tá tràng"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: tiết dịch tụy chứa nhiều enzym tiêu hóa glucid, protein và lipid?",
+        "options":  [
+                        "Tuyến tụy",
+                        "Tuyến mồ hôi",
+                        "Tuyến giáp",
+                        "Tuyến lệ"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Tuyến tụy trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Tiết dịch tụy chứa nhiều enzym tiêu hóa glucid, protein và lipid",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Tuyến tụy?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Tiết dịch tụy chứa nhiều enzym tiêu hóa glucid, protein và lipid",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Tuyến tụy quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Tiết dịch tụy chứa nhiều enzym tiêu hóa glucid, protein và lipid"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Tuyến tụy bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Tiết dịch tụy chứa nhiều enzym tiêu hóa glucid, protein và lipid",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Tuyến tụy là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Tiết dịch tụy chứa nhiều enzym tiêu hóa glucid, protein và lipid",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: chứa amilaza, lipaza và proteaza giúp tiêu hóa nhiều nhóm chất?",
+        "options":  [
+                        "Dịch mật",
+                        "Dịch mũi",
+                        "Dịch tụy",
+                        "Nước mắt"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Dịch tụy trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chứa amilaza, lipaza và proteaza giúp tiêu hóa nhiều nhóm chất"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Dịch tụy?",
+        "options":  [
+                        "Chứa amilaza, lipaza và proteaza giúp tiêu hóa nhiều nhóm chất",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Dịch tụy quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chứa amilaza, lipaza và proteaza giúp tiêu hóa nhiều nhóm chất",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Dịch tụy bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Chứa amilaza, lipaza và proteaza giúp tiêu hóa nhiều nhóm chất",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Dịch tụy là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Chứa amilaza, lipaza và proteaza giúp tiêu hóa nhiều nhóm chất"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: enzym phân giải lipid thành axit béo và glixerol?",
+        "options":  [
+                        "Lipaza",
+                        "Pepsin",
+                        "Amilaza",
+                        "Lactaza"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Lipaza trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Enzym phân giải lipid thành axit béo và glixerol",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Lipaza?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Enzym phân giải lipid thành axit béo và glixerol",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Lipaza quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Enzym phân giải lipid thành axit béo và glixerol"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Lipaza bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Enzym phân giải lipid thành axit béo và glixerol",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Lipaza là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Enzym phân giải lipid thành axit béo và glixerol",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: enzym của dịch tụy phân giải protein thành các đoạn peptit nhỏ hơn?",
+        "options":  [
+                        "Insulin",
+                        "Mucin",
+                        "Tripsin",
+                        "Hemoglobin"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Tripsin trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Enzym của dịch tụy phân giải protein thành các đoạn peptit nhỏ hơn"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Tripsin?",
+        "options":  [
+                        "Enzym của dịch tụy phân giải protein thành các đoạn peptit nhỏ hơn",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Tripsin quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Enzym của dịch tụy phân giải protein thành các đoạn peptit nhỏ hơn",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Tripsin bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Enzym của dịch tụy phân giải protein thành các đoạn peptit nhỏ hơn",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Tripsin là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Enzym của dịch tụy phân giải protein thành các đoạn peptit nhỏ hơn"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: enzym ruột phân giải mantozo thành glucozo?",
+        "options":  [
+                        "Maltaza",
+                        "Pepsin",
+                        "Lipaza",
+                        "Renin"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Maltaza trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Enzym ruột phân giải mantozo thành glucozo",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Maltaza?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Enzym ruột phân giải mantozo thành glucozo",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Maltaza quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Enzym ruột phân giải mantozo thành glucozo"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Maltaza bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Enzym ruột phân giải mantozo thành glucozo",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Maltaza là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Enzym ruột phân giải mantozo thành glucozo",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: enzym ruột phân giải saccarozo thành đường đơn?",
+        "options":  [
+                        "Tripsin",
+                        "Amilaza nước bọt",
+                        "Saccaraza",
+                        "Pepsin"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Saccaraza trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Enzym ruột phân giải saccarozo thành đường đơn"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Saccaraza?",
+        "options":  [
+                        "Enzym ruột phân giải saccarozo thành đường đơn",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Saccaraza quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Enzym ruột phân giải saccarozo thành đường đơn",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Saccaraza bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Enzym ruột phân giải saccarozo thành đường đơn",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Saccaraza là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Enzym ruột phân giải saccarozo thành đường đơn"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: enzym phân giải lactozo trong sữa thành đường đơn?",
+        "options":  [
+                        "Lactaza",
+                        "Lipaza",
+                        "Pepsin",
+                        "Catalaza"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Lactaza trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Enzym phân giải lactozo trong sữa thành đường đơn",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Lactaza?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Enzym phân giải lactozo trong sữa thành đường đơn",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Lactaza quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Enzym phân giải lactozo trong sữa thành đường đơn"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Lactaza bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Enzym phân giải lactozo trong sữa thành đường đơn",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Lactaza là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Enzym phân giải lactozo trong sữa thành đường đơn",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: hấp thụ nước, một số muối khoáng và tạo phân?",
+        "options":  [
+                        "Ruột non",
+                        "Thực quản",
+                        "Ruột già",
+                        "Tá tràng"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Ruột già trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Hấp thụ nước, một số muối khoáng và tạo phân"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Ruột già?",
+        "options":  [
+                        "Hấp thụ nước, một số muối khoáng và tạo phân",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Ruột già quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Hấp thụ nước, một số muối khoáng và tạo phân",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Ruột già bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Hấp thụ nước, một số muối khoáng và tạo phân",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Ruột già là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Hấp thụ nước, một số muối khoáng và tạo phân"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: tạm chứa phân trước khi thải ra ngoài qua hậu môn?",
+        "options":  [
+                        "Trực tràng",
+                        "Dạ dày",
+                        "Gan",
+                        "Tuyến tụy"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Trực tràng trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Tạm chứa phân trước khi thải ra ngoài qua hậu môn",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Trực tràng?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Tạm chứa phân trước khi thải ra ngoài qua hậu môn",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Trực tràng quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Tạm chứa phân trước khi thải ra ngoài qua hậu môn"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Trực tràng bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Tạm chứa phân trước khi thải ra ngoài qua hậu môn",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Trực tràng là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Tạm chứa phân trước khi thải ra ngoài qua hậu môn",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: cơ quan cuối của ống tiêu hóa, thực hiện thải phân?",
+        "options":  [
+                        "Hầu",
+                        "Tá tràng",
+                        "Hậu môn",
+                        "Túi mật"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Hậu môn trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Cơ quan cuối của ống tiêu hóa, thực hiện thải phân"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Hậu môn?",
+        "options":  [
+                        "Cơ quan cuối của ống tiêu hóa, thực hiện thải phân",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Hậu môn quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Cơ quan cuối của ống tiêu hóa, thực hiện thải phân",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Hậu môn bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Cơ quan cuối của ống tiêu hóa, thực hiện thải phân",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Hậu môn là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Cơ quan cuối của ống tiêu hóa, thực hiện thải phân"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: biến đổi thức ăn về mặt vật lí như nhai, nghiền, nhào trộn?",
+        "options":  [
+                        "Tiêu hóa cơ học",
+                        "Hô hấp tế bào",
+                        "Bài tiết nước tiểu",
+                        "Đông máu"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Tiêu hóa cơ học trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Biến đổi thức ăn về mặt vật lí như nhai, nghiền, nhào trộn",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Tiêu hóa cơ học?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Biến đổi thức ăn về mặt vật lí như nhai, nghiền, nhào trộn",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Tiêu hóa cơ học quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Biến đổi thức ăn về mặt vật lí như nhai, nghiền, nhào trộn"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Tiêu hóa cơ học bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Biến đổi thức ăn về mặt vật lí như nhai, nghiền, nhào trộn",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Tiêu hóa cơ học là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Biến đổi thức ăn về mặt vật lí như nhai, nghiền, nhào trộn",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: biến đổi phân tử thức ăn nhờ enzym thành chất đơn giản hấp thụ được?",
+        "options":  [
+                        "Co cơ vân",
+                        "Lọc cầu thận",
+                        "Tiêu hóa hóa học",
+                        "Trao đổi khí"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Tiêu hóa hóa học trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Biến đổi phân tử thức ăn nhờ enzym thành chất đơn giản hấp thụ được"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Tiêu hóa hóa học?",
+        "options":  [
+                        "Biến đổi phân tử thức ăn nhờ enzym thành chất đơn giản hấp thụ được",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Tiêu hóa hóa học quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Biến đổi phân tử thức ăn nhờ enzym thành chất đơn giản hấp thụ được",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Tiêu hóa hóa học bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Biến đổi phân tử thức ăn nhờ enzym thành chất đơn giản hấp thụ được",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Tiêu hóa hóa học là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Biến đổi phân tử thức ăn nhờ enzym thành chất đơn giản hấp thụ được"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: xúc tác phản ứng phân giải chất dinh dưỡng ở điều kiện cơ thể?",
+        "options":  [
+                        "Enzym tiêu hóa",
+                        "Hồng cầu",
+                        "Kháng thể",
+                        "Tiểu cầu"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Enzym tiêu hóa trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Xúc tác phản ứng phân giải chất dinh dưỡng ở điều kiện cơ thể",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Enzym tiêu hóa?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Xúc tác phản ứng phân giải chất dinh dưỡng ở điều kiện cơ thể",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Enzym tiêu hóa quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Xúc tác phản ứng phân giải chất dinh dưỡng ở điều kiện cơ thể"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Enzym tiêu hóa bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Xúc tác phản ứng phân giải chất dinh dưỡng ở điều kiện cơ thể",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Enzym tiêu hóa là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Xúc tác phản ứng phân giải chất dinh dưỡng ở điều kiện cơ thể",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: quá trình đưa sản phẩm tiêu hóa qua thành ruột vào máu hoặc bạch huyết?",
+        "options":  [
+                        "Nuốt",
+                        "Nhai",
+                        "Hấp thụ chất dinh dưỡng",
+                        "Tạo viên thức ăn"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Hấp thụ chất dinh dưỡng trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Quá trình đưa sản phẩm tiêu hóa qua thành ruột vào máu hoặc bạch huyết"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Hấp thụ chất dinh dưỡng?",
+        "options":  [
+                        "Quá trình đưa sản phẩm tiêu hóa qua thành ruột vào máu hoặc bạch huyết",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Hấp thụ chất dinh dưỡng quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Quá trình đưa sản phẩm tiêu hóa qua thành ruột vào máu hoặc bạch huyết",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Hấp thụ chất dinh dưỡng bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Quá trình đưa sản phẩm tiêu hóa qua thành ruột vào máu hoặc bạch huyết",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Hấp thụ chất dinh dưỡng là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Quá trình đưa sản phẩm tiêu hóa qua thành ruột vào máu hoặc bạch huyết"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: sản phẩm tiêu hóa cuối cùng quan trọng của tinh bột và được hấp thụ ở ruột non?",
+        "options":  [
+                        "Glucozo",
+                        "Glycogen nguyên vẹn",
+                        "Xenlulozo",
+                        "Tinh bột sống"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Glucozo trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Sản phẩm tiêu hóa cuối cùng quan trọng của tinh bột và được hấp thụ ở ruột non",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Glucozo?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Sản phẩm tiêu hóa cuối cùng quan trọng của tinh bột và được hấp thụ ở ruột non",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Glucozo quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Sản phẩm tiêu hóa cuối cùng quan trọng của tinh bột và được hấp thụ ở ruột non"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Glucozo bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Sản phẩm tiêu hóa cuối cùng quan trọng của tinh bột và được hấp thụ ở ruột non",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Glucozo là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Sản phẩm tiêu hóa cuối cùng quan trọng của tinh bột và được hấp thụ ở ruột non",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: sản phẩm tiêu hóa cuối cùng của protein được hấp thụ qua ruột non?",
+        "options":  [
+                        "Protein nguyên vẹn",
+                        "Ure",
+                        "Axit amin",
+                        "Tinh bột"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Axit amin trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Sản phẩm tiêu hóa cuối cùng của protein được hấp thụ qua ruột non"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Axit amin?",
+        "options":  [
+                        "Sản phẩm tiêu hóa cuối cùng của protein được hấp thụ qua ruột non",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Axit amin quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Sản phẩm tiêu hóa cuối cùng của protein được hấp thụ qua ruột non",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Axit amin bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Sản phẩm tiêu hóa cuối cùng của protein được hấp thụ qua ruột non",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Axit amin là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Sản phẩm tiêu hóa cuối cùng của protein được hấp thụ qua ruột non"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: sản phẩm tiêu hóa chính của lipid?",
+        "options":  [
+                        "Axit béo và glixerol",
+                        "Glucozo và fructozo",
+                        "Axit amin",
+                        "Muối khoáng"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Axit béo và glixerol trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Sản phẩm tiêu hóa chính của lipid",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Axit béo và glixerol?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Sản phẩm tiêu hóa chính của lipid",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Axit béo và glixerol quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Sản phẩm tiêu hóa chính của lipid"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Axit béo và glixerol bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Sản phẩm tiêu hóa chính của lipid",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Axit béo và glixerol là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Sản phẩm tiêu hóa chính của lipid",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: chất hữu cơ cần lượng nhỏ, nhiều loại không cần tiêu hóa trước khi hấp thụ?",
+        "options":  [
+                        "Tinh bột",
+                        "Protein",
+                        "Vitamin",
+                        "Lipid dự trữ"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Vitamin trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chất hữu cơ cần lượng nhỏ, nhiều loại không cần tiêu hóa trước khi hấp thụ"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Vitamin?",
+        "options":  [
+                        "Chất hữu cơ cần lượng nhỏ, nhiều loại không cần tiêu hóa trước khi hấp thụ",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Vitamin quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chất hữu cơ cần lượng nhỏ, nhiều loại không cần tiêu hóa trước khi hấp thụ",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Vitamin bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Chất hữu cơ cần lượng nhỏ, nhiều loại không cần tiêu hóa trước khi hấp thụ",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Vitamin là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Chất hữu cơ cần lượng nhỏ, nhiều loại không cần tiêu hóa trước khi hấp thụ"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: khó bị enzym người tiêu hóa nhưng hỗ trợ nhu động ruột và phòng táo bón?",
+        "options":  [
+                        "Chất xơ",
+                        "Pepsin",
+                        "Dịch vị",
+                        "Insulin"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Chất xơ trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Khó bị enzym người tiêu hóa nhưng hỗ trợ nhu động ruột và phòng táo bón",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Chất xơ?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Khó bị enzym người tiêu hóa nhưng hỗ trợ nhu động ruột và phòng táo bón",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Chất xơ quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Khó bị enzym người tiêu hóa nhưng hỗ trợ nhu động ruột và phòng táo bón"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Chất xơ bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Khó bị enzym người tiêu hóa nhưng hỗ trợ nhu động ruột và phòng táo bón",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Chất xơ là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Khó bị enzym người tiêu hóa nhưng hỗ trợ nhu động ruột và phòng táo bón",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: được hấp thụ ở cả ruột non và ruột già, cần cho hoạt động tiêu hóa?",
+        "options":  [
+                        "Oxi khí quyển",
+                        "Canxi xương",
+                        "Nước",
+                        "Keratin"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Nước trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Được hấp thụ ở cả ruột non và ruột già, cần cho hoạt động tiêu hóa"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Nước?",
+        "options":  [
+                        "Được hấp thụ ở cả ruột non và ruột già, cần cho hoạt động tiêu hóa",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Nước quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Được hấp thụ ở cả ruột non và ruột già, cần cho hoạt động tiêu hóa",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Nước bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Được hấp thụ ở cả ruột non và ruột già, cần cho hoạt động tiêu hóa",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Nước là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Được hấp thụ ở cả ruột non và ruột già, cần cho hoạt động tiêu hóa"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: được tiêu hóa bắt đầu rõ ở dạ dày và tiếp tục mạnh ở ruột non?",
+        "options":  [
+                        "Protein",
+                        "Tinh bột",
+                        "Vitamin C",
+                        "Nước"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Protein trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Được tiêu hóa bắt đầu rõ ở dạ dày và tiếp tục mạnh ở ruột non",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Protein?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Được tiêu hóa bắt đầu rõ ở dạ dày và tiếp tục mạnh ở ruột non",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Protein quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Được tiêu hóa bắt đầu rõ ở dạ dày và tiếp tục mạnh ở ruột non"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Protein bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Được tiêu hóa bắt đầu rõ ở dạ dày và tiếp tục mạnh ở ruột non",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Protein là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Được tiêu hóa bắt đầu rõ ở dạ dày và tiếp tục mạnh ở ruột non",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: được tiêu hóa bắt đầu ở miệng và tiếp tục ở ruột non?",
+        "options":  [
+                        "Protein",
+                        "Chất khoáng",
+                        "Tinh bột",
+                        "Nước"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Tinh bột trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Được tiêu hóa bắt đầu ở miệng và tiếp tục ở ruột non"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Tinh bột?",
+        "options":  [
+                        "Được tiêu hóa bắt đầu ở miệng và tiếp tục ở ruột non",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Tinh bột quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Được tiêu hóa bắt đầu ở miệng và tiếp tục ở ruột non",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Tinh bột bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Được tiêu hóa bắt đầu ở miệng và tiếp tục ở ruột non",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Tinh bột là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Được tiêu hóa bắt đầu ở miệng và tiếp tục ở ruột non"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: được dịch mật nhũ tương hóa và lipaza phân giải chủ yếu ở ruột non?",
+        "options":  [
+                        "Lipid",
+                        "Glucozo",
+                        "Axit amin",
+                        "Nước"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Lipid trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Được dịch mật nhũ tương hóa và lipaza phân giải chủ yếu ở ruột non",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Lipid?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Được dịch mật nhũ tương hóa và lipaza phân giải chủ yếu ở ruột non",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Lipid quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Được dịch mật nhũ tương hóa và lipaza phân giải chủ yếu ở ruột non"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Lipid bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Được dịch mật nhũ tương hóa và lipaza phân giải chủ yếu ở ruột non",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Lipid là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Được dịch mật nhũ tương hóa và lipaza phân giải chủ yếu ở ruột non",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: cung cấp đủ và hợp lí glucid, protein, lipid, vitamin, khoáng, nước và chất xơ?",
+        "options":  [
+                        "Ăn một loại thực phẩm duy nhất",
+                        "Bỏ hoàn toàn chất béo",
+                        "Khẩu phần ăn cân đối",
+                        "Chỉ uống nước ngọt"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Khẩu phần ăn cân đối trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Cung cấp đủ và hợp lí glucid, protein, lipid, vitamin, khoáng, nước và chất xơ"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Khẩu phần ăn cân đối?",
+        "options":  [
+                        "Cung cấp đủ và hợp lí glucid, protein, lipid, vitamin, khoáng, nước và chất xơ",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Khẩu phần ăn cân đối quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Cung cấp đủ và hợp lí glucid, protein, lipid, vitamin, khoáng, nước và chất xơ",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Khẩu phần ăn cân đối bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Cung cấp đủ và hợp lí glucid, protein, lipid, vitamin, khoáng, nước và chất xơ",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Khẩu phần ăn cân đối là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Cung cấp đủ và hợp lí glucid, protein, lipid, vitamin, khoáng, nước và chất xơ"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: giúp thức ăn nhỏ hơn, thấm nước bọt tốt hơn và giảm gánh nặng cho dạ dày?",
+        "options":  [
+                        "Ăn chậm, nhai kĩ",
+                        "Ăn thật nhanh",
+                        "Vừa ăn vừa chạy",
+                        "Bỏ bữa sáng thường xuyên"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Ăn chậm, nhai kĩ trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Giúp thức ăn nhỏ hơn, thấm nước bọt tốt hơn và giảm gánh nặng cho dạ dày",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Ăn chậm, nhai kĩ?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Giúp thức ăn nhỏ hơn, thấm nước bọt tốt hơn và giảm gánh nặng cho dạ dày",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Ăn chậm, nhai kĩ quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Giúp thức ăn nhỏ hơn, thấm nước bọt tốt hơn và giảm gánh nặng cho dạ dày"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Ăn chậm, nhai kĩ bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Giúp thức ăn nhỏ hơn, thấm nước bọt tốt hơn và giảm gánh nặng cho dạ dày",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Ăn chậm, nhai kĩ là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Giúp thức ăn nhỏ hơn, thấm nước bọt tốt hơn và giảm gánh nặng cho dạ dày",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: giúp phòng nhiễm khuẩn, kí sinh trùng và rối loạn tiêu hóa?",
+        "options":  [
+                        "Ăn thức ăn ôi thiu",
+                        "Uống nước chưa đun sôi",
+                        "Vệ sinh ăn uống",
+                        "Dùng chung đũa bẩn"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Vệ sinh ăn uống trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Giúp phòng nhiễm khuẩn, kí sinh trùng và rối loạn tiêu hóa"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Vệ sinh ăn uống?",
+        "options":  [
+                        "Giúp phòng nhiễm khuẩn, kí sinh trùng và rối loạn tiêu hóa",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Vệ sinh ăn uống quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Giúp phòng nhiễm khuẩn, kí sinh trùng và rối loạn tiêu hóa",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Vệ sinh ăn uống bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Giúp phòng nhiễm khuẩn, kí sinh trùng và rối loạn tiêu hóa",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Vệ sinh ăn uống là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Giúp phòng nhiễm khuẩn, kí sinh trùng và rối loạn tiêu hóa"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: thường liên quan đến thiếu chất xơ, uống ít nước hoặc ít vận động?",
+        "options":  [
+                        "Táo bón",
+                        "Viêm phổi",
+                        "Cận thị",
+                        "Thiếu máu bẩm sinh"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Táo bón trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Thường liên quan đến thiếu chất xơ, uống ít nước hoặc ít vận động",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Táo bón?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Thường liên quan đến thiếu chất xơ, uống ít nước hoặc ít vận động",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Táo bón quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Thường liên quan đến thiếu chất xơ, uống ít nước hoặc ít vận động"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Táo bón bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Thường liên quan đến thiếu chất xơ, uống ít nước hoặc ít vận động",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Táo bón là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Thường liên quan đến thiếu chất xơ, uống ít nước hoặc ít vận động",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: có thể gây mất nước, mất muối khoáng và cần bù nước đúng cách?",
+        "options":  [
+                        "Tăng hấp thụ canxi",
+                        "Tăng tạo hồng cầu",
+                        "Tiêu chảy",
+                        "Tăng đông máu"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Tiêu chảy trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Có thể gây mất nước, mất muối khoáng và cần bù nước đúng cách"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Tiêu chảy?",
+        "options":  [
+                        "Có thể gây mất nước, mất muối khoáng và cần bù nước đúng cách",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Tiêu chảy quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Có thể gây mất nước, mất muối khoáng và cần bù nước đúng cách",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Tiêu chảy bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Có thể gây mất nước, mất muối khoáng và cần bù nước đúng cách",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Tiêu chảy là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có thể gây mất nước, mất muối khoáng và cần bù nước đúng cách"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: hỗ trợ tiêu hóa một số chất, tổng hợp một số vitamin và bảo vệ đường ruột?",
+        "options":  [
+                        "Hệ vi sinh đường ruột",
+                        "Men răng",
+                        "Phế quản",
+                        "Tủy sống"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vai trò chính của Hệ vi sinh đường ruột trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Hỗ trợ tiêu hóa một số chất, tổng hợp một số vitamin và bảo vệ đường ruột",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Hệ vi sinh đường ruột?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Hỗ trợ tiêu hóa một số chất, tổng hợp một số vitamin và bảo vệ đường ruột",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vì sao Hệ vi sinh đường ruột quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Hỗ trợ tiêu hóa một số chất, tổng hợp một số vitamin và bảo vệ đường ruột"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Hệ vi sinh đường ruột bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Hỗ trợ tiêu hóa một số chất, tổng hợp một số vitamin và bảo vệ đường ruột",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Hệ vi sinh đường ruột là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Hỗ trợ tiêu hóa một số chất, tổng hợp một số vitamin và bảo vệ đường ruột",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Cơ quan hoặc thành phần nào phù hợp nhất với mô tả: một phần nhỏ ở manh tràng, viêm ruột thừa cần được xử lí y tế kịp thời?",
+        "options":  [
+                        "Tuyến tụy",
+                        "Thực quản",
+                        "Ruột thừa",
+                        "Túi mật"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Vai trò chính của Ruột thừa trong hệ tiêu hóa người là gì?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Một phần nhỏ ở manh tràng, viêm ruột thừa cần được xử lí y tế kịp thời"
+                    ],
+        "correct_answer":  3
+    },
+    {
+        "question":  "Trong các lựa chọn sau, đâu là nội dung đúng về Ruột thừa?",
+        "options":  [
+                        "Một phần nhỏ ở manh tràng, viêm ruột thừa cần được xử lí y tế kịp thời",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi"
+                    ],
+        "correct_answer":  0
+    },
+    {
+        "question":  "Vì sao Ruột thừa quan trọng đối với quá trình tiêu hóa?",
+        "options":  [
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Một phần nhỏ ở manh tràng, viêm ruột thừa cần được xử lí y tế kịp thời",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu"
+                    ],
+        "correct_answer":  1
+    },
+    {
+        "question":  "Nếu hoạt động liên quan đến Ruột thừa bị rối loạn, quá trình nào bị ảnh hưởng trực tiếp nhất?",
+        "options":  [
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Một phần nhỏ ở manh tràng, viêm ruột thừa cần được xử lí y tế kịp thời",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người"
+                    ],
+        "correct_answer":  2
+    },
+    {
+        "question":  "Khi học về hệ tiêu hóa, nhận định đúng nhất về Ruột thừa là gì?",
+        "options":  [
+                        "Có chức năng chính là lọc máu tạo nước tiểu",
+                        "Không liên quan trực tiếp đến tiêu hóa ở người",
+                        "Chỉ tham gia trao đổi khí ở phổi",
+                        "Một phần nhỏ ở manh tràng, viêm ruột thừa cần được xử lí y tế kịp thời"
+                    ],
+        "correct_answer":  3
+    }
+]

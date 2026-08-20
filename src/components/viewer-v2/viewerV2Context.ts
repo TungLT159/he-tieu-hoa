@@ -1,12 +1,14 @@
 import { createContext, useContext } from 'react'
 import type * as THREE from 'three'
+import type { NarrationVoice } from '@/lib/narrationVoice'
 
 export type ActiveSheet = 'chatbot' | 'settings' | 'video' | null
 export type ActiveDialog = 'info' | 'quiz' | 'genai' | 'video' | null
 
 export type QualityPreset = 'low' | 'medium' | 'high'
-export type VoiceOption = 'bac' | 'trung' | 'nam'
+export type VoiceOption = NarrationVoice
 export type AnnotationTool = 'pen' | 'eraser'
+export type ViewMode = '2d' | '3d'
 
 export interface ViewerV2ContextValue {
   selectedOrgan: string | null
@@ -56,6 +58,8 @@ export interface ViewerV2ContextValue {
   setVoice: (v: VoiceOption) => void
   annotationTool: AnnotationTool
   setAnnotationTool: (tool: AnnotationTool) => void
+  viewMode: ViewMode
+  setViewMode: (mode: ViewMode) => void
 }
 
 export const ViewerV2Context = createContext<ViewerV2ContextValue | null>(null)

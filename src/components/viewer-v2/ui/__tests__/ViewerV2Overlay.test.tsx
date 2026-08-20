@@ -78,6 +78,8 @@ function createViewerValue(overrides: Partial<ViewerV2ContextValue> = {}): Viewe
     setVoice: vi.fn(),
     annotationTool: 'pen',
     setAnnotationTool: vi.fn(),
+    viewMode: '3d',
+    setViewMode: vi.fn(),
     ...overrides,
   }
 }
@@ -103,7 +105,13 @@ function renderOverlay(overrides: Partial<ViewerV2ContextValue> = {}) {
 
 describe('ViewerV2Overlay', () => {
   beforeEach(() => {
-    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true }))
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: () => Promise.resolve([{ question: 'Question one?', options: ['Correct', 'Wrong'], correct_answer: 0 }]),
+      }),
+    )
     mockNavigate.mockClear()
   })
 
@@ -128,7 +136,18 @@ describe('ViewerV2Overlay', () => {
     expect(screen.getByRole('button', { name: 'Information' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Annotation' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Settings' })).toBeInTheDocument()
+    expect(screen.getByRole('combobox', { name: 'View mode' })).toHaveTextContent('3D')
     expect(screen.queryByRole('button', { name: 'Show mesh debug' })).not.toBeInTheDocument()
+  })
+
+  it('updates the view mode from the floating selector', () => {
+    const setViewMode = vi.fn()
+    renderOverlay({ setViewMode })
+
+    fireEvent.click(screen.getByRole('combobox', { name: 'View mode' }))
+    fireEvent.click(screen.getByRole('option', { name: '2D' }))
+
+    expect(setViewMode).toHaveBeenCalledWith('2d')
   })
 
   it('updates v2 state through overlay controls', () => {
@@ -183,25 +202,21 @@ describe('ViewerV2Overlay', () => {
     expect(setActiveSheet).toHaveBeenCalledWith('video')
   })
 
-  it('shows a floating return button only when an organ is selected', () => {
+  it('shows the return button beside the view mode selector', () => {
     const requestViewReset = vi.fn()
-    renderOverlay({ selectedOrgan: 'Stomach', requestViewReset })
+    renderOverlay({ selectedOrgan: null, requestViewReset })
 
     fireEvent.click(screen.getByRole('button', { name: 'Return to overview' }))
 
     expect(requestViewReset).toHaveBeenCalled()
+    expect(screen.getByRole('combobox', { name: 'View mode' })).toBeInTheDocument()
   })
 
-  it('hides the floating return button when no organ is selected', () => {
-    renderOverlay({ selectedOrgan: null })
-
-    expect(screen.queryByRole('button', { name: 'Return to overview' })).not.toBeInTheDocument()
-  })
-
-  it('hides the floating return button when a panel is open', () => {
+  it('hides the return and view mode controls when a panel is open', () => {
     renderOverlay({ activeDialog: 'info', selectedOrgan: 'Stomach' })
 
     expect(screen.queryByRole('button', { name: 'Return to overview' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('combobox', { name: 'View mode' })).not.toBeInTheDocument()
   })
 
   it('captures a screenshot from the screenshot menu action', () => {
@@ -259,20 +274,22 @@ describe('ViewerV2Overlay', () => {
     renderOverlay({ activeDialog: 'info', setActiveDialog })
 
     const dialog = screen.getByRole('dialog', { name: 'Human Digestive System' })
-    expect(within(dialog).getByText('Explore the main organs of the digestive system in the order food moves through the body.')).toBeInTheDocument()
-    expect(within(dialog).getByText(/Digestion begins in the mouth/i)).toBeInTheDocument()
+    expect(within(dialog).getByText(/The human digestive system includes the gastrointestinal tract/i)).toBeInTheDocument()
+    expect(within(dialog).getByRole('combobox', { name: 'Voice' })).toHaveTextContent('Northern')
+    expect(within(dialog).getByRole('button', { name: 'Turn on narration' })).toBeInTheDocument()
 
     fireEvent.click(within(dialog).getByRole('button', { name: 'Close' }))
 
     expect(setActiveDialog).toHaveBeenCalledWith(null)
   })
 
-  it('shows and closes the quiz placeholder dialog', () => {
+  it('shows and closes the quiz panel', async () => {
     const setActiveDialog = vi.fn()
     renderOverlay({ activeDialog: 'quiz', setActiveDialog })
 
     const dialog = screen.getByRole('dialog', { name: 'Quiz' })
-    expect(within(dialog).getByText('This feature is under development.')).toBeInTheDocument()
+    expect(await within(dialog).findByText('1 questions available in the source.')).toBeInTheDocument()
+    expect(within(dialog).queryByText('This feature is under development.')).not.toBeInTheDocument()
 
     fireEvent.click(within(dialog).getByRole('button', { name: 'Close' }))
 
@@ -297,7 +314,8 @@ describe('ViewerV2Overlay', () => {
     renderOverlay({ activeSheet: 'video', setActiveSheet })
 
     const panel = screen.getByRole('region', { name: 'Learning Video' })
-    expect(within(panel).getByTestId('learning-video')).toHaveAttribute('src', '/videos/he-tieu-hoa.mp4')
+    expect(within(panel).getByRole('combobox', { name: 'Voice' })).toHaveTextContent('Northern')
+    expect(within(panel).getByTestId('learning-video')).toHaveAttribute('src', '/videos/b%E1%BA%AFc.mp4')
 
     fireEvent.click(within(panel).getByRole('button', { name: 'Close' }))
 

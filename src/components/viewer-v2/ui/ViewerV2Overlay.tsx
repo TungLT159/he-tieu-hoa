@@ -31,10 +31,11 @@ import { ColorPickerPopover } from './ColorPickerPopover'
 import { GenAIPanel } from './ai/GenAIPanel'
 import { InfoPanel } from './InfoPanel'
 import { OrganInfoCard } from './OrganInfoCard'
-import { PlaceholderDialog } from './PlaceholderDialog'
+import { QuizPanel } from './quiz/QuizPanel'
 import { ViewerV2Annotation } from './ViewerV2Annotation'
 import { captureScreenshot } from './screenshot'
 import { VideoPlayerPanel } from './VideoPlayerPanel'
+import { ViewModeControl } from './ViewModeControl'
 import { ViewerV2SettingsPanel } from './ViewerV2SettingsPanel'
 
 interface MenuButtonDef {
@@ -72,6 +73,7 @@ function ViewerV2MenuGroup({
               type="button"
               variant={button.active ? 'secondary' : 'ghost'}
               size={collapsed ? 'icon' : 'default'}
+              data-tutorial-target={`menu-${button.id}`}
               className={cn(
                 'w-full justify-start gap-2',
                 collapsed && 'h-9 w-9 justify-center',
@@ -113,7 +115,6 @@ export function ViewerV2Overlay() {
     setFlyCameraActive,
     setModelColor,
     activeDialog,
-    selectedOrgan,
   } = useViewerV2()
   const { locale } = useStarterSettings()
   const t = createTranslator(locale)
@@ -236,6 +237,7 @@ export function ViewerV2Overlay() {
             type="button"
             variant="ghost"
             size="icon"
+            data-tutorial-target="menu-toggle"
             aria-label={isMenuOpen ? t('viewer.menu.collapse') : t('viewer.menu.expand')}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -252,12 +254,14 @@ export function ViewerV2Overlay() {
                 onChange={setModelColor}
                 onReset={() => setModelColor(null)}
                 collapsed={!isMenuOpen}
+                tutorialTarget="menu-modelColor"
               />
               <ColorPickerPopover
                 label={t('viewer.menu.backgroundColor')}
                 value={backgroundColor}
                 onChange={setBackgroundColor}
                 collapsed={!isMenuOpen}
+                tutorialTarget="menu-backgroundColor"
               />
           </div>
           <ViewerV2MenuGroup title={t('viewer.menu.group.learning')} buttons={learningButtons} collapsed={!isMenuOpen} />
@@ -265,30 +269,15 @@ export function ViewerV2Overlay() {
           <ViewerV2MenuGroup title={t('viewer.menu.group.system')} buttons={systemButtons} collapsed={!isMenuOpen} />
         </div>
       </div>
-      {selectedOrgan && !hasOpenPanel ? (
-        <Button
-          type="button"
-          variant="secondary"
-          size="icon"
-          className="absolute right-4 top-4 z-20 shadow-lg"
-          aria-label={t('viewer.returnToOverview')}
-          onClick={requestViewReset}
-        >
-          <House aria-hidden />
-        </Button>
-      ) : null}
       {activeSheet === 'settings' ? <ViewerV2SettingsPanel /> : null}
       {activeSheet === 'chatbot' ? <ChatbotPanel onClose={() => setActiveSheet(null)} /> : null}
       {activeDialog === 'info' ? <InfoPanel onClose={() => setActiveDialog(null)} /> : null}
       {activeDialog === 'quiz' ? (
-        <PlaceholderDialog
-          titleKey="viewer.quiz.title"
-          placeholderKey="viewer.quiz.placeholder"
-          onClose={() => setActiveDialog(null)}
-        />
+        <QuizPanel onClose={() => setActiveDialog(null)} />
       ) : null}
       {activeDialog === 'genai' ? <GenAIPanel onClose={() => setActiveDialog(null)} /> : null}
       {activeSheet === 'video' ? <VideoPlayerPanel onClose={() => setActiveSheet(null)} /> : null}
+      {!hasOpenPanel ? <ViewModeControl /> : null}
       <OrganInfoCard />
       <ViewerV2Annotation />
       <AnnotationToolbar />

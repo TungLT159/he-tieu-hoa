@@ -17,7 +17,20 @@ const badgeVariants = cva(
         outline:
           "border-border text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
         ghost: "[a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 [a&]:hover:underline",
+        link: "text-[#5b49c8] underline-offset-4 [a&]:hover:underline dark:text-[#c7bdff]",
+        soft: "border-0 bg-[color-mix(in_oklab,var(--primary)_18%,transparent)] text-[#5b49c8] dark:text-[#c7bdff]",
+        "outline-primary":
+          "border border-primary bg-transparent text-[#5b49c8] [a&]:hover:bg-primary [a&]:hover:text-primary-foreground dark:text-[#c7bdff]",
+        "outline-secondary":
+          "border border-secondary bg-transparent text-foreground [a&]:hover:bg-secondary [a&]:hover:text-secondary-foreground",
+        "outline-success":
+          "border border-[#147a37] bg-transparent text-[#147a37] [a&]:hover:bg-[#147a37] [a&]:hover:text-white dark:border-[#7ee2a2] dark:text-[#7ee2a2]",
+        "outline-danger":
+          "border border-[#b42318] bg-transparent text-[#b42318] [a&]:hover:bg-[#b42318] [a&]:hover:text-white dark:border-[#ffb4ab] dark:text-[#ffb4ab]",
+        "outline-warning":
+          "border border-[#8a4b16] bg-transparent text-[#8a4b16] [a&]:hover:bg-[#8a4b16] [a&]:hover:text-white dark:border-[#f7c58d] dark:text-[#f7c58d]",
+        "outline-info":
+          "border border-[#0969a8] bg-transparent text-[#0969a8] [a&]:hover:bg-[#0969a8] [a&]:hover:text-white dark:border-[#8fd3ff] dark:text-[#8fd3ff]",
       },
     },
     defaultVariants: {

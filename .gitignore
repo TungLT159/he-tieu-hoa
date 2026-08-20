@@ -45,6 +45,10 @@ __pycache__/
 # Dev screenshots
 screenshots/
 
+# Large local media/runtime assets
+/public/office/*.zip
+/public/videos/*.mp4
+
 # Superpowers brainstorming scratch files
 .superpowers/brainstorm/
 

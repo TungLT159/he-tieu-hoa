@@ -5,6 +5,7 @@ Phần mềm 3D Hệ tiêu hóa is a Tauri + React desktop starter focused on a 
 ## Layers
 
 - Tauri shell: native window, app metadata, minimal settings commands, and the viewer screenshot tool launcher.
+- Tauri plugins: the image-generation download action uses the dialog and filesystem plugins to let desktop users choose a save path before writing generated images. If the webview cannot fetch the generated image, the `download_image_to_path` command downloads the image natively and saves it to that chosen path.
 - React app: `StarterApp` renders `ViewerV2Page` directly; no default route table, sidebar navigation, or command palette remains.
 - Viewer UI: `src/components/viewer-v2/` contains the active 3D canvas, overlays, camera controllers, scene effects, and viewer-v2 state. `src/components/viewer/` is retained temporarily because shared overlay behavior and existing tests still reference the old viewer implementation.
 - UI system: shadcn primitives, CSS variables, and reusable local UI patterns.

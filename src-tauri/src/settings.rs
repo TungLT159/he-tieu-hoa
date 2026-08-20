@@ -4,6 +4,7 @@ use serde::{Deserialize, Serialize};
 pub struct AppSettings {
     pub theme_mode: Option<String>,
     pub ui_language: Option<String>,
+    pub narration_voice: Option<String>,
     pub notifications_enabled: Option<bool>,
     pub profile_display_name: Option<String>,
 }
@@ -26,6 +27,7 @@ pub fn normalize_settings(settings: AppSettings) -> AppSettings {
     AppSettings {
         theme_mode: normalize_choice(settings.theme_mode, &["light", "dark", "system"]),
         ui_language: normalize_choice(settings.ui_language, &["en", "vi", "system"]),
+        narration_voice: normalize_choice(settings.narration_voice, &["bac", "trung", "nam"]),
         notifications_enabled: settings.notifications_enabled,
         profile_display_name: normalize_optional_string(settings.profile_display_name),
     }
@@ -50,6 +52,7 @@ mod tests {
         let settings = AppSettings {
             theme_mode: Some("dark".to_string()),
             ui_language: Some("vi".to_string()),
+            narration_voice: Some("nam".to_string()),
             notifications_enabled: Some(true),
             profile_display_name: Some("Starter User".to_string()),
         };
@@ -58,6 +61,7 @@ mod tests {
 
         assert_eq!(normalized.theme_mode.as_deref(), Some("dark"));
         assert_eq!(normalized.ui_language.as_deref(), Some("vi"));
+        assert_eq!(normalized.narration_voice.as_deref(), Some("nam"));
         assert_eq!(normalized.notifications_enabled, Some(true));
         assert_eq!(
             normalized.profile_display_name.as_deref(),
@@ -70,6 +74,7 @@ mod tests {
         let settings = AppSettings {
             theme_mode: Some("sepia".to_string()),
             ui_language: Some("fr-FR".to_string()),
+            narration_voice: Some("mien".to_string()),
             notifications_enabled: None,
             profile_display_name: None,
         };
@@ -78,5 +83,6 @@ mod tests {
 
         assert_eq!(normalized.theme_mode, None);
         assert_eq!(normalized.ui_language, None);
+        assert_eq!(normalized.narration_voice, None);
     }
 }

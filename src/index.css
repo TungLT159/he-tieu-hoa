@@ -2,15 +2,12 @@
 @import "tw-animate-css";
 
 /* ============================================================
-   Theme Variables — app-owned light/dark contract
+   Theme Variables — Darkone-inspired light/dark contract
    ============================================================ */
 
 :root {
-  /* --- Font defaults --- */
-  --font-sans: ui-sans-serif, "Segoe UI Variable", "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, "Segoe UI Variable", "Segoe UI", Helvetica, Arial, sans-serif;
   --font-mono: "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  --shadow-panel: 0 18px 48px color-mix(in oklab, var(--foreground) 12%, transparent);
-  --shadow-panel-soft: 0 10px 30px color-mix(in oklab, var(--foreground) 8%, transparent);
   font-family: var(--font-sans);
   line-height: 1.5;
   font-weight: 400;
@@ -19,6 +16,22 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes dropdown-slide-down {
+  from {
+    opacity: 0;
+    transform: scaleY(0.95) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+.animate-dropdown-slide-down[data-state="open"] {
+  animation: dropdown-slide-down 0.2s ease-out;
+  transform-origin: top;
 }
 
 [data-radix-popper-content-wrapper] {
@@ -37,74 +50,74 @@
   color-scheme: light;
 
   /* --- Semantic surfaces (light mode) --- */
-  --surface-app: #FFFFFF;
-  --surface-sidebar: #F7F6F3;
-  --surface-panel: #FFFFFF;
-  --surface-card: #FFFFFF;
-  --surface-popover: #FFFFFF;
-  --surface-input: #FFFFFF;
-  --surface-button: #EBEBEA;
-  --surface-dialog: #FFFFFF;
-  --surface-editor: #FFFFFF;
+  --surface-app: #f8f7fa;
+  --surface-sidebar: #ffffff;
+  --surface-panel: #ffffff;
+  --surface-card: #ffffff;
+  --surface-popover: #ffffff;
+  --surface-input: #ffffff;
+  --surface-button: #eef2f7;
+  --surface-dialog: #ffffff;
+  --surface-editor: #ffffff;
   --surface-overlay: rgba(0, 0, 0, 0.3);
 
   /* --- Semantic text (light mode) --- */
-  --text-primary: #37352F;
-  --text-secondary: #787774;
-  --text-tertiary: #787774;
-  --text-muted: #B4B4B4;
-  --text-faint: #B4B4B4;
-  --text-heading: #37352F;
-  --text-inverse: #FFFFFF;
+  --text-primary: #5d7186;
+  --text-secondary: #8391a2;
+  --text-tertiary: #8391a2;
+  --text-muted: #b0b0bb;
+  --text-faint: #b0b0bb;
+  --text-heading: #424e5a;
+  --text-inverse: #ffffff;
 
   /* --- Semantic borders (light mode) --- */
-  --border-default: #E9E9E7;
-  --border-subtle: #E9E9E7;
-  --border-strong: #D9D9D6;
-  --border-input: #E9E9E7;
-  --border-dialog: #E9E9E7;
-  --border-focus: #155DFF;
+  --border-default: #eaedf1;
+  --border-subtle: #eaedf1;
+  --border-strong: #d8dfe7;
+  --border-input: #d8dfe7;
+  --border-dialog: #eaedf1;
+  --border-focus: #7e67fe;
 
   /* --- Interaction states (light mode) --- */
-  --state-hover: #EBEBEA;
-  --state-hover-subtle: #F0F0EF;
-  --state-selected: #E8F4FE;
-  --state-selected-strong: #D8ECFE;
-  --state-active: #E8F4FE;
-  --state-focus-ring: #155DFF;
-  --state-drag-target: #155DFF18;
-  --state-disabled: #F0F0EF;
+  --state-hover: #eef2f7;
+  --state-hover-subtle: #f8f9fa;
+  --state-selected: rgba(126, 103, 254, 0.1);
+  --state-selected-strong: rgba(126, 103, 254, 0.18);
+  --state-active: rgba(126, 103, 254, 0.1);
+  --state-focus-ring: #7e67fe;
+  --state-drag-target: rgba(126, 103, 254, 0.12);
+  --state-disabled: #eef2f7;
 
   /* --- Accent roles (light mode) --- */
-  --accent-blue: #155DFF;
-  --accent-blue-bg: #155DFF18;
-  --accent-blue-hover: #0D4AD6;
-  --accent-blue-light: #155DFF14;
-  --accent-green: #38A169;
-  --accent-green-light: rgba(56, 161, 105, 0.1);
-  --accent-orange: #D9730D;
-  --accent-orange-light: rgba(217, 115, 13, 0.1);
-  --accent-red: #E53E3E;
-  --accent-red-light: rgba(229, 62, 62, 0.1);
-  --accent-purple: #805AD5;
-  --accent-purple-light: rgba(128, 90, 213, 0.1);
-  --accent-yellow: #D69E2E;
-  --accent-yellow-light: rgba(214, 158, 46, 0.1);
-  --accent-teal: #319795;
-  --accent-teal-light: rgba(49, 151, 149, 0.1);
-  --accent-pink: #D53F8C;
-  --accent-pink-light: rgba(213, 63, 140, 0.1);
-  --accent-gray: #718096;
-  --accent-gray-light: rgba(113, 128, 150, 0.1);
+  --accent-blue: #1a80f8;
+  --accent-blue-bg: rgba(26, 128, 248, 0.12);
+  --accent-blue-hover: #1568d0;
+  --accent-blue-light: rgba(26, 128, 248, 0.1);
+  --accent-green: #21d760;
+  --accent-green-light: rgba(33, 215, 96, 0.1);
+  --accent-orange: #f0934e;
+  --accent-orange-light: rgba(240, 147, 78, 0.1);
+  --accent-red: #ed321f;
+  --accent-red-light: rgba(237, 50, 31, 0.1);
+  --accent-purple: #7e67fe;
+  --accent-purple-light: rgba(126, 103, 254, 0.1);
+  --accent-yellow: #fb9f68;
+  --accent-yellow-light: rgba(251, 159, 104, 0.1);
+  --accent-teal: #040505;
+  --accent-teal-light: rgba(4, 5, 5, 0.1);
+  --accent-pink: #ff86c8;
+  --accent-pink-light: rgba(255, 134, 200, 0.1);
+  --accent-gray: #8486a7;
+  --accent-gray-light: rgba(132, 134, 167, 0.1);
 
   /* --- Feedback roles (light mode) --- */
   --feedback-info-text: var(--accent-blue);
   --feedback-info-bg: var(--accent-blue-light);
   --feedback-success-text: var(--accent-green);
   --feedback-success-bg: var(--accent-green-light);
-  --feedback-warning-text: #92400E;
-  --feedback-warning-bg: #FEF3C7;
-  --feedback-warning-border: #D97706;
+  --feedback-warning-text: #f0934e;
+  --feedback-warning-bg: rgba(240, 147, 78, 0.1);
+  --feedback-warning-border: #f0934e;
   --feedback-error-text: var(--accent-red);
   --feedback-error-bg: var(--accent-red-light);
 
@@ -134,41 +147,43 @@
   --editor-code-block-text: var(--text-primary);
   --editor-code-block-language: var(--text-secondary);
 
-  /* --- Overlays and shadows (light mode) --- */
+  /* --- Shadows (light mode) --- */
+  --shadow-panel: 0px 3px 4px 0px rgba(0, 0, 0, 0.03);
+  --shadow-panel-soft: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --shadow-overlay: var(--surface-overlay);
-  --shadow-dialog: rgba(0, 0, 0, 0.15);
+  --shadow-dialog: rgba(30, 32, 37, 0.12);
 
   /* --- shadcn theme aliases (light mode) --- */
-  --radius: 0.5rem;
+  --radius: 0.35rem;
   --background: var(--surface-app);
   --foreground: var(--text-primary);
   --card: var(--surface-card);
   --card-foreground: var(--text-primary);
   --popover: var(--surface-popover);
   --popover-foreground: var(--text-primary);
-  --primary: var(--accent-blue);
-  --primary-foreground: var(--text-inverse);
-  --secondary: var(--state-hover);
-  --secondary-foreground: var(--text-primary);
-  --muted: var(--state-hover-subtle);
-  --muted-foreground: var(--text-secondary);
+  --primary: var(--accent-purple);
+  --primary-foreground: #000000;
+  --secondary: #424e5a;
+  --secondary-foreground: #ffffff;
+  --muted: #eef2f7;
+  --muted-foreground: var(--text-primary);
   --accent: var(--state-hover);
   --accent-foreground: var(--text-primary);
   --destructive: var(--accent-red);
-  --destructive-foreground: var(--text-inverse);
+  --destructive-foreground: #000000;
   --border: var(--border-default);
   --input: var(--border-input);
   --ring: var(--state-focus-ring);
   --sidebar: var(--surface-sidebar);
   --sidebar-foreground: var(--text-primary);
-  --sidebar-primary: var(--accent-blue);
+  --sidebar-primary: var(--accent-purple);
   --sidebar-primary-foreground: var(--text-inverse);
   --sidebar-accent: var(--state-hover);
   --sidebar-accent-foreground: var(--text-primary);
   --sidebar-border: var(--border-default);
   --sidebar-ring: var(--state-focus-ring);
 
-  /* --- Compatibility aliases for existing product code --- */
+  /* --- Compatibility aliases --- */
   --bg-primary: var(--surface-app);
   --bg-sidebar: var(--surface-sidebar);
   --bg-card: var(--surface-card);
@@ -180,8 +195,8 @@
   --bg-dialog: var(--surface-dialog);
   --border-primary: var(--border-default);
   --hover: var(--state-hover);
-  --link-color: var(--accent-blue);
-  --link-hover: var(--accent-blue-hover);
+  --link-color: #5b49c8;
+  --link-hover: #6b56e5;
 }
 
 :root.dark,
@@ -189,74 +204,74 @@
   color-scheme: dark;
 
   /* --- Semantic surfaces (dark mode) --- */
-  --surface-app: #1F1E1B;
-  --surface-sidebar: #191814;
-  --surface-panel: #23221F;
-  --surface-card: #23221F;
-  --surface-popover: #292823;
-  --surface-input: #1F1E1B;
-  --surface-button: #34322D;
-  --surface-dialog: #272622;
-  --surface-editor: #1F1E1B;
-  --surface-overlay: rgba(8, 8, 7, 0.58);
+  --surface-app: #191e23;
+  --surface-sidebar: #1d2329;
+  --surface-panel: #242b33;
+  --surface-card: #1d2329;
+  --surface-popover: #242b33;
+  --surface-input: #242b33;
+  --surface-button: #36404a;
+  --surface-dialog: #1d2329;
+  --surface-editor: #191e23;
+  --surface-overlay: rgba(0, 0, 0, 0.5);
 
   /* --- Semantic text (dark mode) --- */
-  --text-primary: #E6E1D8;
-  --text-secondary: #B8B1A6;
-  --text-tertiary: #9C9488;
-  --text-muted: #7F776D;
-  --text-faint: #625B53;
-  --text-heading: #F1ECE3;
-  --text-inverse: #151411;
+  --text-primary: #aab8c5;
+  --text-secondary: #8391a2;
+  --text-tertiary: #8391a2;
+  --text-muted: #687d92;
+  --text-faint: #424e5a;
+  --text-heading: #dee2e6;
+  --text-inverse: #191e23;
 
   /* --- Semantic borders (dark mode) --- */
-  --border-default: #34322D;
-  --border-subtle: #2A2925;
-  --border-strong: #46433B;
-  --border-input: #3A3832;
-  --border-dialog: #3A3832;
-  --border-focus: #78A4FF;
+  --border-default: #272f37;
+  --border-subtle: #272f37;
+  --border-strong: #3a4551;
+  --border-input: #3a4551;
+  --border-dialog: #272f37;
+  --border-focus: #9b8bfe;
 
   /* --- Interaction states (dark mode) --- */
-  --state-hover: #2D2B27;
-  --state-hover-subtle: #262520;
-  --state-selected: #1E344C;
-  --state-selected-strong: #25415F;
-  --state-active: #203A55;
-  --state-focus-ring: #78A4FF;
-  --state-drag-target: rgba(120, 164, 255, 0.2);
-  --state-disabled: #292824;
+  --state-hover: #2d3744;
+  --state-hover-subtle: #242b33;
+  --state-selected: rgba(126, 103, 254, 0.2);
+  --state-selected-strong: rgba(126, 103, 254, 0.28);
+  --state-active: rgba(126, 103, 254, 0.2);
+  --state-focus-ring: #9b8bfe;
+  --state-drag-target: rgba(126, 103, 254, 0.22);
+  --state-disabled: #222930;
 
   /* --- Accent roles (dark mode) --- */
-  --accent-blue: #78A4FF;
-  --accent-blue-bg: rgba(120, 164, 255, 0.2);
-  --accent-blue-hover: #9BBEFF;
-  --accent-blue-light: rgba(120, 164, 255, 0.16);
-  --accent-green: #79D89D;
-  --accent-green-light: rgba(121, 216, 157, 0.16);
-  --accent-orange: #F3A15B;
-  --accent-orange-light: rgba(243, 161, 91, 0.17);
-  --accent-red: #FF8A86;
-  --accent-red-light: rgba(255, 138, 134, 0.16);
-  --accent-purple: #B69CFF;
-  --accent-purple-light: rgba(182, 156, 255, 0.17);
-  --accent-yellow: #F2C86B;
-  --accent-yellow-light: rgba(242, 200, 107, 0.18);
-  --accent-teal: #64D1C8;
-  --accent-teal-light: rgba(100, 209, 200, 0.16);
-  --accent-pink: #F28AC3;
-  --accent-pink-light: rgba(242, 138, 195, 0.16);
-  --accent-gray: #A7B0BD;
-  --accent-gray-light: rgba(167, 176, 189, 0.14);
+  --accent-blue: #4a9efa;
+  --accent-blue-bg: rgba(74, 158, 250, 0.2);
+  --accent-blue-hover: #6db4fb;
+  --accent-blue-light: rgba(74, 158, 250, 0.16);
+  --accent-green: #4ddb83;
+  --accent-green-light: rgba(77, 219, 131, 0.16);
+  --accent-orange: #f5a76a;
+  --accent-orange-light: rgba(245, 167, 106, 0.16);
+  --accent-red: #f06054;
+  --accent-red-light: rgba(240, 96, 84, 0.16);
+  --accent-purple: #9b8bfe;
+  --accent-purple-light: rgba(155, 139, 254, 0.16);
+  --accent-yellow: #fcb681;
+  --accent-yellow-light: rgba(252, 182, 129, 0.16);
+  --accent-teal: #263333;
+  --accent-teal-light: rgba(38, 51, 51, 0.16);
+  --accent-pink: #ff9fd5;
+  --accent-pink-light: rgba(255, 159, 213, 0.16);
+  --accent-gray: #a0a3b5;
+  --accent-gray-light: rgba(160, 163, 181, 0.16);
 
   /* --- Feedback roles (dark mode) --- */
   --feedback-info-text: var(--accent-blue);
   --feedback-info-bg: var(--accent-blue-light);
   --feedback-success-text: var(--accent-green);
   --feedback-success-bg: var(--accent-green-light);
-  --feedback-warning-text: #F5C36B;
-  --feedback-warning-bg: rgba(245, 195, 107, 0.16);
-  --feedback-warning-border: #D99B3D;
+  --feedback-warning-text: #f5a76a;
+  --feedback-warning-bg: rgba(245, 167, 106, 0.16);
+  --feedback-warning-border: #f5a76a;
   --feedback-error-text: var(--accent-red);
   --feedback-error-bg: var(--accent-red-light);
 
@@ -264,31 +279,33 @@
   --syntax-heading: #83B2FF;
   --syntax-link: #83B2FF;
   --syntax-monospace: #FFA6A3;
-  --syntax-monospace-bg: rgba(167, 176, 189, 0.16);
-  --syntax-muted: #9C9488;
+  --syntax-monospace-bg: rgba(160, 163, 181, 0.16);
+  --syntax-muted: #8391a2;
   --syntax-frontmatter-key: #FFA6A3;
   --syntax-frontmatter-value: #8EDFAE;
-  --syntax-highlight-comment: #8E877D;
+  --syntax-highlight-comment: #687d92;
   --syntax-highlight-keyword: #FF9BA0;
   --syntax-highlight-string: #A9D6FF;
   --syntax-highlight-number: #8BB7FF;
   --syntax-highlight-title: #C2AAFF;
   --syntax-highlight-type: #F3B175;
   --syntax-highlight-deletion: #FF9C9A;
-  --syntax-highlight-deletion-bg: rgba(255, 138, 134, 0.16);
-  --diff-added-text: #79D89D;
-  --diff-added-bg: rgba(121, 216, 157, 0.14);
-  --diff-removed-text: #FF8A86;
-  --diff-removed-bg: rgba(255, 138, 134, 0.14);
-  --diff-hunk-bg: rgba(120, 164, 255, 0.13);
+  --syntax-highlight-deletion-bg: rgba(240, 96, 84, 0.16);
+  --diff-added-text: #4ddb83;
+  --diff-added-bg: rgba(77, 219, 131, 0.14);
+  --diff-removed-text: #f06054;
+  --diff-removed-bg: rgba(240, 96, 84, 0.14);
+  --diff-hunk-bg: rgba(74, 158, 250, 0.13);
   --editor-code-block-background: #161616;
   --editor-code-block-border: transparent;
   --editor-code-block-text: #FFFFFF;
   --editor-code-block-language: rgba(255, 255, 255, 0.7);
 
-  /* --- Overlays and shadows (dark mode) --- */
+  /* --- Shadows (dark mode) --- */
+  --shadow-panel: 0px 3px 4px 0px rgba(0, 0, 0, 0.08);
+  --shadow-panel-soft: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
   --shadow-overlay: var(--surface-overlay);
-  --shadow-dialog: rgba(0, 0, 0, 0.42);
+  --shadow-dialog: rgba(0, 0, 0, 0.4);
 
   /* --- shadcn theme aliases (dark mode) --- */
   --background: var(--surface-app);
@@ -297,11 +314,11 @@
   --card-foreground: var(--text-primary);
   --popover: var(--surface-popover);
   --popover-foreground: var(--text-primary);
-  --primary: var(--accent-blue);
+  --primary: var(--accent-purple);
   --primary-foreground: var(--text-inverse);
-  --secondary: var(--state-hover);
-  --secondary-foreground: var(--text-primary);
-  --muted: var(--state-hover-subtle);
+  --secondary: #424e5a;
+  --secondary-foreground: #ffffff;
+  --muted: #242b33;
   --muted-foreground: var(--text-secondary);
   --accent: var(--state-hover);
   --accent-foreground: var(--text-primary);
@@ -312,14 +329,14 @@
   --ring: var(--state-focus-ring);
   --sidebar: var(--surface-sidebar);
   --sidebar-foreground: var(--text-primary);
-  --sidebar-primary: var(--accent-blue);
+  --sidebar-primary: var(--accent-purple);
   --sidebar-primary-foreground: var(--text-inverse);
   --sidebar-accent: var(--state-hover);
   --sidebar-accent-foreground: var(--text-primary);
   --sidebar-border: var(--border-default);
   --sidebar-ring: var(--state-focus-ring);
 
-  /* --- Compatibility aliases for existing product code --- */
+  /* --- Compatibility aliases --- */
   --bg-primary: var(--surface-app);
   --bg-sidebar: var(--surface-sidebar);
   --bg-card: var(--surface-card);
@@ -331,11 +348,11 @@
   --bg-dialog: var(--surface-dialog);
   --border-primary: var(--border-default);
   --hover: var(--state-hover);
-  --link-color: var(--accent-blue);
-  --link-hover: var(--accent-blue-hover);
+  --link-color: var(--accent-purple);
+  --link-hover: #b5a5ff;
 }
 
-/* --- Tailwind v4 theme inline: register colors + radii --- */
+/* --- Tailwind v4 theme inline --- */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -377,10 +394,10 @@
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: 0.25rem;
+  --radius-md: 0.35rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 1rem;
 }
 
 /* --- Base layer --- */
@@ -406,7 +423,6 @@
     width: 100%;
     height: 100%;
   }
-  /* Interactive controls should advertise clickability unless disabled. */
   :where(
     button:not(:disabled):not([aria-disabled="true"]),
     [role="button"]:not([aria-disabled="true"]):not([data-disabled]),
@@ -419,15 +435,13 @@
   }
 }
 
-/* --- Label typography (Inter, sentence case) --- */
-/* t8: Section labels, metadata tags — 11px medium */
+/* --- Label typography --- */
 .font-mono-label {
   font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 500;
 }
 
-/* t9: Overlines, category labels — 10px regular */
 .font-mono-overline {
   font-family: 'Inter', sans-serif;
   font-size: 10px;

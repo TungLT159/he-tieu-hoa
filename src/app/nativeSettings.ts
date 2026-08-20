@@ -1,10 +1,12 @@
 import { normalizeUiLanguagePreference } from '@/lib/i18n'
+import { normalizeNarrationVoice } from '@/lib/narrationVoice'
 import { normalizeThemeMode } from '@/lib/themeMode'
 import type { StarterSettings } from './settingsStorage'
 
 type NativeSettings = {
   theme_mode?: unknown
   ui_language?: unknown
+  narration_voice?: unknown
   notifications_enabled?: unknown
   profile_display_name?: unknown
 }
@@ -25,6 +27,7 @@ function toNativeSettings(settings: StarterSettings): NativeSettings {
   return {
     theme_mode: settings.themeMode,
     ui_language: settings.uiLanguage,
+    narration_voice: settings.narrationVoice,
     notifications_enabled: settings.notificationsEnabled,
     profile_display_name: settings.profileDisplayName,
   }
@@ -33,6 +36,7 @@ function toNativeSettings(settings: StarterSettings): NativeSettings {
 function fromNativeSettings(settings: NativeSettings): Partial<StarterSettings> {
   const themeMode = normalizeThemeMode(settings.theme_mode)
   const uiLanguage = normalizeUiLanguagePreference(settings.ui_language)
+  const narrationVoice = normalizeNarrationVoice(settings.narration_voice)
   const notificationsEnabled = typeof settings.notifications_enabled === 'boolean'
     ? settings.notifications_enabled
     : undefined
@@ -43,6 +47,7 @@ function fromNativeSettings(settings: NativeSettings): Partial<StarterSettings> 
   return {
     ...(themeMode ? { themeMode } : {}),
     ...(uiLanguage ? { uiLanguage } : {}),
+    ...(narrationVoice ? { narrationVoice } : {}),
     ...(notificationsEnabled !== undefined ? { notificationsEnabled } : {}),
     ...(profileDisplayName !== undefined ? { profileDisplayName } : {}),
   }

@@ -16,9 +16,10 @@ const buttonVariants = cva(
           "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        soft: "bg-[color-mix(in_oklab,var(--primary)_10%,transparent)] text-[#5b49c8] hover:bg-primary hover:text-primary-foreground dark:text-[#c7bdff]",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline",
+        link: "text-[#5b49c8] underline-offset-4 hover:underline dark:text-[#c7bdff]",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

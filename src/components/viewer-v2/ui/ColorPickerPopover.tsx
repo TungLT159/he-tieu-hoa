@@ -13,6 +13,7 @@ interface ColorPickerPopoverProps {
   onReset?: () => void
   presets?: string[]
   collapsed?: boolean
+  tutorialTarget?: string
 }
 
 export function ColorPickerPopover({
@@ -22,6 +23,7 @@ export function ColorPickerPopover({
   onReset,
   presets = DEFAULT_PRESETS,
   collapsed = false,
+  tutorialTarget,
 }: ColorPickerPopoverProps) {
   const { locale } = useStarterSettings()
   const t = createTranslator(locale)
@@ -33,6 +35,7 @@ export function ColorPickerPopover({
           type="button"
           variant="outline"
           size={collapsed ? 'icon' : 'default'}
+          data-tutorial-target={tutorialTarget}
           className={cn('justify-start gap-2', collapsed && 'h-9 w-9 justify-center')}
           title={collapsed ? label : undefined}
         >

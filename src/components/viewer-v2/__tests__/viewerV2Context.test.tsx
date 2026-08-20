@@ -1,7 +1,8 @@
 import { renderHook } from '@testing-library/react'
 import { act } from 'react'
+import type { ReactNode } from 'react'
 import * as THREE from 'three'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import { ViewerV2Provider } from '../ViewerV2Provider'
 import { useViewerV2 } from '../viewerV2Context'
@@ -114,11 +115,11 @@ describe('ViewerV2Context', () => {
     expect(result.current.flyCameraActive).toBe(false)
   })
 
-  it('defaults qualityPreset to medium', () => {
+  it('defaults qualityPreset to high', () => {
     const { result } = renderHook(() => useViewerV2(), {
       wrapper: ViewerV2Provider,
     })
-    expect(result.current.qualityPreset).toBe('medium')
+    expect(result.current.qualityPreset).toBe('high')
   })
 
   it('defaults volume to 80', () => {
@@ -135,11 +136,42 @@ describe('ViewerV2Context', () => {
     expect(result.current.voice).toBe('bac')
   })
 
+  it('can initialize voice from persisted settings and report changes', () => {
+    const onVoiceChange = vi.fn()
+    const wrapper = ({ children }: { children: ReactNode }) => (
+      <ViewerV2Provider initialVoice="nam" onVoiceChange={onVoiceChange}>
+        {children}
+      </ViewerV2Provider>
+    )
+    const { result } = renderHook(() => useViewerV2(), { wrapper })
+
+    expect(result.current.voice).toBe('nam')
+
+    act(() => {
+      result.current.setVoice('trung')
+    })
+
+    expect(result.current.voice).toBe('trung')
+    expect(onVoiceChange).toHaveBeenCalledWith('trung')
+  })
+
   it('defaults annotationTool to pen', () => {
     const { result } = renderHook(() => useViewerV2(), {
       wrapper: ViewerV2Provider,
     })
     expect(result.current.annotationTool).toBe('pen')
+  })
+
+  it('defaults viewMode to 3d and updates it', () => {
+    const { result } = renderHook(() => useViewerV2(), {
+      wrapper: ViewerV2Provider,
+    })
+    expect(result.current.viewMode).toBe('3d')
+
+    act(() => {
+      result.current.setViewMode('2d')
+    })
+    expect(result.current.viewMode).toBe('2d')
   })
 
   it('defaults flyCameraOrganPopup to null', () => {

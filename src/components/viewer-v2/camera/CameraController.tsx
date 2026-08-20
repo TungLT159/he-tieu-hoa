@@ -1,6 +1,7 @@
 import { OrbitControls } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber'
 import { useCallback, useEffect, useRef } from 'react'
+import * as THREE from 'three'
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 
 import { useViewerV2 } from '../viewerV2Context'
@@ -11,6 +12,10 @@ import {
   easeSmoothstep,
 } from './cameraMath'
 const FLY_DURATION = 1.0
+const VIEW_MODE_MOUSE_BUTTONS = {
+  '2d': { LEFT: THREE.MOUSE.PAN, MIDDLE: THREE.MOUSE.DOLLY, RIGHT: THREE.MOUSE.PAN },
+  '3d': { LEFT: THREE.MOUSE.ROTATE, MIDDLE: THREE.MOUSE.DOLLY, RIGHT: THREE.MOUSE.PAN },
+} as const
 
 export function CameraController() {
   const { camera } = useThree()
@@ -26,6 +31,7 @@ export function CameraController() {
     setFlyCameraActive,
     setIsTransitioning,
     setSelectedOrgan,
+    viewMode,
   } = useViewerV2()
   const controlsRef = useRef<OrbitControlsImpl | null>(null)
   const lerpStart = useRef(0)
@@ -57,6 +63,15 @@ export function CameraController() {
     controls.target.copy(DEFAULT_TARGET)
     controls.update()
   }, [])
+
+  useEffect(() => {
+    if (viewMode !== '2d') return
+
+    const controls = controlsRef.current
+    camera.position.copy(DEFAULT_POSITION)
+    controls?.target.copy(DEFAULT_TARGET)
+    controls?.update()
+  }, [camera.position, viewMode])
 
   useEffect(() => {
     if (resetViewVersion !== handledResetViewVersion.current) return
@@ -110,9 +125,14 @@ export function CameraController() {
   return (
     <OrbitControls
       ref={controlsRef}
-      autoRotate={isSpinning && !isTransitioning}
+      autoRotate={viewMode === '3d' && isSpinning && !isTransitioning}
       autoRotateSpeed={1.0}
       enabled={!isTransitioning}
+      enablePan
+      enableRotate={viewMode === '3d'}
+      enableZoom
+      mouseButtons={VIEW_MODE_MOUSE_BUTTONS[viewMode]}
+      screenSpacePanning={viewMode === '2d'}
       minDistance={1}
       maxDistance={20}
       makeDefault
